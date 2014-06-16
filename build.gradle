@@ -22,7 +22,7 @@ dependencies {
     compile group: 'com.yammer.dropwizard', name: 'dropwizard-migrations', version: dropwizardVersion
     compile group: 'com.yammer.dropwizard', name: 'dropwizard-testing', version: dropwizardVersion
     compile group: 'org.codehaus.jackson', name: 'jackson-core-lgpl', version: '1.7.1'
-//    compile fileTree('lib')
+    compile fileTree('lib')
 //    runtime group: 'postgresql', name: 'postgresql', version: '9.1-901.jdbc4'
 }
 
