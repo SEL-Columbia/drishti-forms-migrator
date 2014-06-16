@@ -1,0 +1,14 @@
+template: name
+defaultName: Hello
+
+logging:
+  console:
+    enabled: true
+    threshold: ALL
+  file:
+    enabled: true
+    threshold: ALL
+    currentLogFilename: ./logs/content_migrator.log
+    archivedLogFilenamePattern: ./logs/content_migrator_%d.log.gz
+    archivedFileCount: 10
+    timeZone: IST

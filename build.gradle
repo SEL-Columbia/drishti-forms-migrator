@@ -1,0 +1,37 @@
+['java', 'idea', 'application'].each({ apply plugin: it })
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+project.ext {
+    dropwizardVersion = '0.6.2'
+}
+
+mainClassName = 'app.ApplicationService'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://repository.codehaus.org/org/codehaus"
+    }
+}
+
+dependencies {
+    compile group: 'com.yammer.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+    compile group: 'com.yammer.dropwizard', name: 'dropwizard-jdbi', version: dropwizardVersion
+    compile group: 'com.yammer.dropwizard', name: 'dropwizard-migrations', version: dropwizardVersion
+    compile group: 'com.yammer.dropwizard', name: 'dropwizard-testing', version: dropwizardVersion
+    compile group: 'org.codehaus.jackson', name: 'jackson-core-lgpl', version: '1.7.1'
+//    compile fileTree('lib')
+//    runtime group: 'postgresql', name: 'postgresql', version: '9.1-901.jdbc4'
+}
+
+run {
+    args 'server', 'content-migrator.yml'
+}
+
+sourceSets {
+    test {
+        java.srcDir file('src/test/')
+    }
+}
