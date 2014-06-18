@@ -34,6 +34,7 @@ dependencies {
     compile group: 'com.yammer.dropwizard', name: 'dropwizard-jdbi', version: dropwizardVersion
     compile group: 'com.yammer.dropwizard', name: 'dropwizard-migrations', version: dropwizardVersion
     compile group: 'com.yammer.dropwizard', name: 'dropwizard-testing', version: dropwizardVersion
+    compile group: 'com.yammer.dropwizard', name: 'dropwizard-hibernate', version: dropwizardVersion
     compile group: 'org.codehaus.jackson', name: 'jackson-core-lgpl', version: '1.7.1'
     compile fileTree('lib')
     runtime group: 'postgresql', name: 'postgresql', version: '9.1-901.jdbc4'
@@ -63,6 +64,10 @@ fatJar {
 
 task runMigrations(type: Exec) {
     commandLine 'java',  '-jar', 'build/libs/drishti-content-migrator-1.0-fat.jar', 'db', 'migrate', 'content-migrator.yml'
+}
+
+task cleanDb(type: Exec) {
+    commandLine 'java',  '-jar', 'build/libs/drishti-content-migrator-1.0-fat.jar', 'db', 'drop-all', '--confirm-delete-everything', 'content-migrator.yml'
 }
 
 task migrations(dependsOn: ['fatJar', 'runMigrations'])
