@@ -3,7 +3,7 @@ package app.scheduler;
 import app.Context;
 import app.model.Person;
 import app.model.Student;
-import app.repository.PersonRepository;
+import app.repository.Repository;
 import de.spinscale.dropwizard.jobs.Job;
 import de.spinscale.dropwizard.jobs.annotations.Every;
 
@@ -29,7 +29,7 @@ public class JobScheduler extends Job {
         student.setCourse("Herbology");
 
         try {
-            PersonRepository repository = context.repository();
+            Repository repository = context.repository();
 
             repository.create(person);
             repository.create(student);

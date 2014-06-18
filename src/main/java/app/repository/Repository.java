@@ -6,10 +6,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.context.internal.ManagedSessionContext;
 
-public class PersonRepository extends AbstractDAO<EntityForm>{
+public class Repository extends AbstractDAO<EntityForm>{
     private SessionFactory sessionFactory;
 
-    public PersonRepository(SessionFactory sessionFactory) {
+    public Repository(SessionFactory sessionFactory) {
         super(sessionFactory);
         this.sessionFactory = sessionFactory;
     }

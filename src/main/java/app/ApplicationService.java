@@ -2,7 +2,7 @@ package app;
 
 import app.model.Person;
 import app.model.Student;
-import app.repository.PersonRepository;
+import app.repository.Repository;
 import app.scheduler.JobScheduler;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
@@ -46,7 +46,7 @@ public class ApplicationService extends Service<MigratorConfiguration> {
 
     @Override
     public void run(MigratorConfiguration configuration, Environment environment) throws Exception {
-        PersonRepository personRepository = new PersonRepository(hibernateBundle.getSessionFactory());
+        Repository repository = new Repository(hibernateBundle.getSessionFactory());
 
         Context context = Context.getInstance();
         context.updateSessionFactory(hibernateBundle.getSessionFactory());

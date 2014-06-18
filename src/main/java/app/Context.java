@@ -1,11 +1,11 @@
 package app;
 
-import app.repository.PersonRepository;
+import app.repository.Repository;
 import org.hibernate.SessionFactory;
 
 public class Context {
     private static Context context;
-    private PersonRepository repository;
+    private Repository repository;
     private SessionFactory sessionFactory;
 
     protected Context() {}
@@ -17,10 +17,10 @@ public class Context {
         return context;
     }
 
-    public PersonRepository repository() throws ClassNotFoundException {
+    public Repository repository() throws ClassNotFoundException {
 
         if (repository == null) {
-            repository = new PersonRepository(sessionFactory);
+            repository = new Repository(sessionFactory);
         }
         return repository;
     }
