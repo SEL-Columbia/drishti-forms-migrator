@@ -17,4 +17,16 @@
             <column name="job_title" type="varchar(255)"/>
         </createTable>
     </changeSet>
+
+    <changeSet id="2" author="maha">
+        <createTable tableName="student">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="full_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="course" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>

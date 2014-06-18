@@ -1,12 +1,12 @@
 package app.repository;
 
-import app.model.Person;
+import app.model.EntityForm;
 import com.yammer.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.context.internal.ManagedSessionContext;
 
-public class PersonRepository extends AbstractDAO<Person>{
+public class PersonRepository extends AbstractDAO<EntityForm>{
     private SessionFactory sessionFactory;
 
     public PersonRepository(SessionFactory sessionFactory) {
@@ -14,17 +14,14 @@ public class PersonRepository extends AbstractDAO<Person>{
         this.sessionFactory = sessionFactory;
     }
 
-    public void create(Person person) {
+    public void create(EntityForm entityForm) {
         Session session = sessionFactory.openSession();
         try {
             ManagedSessionContext.bind(session);
-            persist(person);
+            persist(entityForm);
         } catch (Exception ex) {
             System.out.println("!!!!!!!! Error !!!!!!!!");
+            System.out.println(ex.getMessage());
         }
-        finally {
-            session.flush();
-        }
-
     }
 }

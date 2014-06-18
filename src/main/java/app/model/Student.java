@@ -3,17 +3,17 @@ package app.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "people")
-public class Person extends EntityForm{
+@Table(name = "student")
+public class Student extends EntityForm{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    protected long id;
 
     @Column(name = "full_name", nullable = false)
     private String fullName;
 
-    @Column(name = "job_title", nullable = false)
-    private String jobTitle;
+    @Column(name = "course", nullable = false)
+    private String course;
 
     public long getId() {
         return id;
@@ -31,11 +31,11 @@ public class Person extends EntityForm{
         this.fullName = fullName;
     }
 
-    public String getJobTitle() {
-        return jobTitle;
+    public String getCourse() {
+        return course;
     }
 
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
+    public void setCourse(String course) {
+        this.course = course;
     }
 }

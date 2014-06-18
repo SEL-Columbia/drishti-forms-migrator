@@ -2,6 +2,7 @@ package app.scheduler;
 
 import app.Context;
 import app.model.Person;
+import app.model.Student;
 import app.repository.PersonRepository;
 import de.spinscale.dropwizard.jobs.Job;
 import de.spinscale.dropwizard.jobs.annotations.Every;
@@ -9,7 +10,6 @@ import de.spinscale.dropwizard.jobs.annotations.Every;
 @Every("5s")
 public class JobScheduler extends Job {
     private final Context context;
-    private PersonRepository personRepository;
 
     public JobScheduler() {
         context = Context.getInstance();
@@ -23,10 +23,19 @@ public class JobScheduler extends Job {
         Person person = new Person();
         person.setFullName("Harry");
         person.setJobTitle("Wizard");
+
+        Student student = new Student();
+        student.setFullName("Ron");
+        student.setCourse("Herbology");
+
         try {
-            context.repository().create(person);
+            PersonRepository repository = context.repository();
+
+            repository.create(person);
+            repository.create(student);
+
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            System.out.println(e.getStackTrace());
         }
     }
 }
