@@ -5,3 +5,5 @@
 logs/
 build/
 .gradle/
+**.DS_Store
+util/generated
