@@ -1,8 +1,12 @@
 package app.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 @Table(name = "people")
 public class Person extends EntityForm{
     @Id
@@ -10,32 +14,9 @@ public class Person extends EntityForm{
     private long id;
 
     @Column(name = "full_name", nullable = false)
+    @JsonProperty("full_name")
     private String fullName;
 
     @Column(name = "job_title", nullable = false)
     private String jobTitle;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getJobTitle() {
-        return jobTitle;
-    }
-
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
-    }
 }
