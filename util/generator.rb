@@ -1,5 +1,6 @@
 require 'json'
 require 'fileutils'
+require './string_util.rb'
 
 print "\n !!! Starting the generating script !!! \n"
 
@@ -20,7 +21,7 @@ def generate_migration_script
     file.puts "</column>\n"
 
     $data_json["formInstance"]["form"]["fields"].each do |fieldHash|
-      field = fieldHash["name"]
+      field = fieldHash["name"].to_underscore
       if field == "id" then
         next
       end;
@@ -50,7 +51,7 @@ def generate_class_file
       if field == "id" then
         next
       end;
-      file.puts "@Column(name = \"" + field + "\")"
+      file.puts "@Column(name = \"" + field.to_underscore + "\")"
       file.puts "@JsonProperty(\"" + field + "\")"
       file.puts "private String " + field + ";"
       file.puts "\n"

@@ -29,4 +29,130 @@
             <column name="course" type="varchar(255)"/>
         </createTable>
     </changeSet>
+
+    <changeSet id="3" author="maha">
+        <createTable tableName="ec_registration">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="district" type="varchar(255)"/>
+
+            <column name="phc" type="varchar(255)"/>
+
+            <column name="sub_center" type="varchar(255)"/>
+
+            <column name="village" type="varchar(255)"/>
+
+            <column name="household_number" type="varchar(255)"/>
+
+            <column name="household_address" type="varchar(255)"/>
+
+            <column name="head_of_household" type="varchar(255)"/>
+
+            <column name="ec_number" type="varchar(255)"/>
+
+            <column name="wife_name" type="varchar(255)"/>
+
+            <column name="aadhar_number" type="varchar(255)"/>
+
+            <column name="wife_age" type="varchar(255)"/>
+
+            <column name="husband_age" type="varchar(255)"/>
+
+            <column name="woman_dob" type="varchar(255)"/>
+
+            <column name="husband_dob" type="varchar(255)"/>
+
+            <column name="husband_name" type="varchar(255)"/>
+
+            <column name="phone_number" type="varchar(255)"/>
+
+            <column name="phone_owner" type="varchar(255)"/>
+
+            <column name="alternate_phone_number" type="varchar(255)"/>
+
+            <column name="alternate_phone_owner" type="varchar(255)"/>
+
+            <column name="economic_status" type="varchar(255)"/>
+
+            <column name="bpl_card_number" type="varchar(255)"/>
+
+            <column name="religion" type="varchar(255)"/>
+
+            <column name="caste" type="varchar(255)"/>
+
+            <column name="educational_level" type="varchar(255)"/>
+
+            <column name="number_of_pregnancies" type="varchar(255)"/>
+
+            <column name="number_of_live_births" type="varchar(255)"/>
+
+            <column name="number_of_abortions" type="varchar(255)"/>
+
+            <column name="number_of_spontaneous_abortions" type="varchar(255)"/>
+
+            <column name="number_of_induced_abortions" type="varchar(255)"/>
+
+            <column name="number_of_still_births" type="varchar(255)"/>
+
+            <column name="number_of_living_children" type="varchar(255)"/>
+
+            <column name="number_of_living_male_children" type="varchar(255)"/>
+
+            <column name="number_of_living_female_child" type="varchar(255)"/>
+
+            <column name="is_youngest_child_under_two" type="varchar(255)"/>
+
+            <column name="youngest_child_age" type="varchar(255)"/>
+
+            <column name="youngest_child_dob" type="varchar(255)"/>
+
+            <column name="current_method" type="varchar(255)"/>
+
+            <column name="iud_place" type="varchar(255)"/>
+
+            <column name="iud_person" type="varchar(255)"/>
+
+            <column name="family_planning_method_change_date" type="varchar(255)"/>
+
+            <column name="three_months_from_sterilization_date" type="varchar(255)"/>
+
+            <column name="number_of_condoms_supplied" type="varchar(255)"/>
+
+            <column name="number_of_ocp_delivered" type="varchar(255)"/>
+
+            <column name="number_of_centchroman_pills_delivered" type="varchar(255)"/>
+
+            <column name="is_high_priority" type="varchar(255)"/>
+
+            <column name="high_priority_reason" type="varchar(255)"/>
+
+            <column name="is_out_of_area" type="varchar(255)"/>
+
+            <column name="is_closed" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+            <column name="registration_date" type="varchar(255)"/>
+
+            <column name="parity" type="varchar(255)"/>
+
+            <column name="dmpa_injection_date" type="varchar(255)"/>
+
+            <column name="ocp_refill_date" type="varchar(255)"/>
+
+            <column name="husband_education_level" type="varchar(255)"/>
+
+            <column name="lmp_date" type="varchar(255)"/>
+
+            <column name="upt_result" type="varchar(255)"/>
+
+            <column name="sterilization_doctor_name" type="varchar(255)"/>
+
+            <column name="male_sterilization_type" type="varchar(255)"/>
+
+            <column name="female_sterilization_type" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
 </databaseChangeLog>

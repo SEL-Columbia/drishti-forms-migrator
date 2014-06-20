@@ -26,8 +26,8 @@ public class MapTransformerTest {
     @Test
     public void test() throws JsonProcessingException {
         ImmutableMap<String, Object> key1 = of(NAME, (Object) "name", VALUE, "harry", "source", "eligible_couple.name");
-        ImmutableMap<String, Object> key2 = of(NAME, (Object) "id", VALUE, "12345", "source", "eligible_couple.id");
-        ImmutableMap<String, Object> key3 = of(NAME, (Object) "district", VALUE, "koppal", "source", "eligible_couple.district");
+        ImmutableMap<String, Object> key2 = of(NAME, (Object) "id", VALUE, "", "source", "eligible_couple.id");
+        ImmutableMap<String, Object> key3 = of(NAME, (Object) "district", "source", "eligible_couple.district");
 
         Map<String, Object> formInstance = new HashMap<String, Object>();
         formInstance.put(FORM, of(FIELDS, Lists.<Map<String, Object>>newArrayList(key1, key2, key3)));
@@ -41,8 +41,8 @@ public class MapTransformerTest {
 
         Map<String, Object> transformedMap = mapTransformer.transform(Lists.<Map<String, Object>>newArrayList(formMap)).get(0);
         assertEquals("123", transformedMap.get("anmId"));
-        assertEquals("12345", transformedMap.get("id"));
         assertEquals("harry", transformedMap.get(NAME));
-        assertEquals("koppal", transformedMap.get("district"));
+        assertEquals(null, transformedMap.get("id"));
+        assertEquals(null, transformedMap.get("district"));
     }
 }

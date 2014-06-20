@@ -1,13 +1,19 @@
 package app.scheduler;
 
 import app.Context;
-import app.model.Person;
-import app.model.Student;
+import app.MigratorConfiguration;
+import app.model.EntityForm;
 import app.repository.Repository;
+import app.util.HttpClient;
+import app.util.MapTransformer;
+import app.util.ObjectConverter;
 import de.spinscale.dropwizard.jobs.Job;
 import de.spinscale.dropwizard.jobs.annotations.Every;
 
-@Every("5s")
+import java.util.List;
+import java.util.Map;
+
+@Every("10s")
 public class JobScheduler extends Job {
     private final Context context;
 
@@ -18,21 +24,28 @@ public class JobScheduler extends Job {
     @Override
     public void doJob() {
         System.out.println("************");
-        System.out.println("Hello");
+        System.out.println("Started the job");
 
-        Person person = new Person();
-        person.setFullName("Harry");
-        person.setJobTitle("Wizard");
+        process();
 
-        Student student = new Student();
-        student.setFullName("Ron");
-        student.setCourse("Herbology");
+        System.out.println("Job Ended");
+        System.out.println("************");
+    }
 
+    private void process() {
+        MigratorConfiguration configuration = context.configuration();
+        List<Map<String, Object>> responseData = HttpClient.call(configuration.getPollingUrl(), configuration.getPollingUrlUsername(), configuration.getPollingUrlPassword());
+        List<Map<String, Object>> mappedData = new MapTransformer().transform(responseData);
+//        for (Map<String, Object> map : mappedData) {
+            persist(ObjectConverter.create(mappedData.get(0)));
+//        }
+
+    }
+
+    private void persist(EntityForm entity) {
         try {
             Repository repository = context.repository();
-
-            repository.create(person);
-            repository.create(student);
+            repository.create(entity);
 
         } catch (ClassNotFoundException e) {
             System.out.println(e.getStackTrace());

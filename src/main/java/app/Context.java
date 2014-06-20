@@ -7,6 +7,7 @@ public class Context {
     private static Context context;
     private Repository repository;
     private SessionFactory sessionFactory;
+    private MigratorConfiguration configuration;
 
     protected Context() {}
 
@@ -25,7 +26,17 @@ public class Context {
         return repository;
     }
 
-    public void updateSessionFactory(SessionFactory sessionFactory) {
+    public Context updateSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
+        return this;
+    }
+
+    public Context updateConfiguration(MigratorConfiguration configuration) {
+        this.configuration = configuration;
+        return this;
+    }
+
+    public MigratorConfiguration configuration() {
+        return configuration;
     }
 }

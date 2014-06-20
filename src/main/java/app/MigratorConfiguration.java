@@ -11,18 +11,36 @@ public class MigratorConfiguration extends Configuration{
     @Valid
     @NotNull
     @JsonProperty
-    private String defaultName = "Stranger";
+    private String pollingUrl = "invalid";
+
+    @Valid
+    @NotNull
+    @JsonProperty
+    private String pollingUrlUsername = "";
+
+    @Valid
+    @NotNull
+    @JsonProperty
+    private String pollingUrlPassword = "";
 
     @Valid
     @NotNull
     @JsonProperty
     private DatabaseConfiguration database = new DatabaseConfiguration();
 
-    public String getDefaultName() {
-        return defaultName;
-    }
-
     public DatabaseConfiguration getDatabase() {
         return database;
+    }
+
+    public String getPollingUrl() {
+        return pollingUrl;
+    }
+
+    public String getPollingUrlPassword() {
+        return pollingUrlPassword;
+    }
+
+    public String getPollingUrlUsername() {
+        return pollingUrlUsername;
     }
 }

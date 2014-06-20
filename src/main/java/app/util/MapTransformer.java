@@ -2,6 +2,7 @@ package app.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Function;
+import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 
 import java.io.IOException;
@@ -11,10 +12,11 @@ import java.util.List;
 import java.util.Map;
 
 import static app.Constants.*;
+import static java.lang.String.valueOf;
 
 public class MapTransformer {
 
-    private final ArrayList<String> otherFields = Lists.newArrayList("anmId");
+    private final ArrayList<String> otherFields = Lists.newArrayList("anmId", FORM_NAME);
 
     public List<Map<String, Object>> transform(List<Map<String, Object>> formData) {
         return Lists.transform(filter(formData), new Function<Map<String, Object>, Map<String, Object>>() {
@@ -49,7 +51,9 @@ public class MapTransformer {
             List<Map<String, Object>> allFieldsMap = (List<Map<String, Object>>) formInfo.get(FIELDS);
 
             for (Map<String, Object> field : allFieldsMap) {
-                resultMap.put((String) field.get(NAME), field.get(VALUE));
+                if(!valueOf(field.get(NAME)).equals("id")) {
+                    resultMap.put((String) field.get(NAME), Strings.emptyToNull((String) field.get(VALUE)));
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
