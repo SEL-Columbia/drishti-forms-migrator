@@ -22,6 +22,8 @@ public class Repository extends AbstractDAO<EntityForm>{
         } catch (Exception ex) {
             System.out.println("!!!!!!!! Error !!!!!!!!");
             System.out.println(ex.getMessage());
+        }finally {
+            session.close();
         }
     }
 }

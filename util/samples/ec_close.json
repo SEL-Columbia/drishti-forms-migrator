@@ -1,0 +1,58 @@
+{"anmId": "demo1", "instanceId": "05a26378-369e-4d55-822a-af4d016a2989", "entityId": "fe7c55bd-088f-4d57-97f5-91f8a00fd96e", "formName": "ec_close", "formInstance": {
+    "form_data_definition_version": "1",
+    "form": {
+        "bind_type": "eligible_couple",
+        "default_bind_path": "/model/instance/EC_Close_EngKan/",
+        "fields": [
+            {
+                "name": "id",
+                "value": "fe7c55bd-088f-4d57-97f5-91f8a00fd96e",
+                "source": "eligible_couple.id"
+            },
+            {
+                "name": "closeReason",
+                "value": "death_of_husband",
+                "source": "eligible_couple.closeReason"
+            },
+            {
+                "name": "otherCloseReason",
+                "source": "eligible_couple.otherCloseReason"
+            },
+            {
+                "name": "isSterilizationDeath",
+                "value": "no",
+                "source": "eligible_couple.isSterilizationDeath"
+            },
+            {
+                "name": "sterilizationDeathDate",
+                "source": "eligible_couple.sterilizationDeathDate"
+            },
+            {
+                "name": "isMaternalDeath",
+                "source": "eligible_couple.isMaternalDeath"
+            },
+            {
+                "name": "maternalDeathDate",
+                "source": "eligible_couple.maternalDeathDate"
+            },
+            {
+                "name": "maternalDeathCause",
+                "source": "eligible_couple.maternalDeathCause"
+            },
+            {
+                "name": "otherMaternalDeathCause",
+                "source": "eligible_couple.otherMaternalDeathCause"
+            },
+            {
+                "name": "isECCloseConfirmed",
+                "value": "yes",
+                "source": "eligible_couple.isECCloseConfirmed"
+            },
+            {
+                "name": "submissionDate",
+                "value": "2013-10-15",
+                "source": "eligible_couple.submissionDate"
+            }
+        ]
+    }
+}, "clientVersion": "1381820002937", "serverVersion": "1381833160517", "formDataDefinitionVersion": "1"}

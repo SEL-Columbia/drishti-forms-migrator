@@ -7,32 +7,930 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
 
     <changeSet id="1" author="maha">
-        <createTable tableName="people">
-            <column name="id" type="bigint" autoIncrement="true">
+        <createTable tableName="anc_close">
+            <column name="anc_close_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="full_name" type="varchar(255)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="job_title" type="varchar(255)"/>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="close_reason" type="varchar(255)"/>
+
+            <column name="number_of_abortions" type="varchar(255)"/>
+
+            <column name="is_maternal_death" type="varchar(255)"/>
+
+            <column name="number_of_spontaneous_abortions" type="varchar(255)"/>
+
+            <column name="date_of_spontaneous_abortion" type="varchar(255)"/>
+
+            <column name="reference_date" type="varchar(255)"/>
+
+            <column name="number_of_weeks_pregnant_when_spontaneous_abortion_happened" type="varchar(255)"/>
+
+            <column name="cause_of_spontaneous_abortion" type="varchar(255)"/>
+
+            <column name="other_cause_of_spontaneous_abortion" type="varchar(255)"/>
+
+            <column name="place_of_spontaneous_abortion" type="varchar(255)"/>
+
+            <column name="is_rh_negative" type="varchar(255)"/>
+
+            <column name="number_of_induced_abortions" type="varchar(255)"/>
+
+            <column name="time_of_induced_abortion" type="varchar(255)"/>
+
+            <column name="date_of_induced_abortion" type="varchar(255)"/>
+
+            <column name="maternal_death_date" type="varchar(255)"/>
+
+            <column name="maternal_death_trimester" type="varchar(255)"/>
+
+            <column name="maternal_death_cause" type="varchar(255)"/>
+
+            <column name="other_maternal_death_cause" type="varchar(255)"/>
+
+            <column name="rh_injection_given" type="varchar(255)"/>
+
+            <column name="is_anc_close_confirmed" type="varchar(255)"/>
+
+            <column name="has_anc_left_place" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
         </createTable>
     </changeSet>
 
     <changeSet id="2" author="maha">
-        <createTable tableName="student">
-            <column name="id" type="bigint" autoIncrement="true">
+        <createTable tableName="anc_registration">
+            <column name="anc_registration_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="full_name" type="varchar(255)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="course" type="varchar(255)"/>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="mother_id" type="varchar(255)"/>
+
+            <column name="registration_date" type="varchar(255)"/>
+
+            <column name="registration_place" type="varchar(255)"/>
+
+            <column name="wife_name" type="varchar(255)"/>
+
+            <column name="number_of_pregnancies" type="varchar(255)"/>
+
+            <column name="thayi_card_number" type="varchar(255)"/>
+
+            <column name="anc_number" type="varchar(255)"/>
+
+            <column name="is_jsy_beneficiary" type="varchar(255)"/>
+
+            <column name="asha_name" type="varchar(255)"/>
+
+            <column name="asha_phone_number" type="varchar(255)"/>
+
+            <column name="reference_date" type="varchar(255)"/>
+
+            <column name="edd" type="varchar(255)"/>
+
+            <column name="linked_facility_for_delivery" type="varchar(255)"/>
+
+            <column name="facility_name" type="varchar(255)"/>
+
+            <column name="complications" type="varchar(255)"/>
+
+            <column name="other_complications" type="varchar(255)"/>
+
+            <column name="medical_histories" type="varchar(255)"/>
+
+            <column name="other_medical_histories" type="varchar(255)"/>
+
+            <column name="blood_group" type="varchar(255)"/>
+
+            <column name="is_rh_negative" type="varchar(255)"/>
+
+            <column name="husband_blood_group" type="varchar(255)"/>
+
+            <column name="is_rh_incompatible_couple" type="varchar(255)"/>
+
+            <column name="height" type="varchar(255)"/>
+
+            <column name="weight" type="varchar(255)"/>
+
+            <column name="is_tobacco_used" type="varchar(255)"/>
+
+            <column name="tobacco_user" type="varchar(255)"/>
+
+            <column name="is_high_risk_till_delivery" type="varchar(255)"/>
+
+            <column name="high_risk_till_delivery_reason" type="varchar(255)"/>
+
+            <column name="is_high_risk_till_pnc_close" type="varchar(255)"/>
+
+            <column name="high_risk_till_pnc_close_reason" type="varchar(255)"/>
+
+            <column name="high_risk_reason" type="varchar(255)"/>
+
+            <column name="is_high_risk" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+            <column name="type" type="varchar(255)"/>
+
+            <column name="is_closed" type="varchar(255)"/>
+
+            <column name="current_method" type="varchar(255)"/>
+
+            <column name="family_planning_method_change_date" type="varchar(255)"/>
+
         </createTable>
     </changeSet>
 
     <changeSet id="3" author="maha">
-        <createTable tableName="ec_registration">
-            <column name="ec_registration_id" type="bigint" autoIncrement="true">
+        <createTable tableName="anc_registration_oa">
+            <column name="anc_registration_oa_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="original_village" type="varchar(255)"/>
+
+            <column name="phc" type="varchar(255)"/>
+
+            <column name="sub_center" type="varchar(255)"/>
+
+            <column name="village" type="varchar(255)"/>
+
+            <column name="household_address" type="varchar(255)"/>
+
+            <column name="wife_name" type="varchar(255)"/>
+
+            <column name="aadhar_number" type="varchar(255)"/>
+
+            <column name="wife_age" type="varchar(255)"/>
+
+            <column name="husband_name" type="varchar(255)"/>
+
+            <column name="phone_number" type="varchar(255)"/>
+
+            <column name="phone_owner" type="varchar(255)"/>
+
+            <column name="alternate_phone_number" type="varchar(255)"/>
+
+            <column name="alternate_phone_owner" type="varchar(255)"/>
+
+            <column name="economic_status" type="varchar(255)"/>
+
+            <column name="bpl_card_number" type="varchar(255)"/>
+
+            <column name="caste" type="varchar(255)"/>
+
+            <column name="mother_id" type="varchar(255)"/>
+
+            <column name="registration_date" type="varchar(255)"/>
+
+            <column name="thayi_card_number" type="varchar(255)"/>
+
+            <column name="anc_number" type="varchar(255)"/>
+
+            <column name="is_jsy_beneficiary" type="varchar(255)"/>
+
+            <column name="asha_name" type="varchar(255)"/>
+
+            <column name="asha_phone_number" type="varchar(255)"/>
+
+            <column name="reference_date" type="varchar(255)"/>
+
+            <column name="edd" type="varchar(255)"/>
+
+            <column name="is_first_pregnancy" type="varchar(255)"/>
+
+            <column name="had_three_or_more_births" type="varchar(255)"/>
+
+            <column name="had_three_or_more_abortions" type="varchar(255)"/>
+
+            <column name="is_youngest_child_under_two" type="varchar(255)"/>
+
+            <column name="complications" type="varchar(255)"/>
+
+            <column name="other_complications" type="varchar(255)"/>
+
+            <column name="medical_histories" type="varchar(255)"/>
+
+            <column name="other_medical_histories" type="varchar(255)"/>
+
+            <column name="blood_group" type="varchar(255)"/>
+
+            <column name="is_rh_negative" type="varchar(255)"/>
+
+            <column name="husband_blood_group" type="varchar(255)"/>
+
+            <column name="is_rh_incompatible_couple" type="varchar(255)"/>
+
+            <column name="height" type="varchar(255)"/>
+
+            <column name="weight" type="varchar(255)"/>
+
+            <column name="is_tobacco_used" type="varchar(255)"/>
+
+            <column name="tobacco_user" type="varchar(255)"/>
+
+            <column name="is_high_risk_till_delivery" type="varchar(255)"/>
+
+            <column name="high_risk_till_delivery_reason" type="varchar(255)"/>
+
+            <column name="is_high_risk_till_pnc_close" type="varchar(255)"/>
+
+            <column name="high_risk_till_pnc_close_reason" type="varchar(255)"/>
+
+            <column name="high_risk_reason" type="varchar(255)"/>
+
+            <column name="is_high_risk" type="varchar(255)"/>
+
+            <column name="is_birth_planning_done" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+            <column name="type" type="varchar(255)"/>
+
+            <column name="is_closed" type="varchar(255)"/>
+
+            <column name="is_out_of_area" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="4" author="maha">
+        <createTable tableName="anc_visit">
+            <column name="anc_visit_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="ec_id" type="varchar(255)"/>
+
+            <column name="wife_name" type="varchar(255)"/>
+
+            <column name="anc_visit_number" type="varchar(255)"/>
+
+            <column name="anc_visit_date" type="varchar(255)"/>
+
+            <column name="anc_visit_person" type="varchar(255)"/>
+
+            <column name="anc_visit_place" type="varchar(255)"/>
+
+            <column name="risk_observed_during_anc" type="varchar(255)"/>
+
+            <column name="other_risk_observed_during_anc" type="varchar(255)"/>
+
+            <column name="jaundice" type="varchar(255)"/>
+
+            <column name="vitals_taken" type="varchar(255)"/>
+
+            <column name="bp_systolic" type="varchar(255)"/>
+
+            <column name="bp_diastolic" type="varchar(255)"/>
+
+            <column name="pulse_rate" type="varchar(255)"/>
+
+            <column name="temperature" type="varchar(255)"/>
+
+            <column name="weight" type="varchar(255)"/>
+
+            <column name="reference_date" type="varchar(255)"/>
+
+            <column name="abdominals_observed" type="varchar(255)"/>
+
+            <column name="abdominals_abnormal" type="varchar(255)"/>
+
+            <column name="is_multiple_pregnancy" type="varchar(255)"/>
+
+            <column name="is_malpresentation_of_fetus" type="varchar(255)"/>
+
+            <column name="prasooti_payment1" type="varchar(255)"/>
+
+            <column name="prasooti1_date" type="varchar(255)"/>
+
+            <column name="pih" type="varchar(255)"/>
+
+            <column name="multiple_pregnancy_reason" type="varchar(255)"/>
+
+            <column name="malpresentation_of_fetus_reason" type="varchar(255)"/>
+
+            <column name="is_high_risk_till_delivery" type="varchar(255)"/>
+
+            <column name="high_risk_till_delivery_reason" type="varchar(255)"/>
+
+            <column name="is_high_risk_till_pnc_close" type="varchar(255)"/>
+
+            <column name="high_risk_till_pnc_close_reason" type="varchar(255)"/>
+
+            <column name="high_risk_reason" type="varchar(255)"/>
+
+            <column name="is_high_risk" type="varchar(255)"/>
+
+            <column name="is_birth_planning_done" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="5" author="maha">
+        <createTable tableName="child_close">
+            <column name="child_close_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="close_reason" type="varchar(255)"/>
+
+            <column name="number_of_living_children" type="varchar(255)"/>
+
+            <column name="is_immunization_death" type="varchar(255)"/>
+
+            <column name="death_cause" type="varchar(255)"/>
+
+            <column name="other_death_cause" type="varchar(255)"/>
+
+            <column name="death_date" type="varchar(255)"/>
+
+            <column name="is_close_confirmed" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+            <column name="child_mother_eligible_couple_id" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="6" author="maha">
+        <createTable tableName="child_illness">
+            <column name="child_illness_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="sick_visit_date" type="varchar(255)"/>
+
+            <column name="date_of_birth" type="varchar(255)"/>
+
+            <column name="child_signs" type="varchar(255)"/>
+
+            <column name="child_signs_other" type="varchar(255)"/>
+
+            <column name="immediate_referral" type="varchar(255)"/>
+
+            <column name="immediate_referral_reason" type="varchar(255)"/>
+
+            <column name="report_child_disease" type="varchar(255)"/>
+
+            <column name="report_child_disease_other" type="varchar(255)"/>
+
+            <column name="report_child_disease_date" type="varchar(255)"/>
+
+            <column name="report_child_disease_place" type="varchar(255)"/>
+
+            <column name="number_of_ors_given" type="varchar(255)"/>
+
+            <column name="child_referral" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="7" author="maha">
+        <createTable tableName="child_immunizations">
+            <column name="child_immunizations_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="previous_immunizations" type="varchar(255)"/>
+
+            <column name="immunizations_received" type="varchar(255)"/>
+
+            <column name="immunizations_given" type="varchar(255)"/>
+
+            <column name="immunization_date" type="varchar(255)"/>
+
+            <column name="immunization_place" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+            <column name="date_of_birth" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="8" author="maha">
+        <createTable tableName="child_registration_ec">
+            <column name="child_registration_ec_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="mother_id" type="varchar(255)"/>
+
+            <column name="child_id" type="varchar(255)"/>
+
+            <column name="phc" type="varchar(255)"/>
+
+            <column name="sub_center" type="varchar(255)"/>
+
+            <column name="village" type="varchar(255)"/>
+
+            <column name="household_number" type="varchar(255)"/>
+
+            <column name="household_address" type="varchar(255)"/>
+
+            <column name="head_of_household" type="varchar(255)"/>
+
+            <column name="wife_name" type="varchar(255)"/>
+
+            <column name="husband_name" type="varchar(255)"/>
+
+            <column name="mother_name" type="varchar(255)"/>
+
+            <column name="father_name" type="varchar(255)"/>
+
+            <column name="ec_number" type="varchar(255)"/>
+
+            <column name="phone_number" type="varchar(255)"/>
+
+            <column name="alternate_phone_number" type="varchar(255)"/>
+
+            <column name="economic_status" type="varchar(255)"/>
+
+            <column name="religion" type="varchar(255)"/>
+
+            <column name="caste" type="varchar(255)"/>
+
+            <column name="registration_date" type="varchar(255)"/>
+
+            <column name="date_of_birth" type="varchar(255)"/>
+
+            <column name="age" type="varchar(255)"/>
+
+            <column name="gender" type="varchar(255)"/>
+
+            <column name="name" type="varchar(255)"/>
+
+            <column name="thayi_card_number" type="varchar(255)"/>
+
+            <column name="blood_group" type="varchar(255)"/>
+
+            <column name="weight" type="varchar(255)"/>
+
+            <column name="height" type="varchar(255)"/>
+
+            <column name="immunizations_given" type="varchar(255)"/>
+
+            <column name="bcg_date" type="varchar(255)"/>
+
+            <column name="opv0_date" type="varchar(255)"/>
+
+            <column name="hepb0_date" type="varchar(255)"/>
+
+            <column name="opv1_date" type="varchar(255)"/>
+
+            <column name="pentavalent1_date" type="varchar(255)"/>
+
+            <column name="opv2_date" type="varchar(255)"/>
+
+            <column name="pentavalent2_date" type="varchar(255)"/>
+
+            <column name="opv3_date" type="varchar(255)"/>
+
+            <column name="pentavalent3_date" type="varchar(255)"/>
+
+            <column name="measles_date" type="varchar(255)"/>
+
+            <column name="mmr_date" type="varchar(255)"/>
+
+            <column name="dptbooster1_date" type="varchar(255)"/>
+
+            <column name="opvbooster_date" type="varchar(255)"/>
+
+            <column name="je_date" type="varchar(255)"/>
+
+            <column name="measlesbooster_date" type="varchar(255)"/>
+
+            <column name="dptbooster2_date" type="varchar(255)"/>
+
+            <column name="child_vitamin_a_history" type="varchar(255)"/>
+
+            <column name="vitamin1_date" type="varchar(255)"/>
+
+            <column name="vitamin2_date" type="varchar(255)"/>
+
+            <column name="vitamin3_date" type="varchar(255)"/>
+
+            <column name="vitamin4_date" type="varchar(255)"/>
+
+            <column name="vitamin5_date" type="varchar(255)"/>
+
+            <column name="vitamin6_date" type="varchar(255)"/>
+
+            <column name="vitamin7_date" type="varchar(255)"/>
+
+            <column name="vitamin8_date" type="varchar(255)"/>
+
+            <column name="vitamin9_date" type="varchar(255)"/>
+
+            <column name="is_child_high_risk" type="varchar(255)"/>
+
+            <column name="child_high_risk_reason" type="varchar(255)"/>
+
+            <column name="is_closed" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+            <column name="is_mother_closed" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="9" author="maha">
+        <createTable tableName="child_registration_oa">
+            <column name="child_registration_oa_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="registration_date" type="varchar(255)"/>
+
+            <column name="phc" type="varchar(255)"/>
+
+            <column name="sub_center" type="varchar(255)"/>
+
+            <column name="village" type="varchar(255)"/>
+
+            <column name="household_number" type="varchar(255)"/>
+
+            <column name="household_address" type="varchar(255)"/>
+
+            <column name="mother_name" type="varchar(255)"/>
+
+            <column name="father_name" type="varchar(255)"/>
+
+            <column name="thayi_card_number" type="varchar(255)"/>
+
+            <column name="economic_status" type="varchar(255)"/>
+
+            <column name="caste" type="varchar(255)"/>
+
+            <column name="phone_number" type="varchar(255)"/>
+
+            <column name="name" type="varchar(255)"/>
+
+            <column name="date_of_birth" type="varchar(255)"/>
+
+            <column name="gender" type="varchar(255)"/>
+
+            <column name="blood_group" type="varchar(255)"/>
+
+            <column name="birth_weight" type="varchar(255)"/>
+
+            <column name="weight" type="varchar(255)"/>
+
+            <column name="height" type="varchar(255)"/>
+
+            <column name="immunizations_given" type="varchar(255)"/>
+
+            <column name="bcg_date" type="varchar(255)"/>
+
+            <column name="opv0_date" type="varchar(255)"/>
+
+            <column name="hepb0_date" type="varchar(255)"/>
+
+            <column name="opv1_date" type="varchar(255)"/>
+
+            <column name="dpt1_date" type="varchar(255)"/>
+
+            <column name="hepb1_date" type="varchar(255)"/>
+
+            <column name="pentavalent1_date" type="varchar(255)"/>
+
+            <column name="opv2_date" type="varchar(255)"/>
+
+            <column name="dpt2_date" type="varchar(255)"/>
+
+            <column name="hepb2_date" type="varchar(255)"/>
+
+            <column name="pentavalent2_date" type="varchar(255)"/>
+
+            <column name="opv3_date" type="varchar(255)"/>
+
+            <column name="dpt3_date" type="varchar(255)"/>
+
+            <column name="hepb3_date" type="varchar(255)"/>
+
+            <column name="pentavalent3_date" type="varchar(255)"/>
+
+            <column name="measles_date" type="varchar(255)"/>
+
+            <column name="mmr_date" type="varchar(255)"/>
+
+            <column name="dpt_booster1_date" type="varchar(255)"/>
+
+            <column name="opv_booster_date" type="varchar(255)"/>
+
+            <column name="je_date" type="varchar(255)"/>
+
+            <column name="je2_date" type="varchar(255)"/>
+
+            <column name="measles_booster_date" type="varchar(255)"/>
+
+            <column name="dpt_booster2_date" type="varchar(255)"/>
+
+            <column name="child_vitamin_a_history" type="varchar(255)"/>
+
+            <column name="vitamin1_date" type="varchar(255)"/>
+
+            <column name="vitamin2_date" type="varchar(255)"/>
+
+            <column name="vitamin3_date" type="varchar(255)"/>
+
+            <column name="vitamin4_date" type="varchar(255)"/>
+
+            <column name="vitamin5_date" type="varchar(255)"/>
+
+            <column name="vitamin6_date" type="varchar(255)"/>
+
+            <column name="vitamin7_date" type="varchar(255)"/>
+
+            <column name="vitamin8_date" type="varchar(255)"/>
+
+            <column name="vitamin9_date" type="varchar(255)"/>
+
+            <column name="is_child_high_risk" type="varchar(255)"/>
+
+            <column name="child_high_risk_reason" type="varchar(255)"/>
+
+            <column name="stay_in_area" type="varchar(255)"/>
+
+            <column name="ec_id" type="varchar(255)"/>
+
+            <column name="mother_id" type="varchar(255)"/>
+
+            <column name="is_mother_closed" type="varchar(255)"/>
+
+            <column name="is_closed" type="varchar(255)"/>
+
+            <column name="is_out_of_area" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="10" author="maha">
+        <createTable tableName="delivery_outcome">
+            <column name="delivery_outcome_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="ec_id" type="varchar(255)"/>
+
+            <column name="reference_date" type="varchar(255)"/>
+
+            <column name="delivery_registration_date" type="varchar(255)"/>
+
+            <column name="delivery_place" type="varchar(255)"/>
+
+            <column name="delivery_facility_name" type="varchar(255)"/>
+
+            <column name="is_this_only_delivery_facility" type="varchar(255)"/>
+
+            <column name="additional_delivery_facility" type="varchar(255)"/>
+
+            <column name="reasons_for_additional_delivery_facility" type="varchar(255)"/>
+
+            <column name="other_reasons_for_additional_delivery_facility" type="varchar(255)"/>
+
+            <column name="is_skilled_delivery" type="varchar(255)"/>
+
+            <column name="delivery_type" type="varchar(255)"/>
+
+            <column name="delivery_outcome" type="varchar(255)"/>
+
+            <column name="parity" type="varchar(255)"/>
+
+            <column name="number_of_live_births" type="varchar(255)"/>
+
+            <column name="number_of_still_births" type="varchar(255)"/>
+
+            <column name="cause_of_still_birth" type="varchar(255)"/>
+
+            <column name="other_cause_of_still_birth" type="varchar(255)"/>
+
+            <column name="did_woman_survive" type="varchar(255)"/>
+
+            <column name="did_mother_survive" type="varchar(255)"/>
+
+            <column name="did_breastfeeding_start" type="varchar(255)"/>
+
+            <column name="maternal_death_cause" type="varchar(255)"/>
+
+            <column name="other_maternal_death_cause" type="varchar(255)"/>
+
+            <column name="is_rh_negative" type="varchar(255)"/>
+
+            <column name="is_rh_injection_given" type="varchar(255)"/>
+
+            <column name="had_delivery_complications" type="varchar(255)"/>
+
+            <column name="delivery_complications" type="varchar(255)"/>
+
+            <column name="other_delivery_complications" type="varchar(255)"/>
+
+            <column name="is_high_risk_till_pnc_close" type="varchar(255)"/>
+
+            <column name="high_risk_till_pnc_close_reason" type="varchar(255)"/>
+
+            <column name="anemic_status" type="varchar(255)"/>
+
+            <column name="pih" type="varchar(255)"/>
+
+            <column name="pre_eclampsia" type="varchar(255)"/>
+
+            <column name="jaundice" type="varchar(255)"/>
+
+            <column name="is_high_risk" type="varchar(255)"/>
+
+            <column name="is_birth_planning_done" type="varchar(255)"/>
+
+            <column name="high_risk_reason" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+            <column name="type" type="varchar(255)"/>
+
+            <column name="number_of_living_children" type="varchar(255)"/>
+
+            <column name="number_of_children_born" type="varchar(255)"/>
+
+            <column name="number_of_female_children_born" type="varchar(255)"/>
+
+            <column name="number_of_male_children_born" type="varchar(255)"/>
+
+            <column name="number_of_living_female_child" type="varchar(255)"/>
+
+            <column name="number_of_living_male_child" type="varchar(255)"/>
+
+            <column name="youngest_child_dob" type="varchar(255)"/>
+
+            <column name="youngest_child_age" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="11" author="maha">
+        <createTable tableName="delivery_plan">
+            <column name="delivery_plan_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="ec_id" type="varchar(255)"/>
+
+            <column name="phone_number" type="varchar(255)"/>
+
+            <column name="is_high_risk" type="varchar(255)"/>
+
+            <column name="high_risk_reason" type="varchar(255)"/>
+
+            <column name="anaemic_status" type="varchar(255)"/>
+
+            <column name="woman_blood_group" type="varchar(255)"/>
+
+            <column name="woman_name" type="varchar(255)"/>
+
+            <column name="asha_phone_number" type="varchar(255)"/>
+
+            <column name="family_member" type="varchar(255)"/>
+
+            <column name="family_member2" type="varchar(255)"/>
+
+            <column name="same_phone_number" type="varchar(255)"/>
+
+            <column name="new_phone_number" type="varchar(255)"/>
+
+            <column name="phone_number1" type="varchar(255)"/>
+
+            <column name="phone_number2" type="varchar(255)"/>
+
+            <column name="same_asha_phone_number" type="varchar(255)"/>
+
+            <column name="new_asha_phone_number" type="varchar(255)"/>
+
+            <column name="asha_phone_number1" type="varchar(255)"/>
+
+            <column name="asha_phone_number2" type="varchar(255)"/>
+
+            <column name="blood_group_message" type="varchar(255)"/>
+
+            <column name="is_blood_donor_available" type="varchar(255)"/>
+
+            <column name="reviewed_hrp_status1" type="varchar(255)"/>
+
+            <column name="reviewed_hrp_status2" type="varchar(255)"/>
+
+            <column name="reviewed_hrp_status" type="varchar(255)"/>
+
+            <column name="mo_visit" type="varchar(255)"/>
+
+            <column name="mo_visit_message" type="varchar(255)"/>
+
+            <column name="delivery_facility1" type="varchar(255)"/>
+
+            <column name="home_reasons" type="varchar(255)"/>
+
+            <column name="delivery_facility_name1" type="varchar(255)"/>
+
+            <column name="hrp_delivery_facility_message" type="varchar(255)"/>
+
+            <column name="severe_anaemia_delivery_facility_message" type="varchar(255)"/>
+
+            <column name="normal_delivery_facility_message" type="varchar(255)"/>
+
+            <column name="change_delivery_facility" type="varchar(255)"/>
+
+            <column name="delivery_facility2" type="varchar(255)"/>
+
+            <column name="delivery_facility_name2" type="varchar(255)"/>
+
+            <column name="delivery_facility" type="varchar(255)"/>
+
+            <column name="delivery_facility_name" type="varchar(255)"/>
+
+            <column name="five_delivery_cleans" type="varchar(255)"/>
+
+            <column name="nearest247_facility" type="varchar(255)"/>
+
+            <column name="nearest247_facility_message" type="varchar(255)"/>
+
+            <column name="transportation_plan1" type="varchar(255)"/>
+
+            <column name="transportation_plan1_message" type="varchar(255)"/>
+
+            <column name="transportation_plan" type="varchar(255)"/>
+
+            <column name="other_transportation_plan" type="varchar(255)"/>
+
+            <column name="money_for_transport" type="varchar(255)"/>
+
+            <column name="money_for_transport_message" type="varchar(255)"/>
+
+            <column name="birth_companion" type="varchar(255)"/>
+
+            <column name="post_partum_family_planning_message" type="varchar(255)"/>
+
+            <column name="ready_to_select_post_partum_family_planning" type="varchar(255)"/>
+
+            <column name="post_partum_family_planning_method" type="varchar(255)"/>
+
+            <column name="birth_planning" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="12" author="maha">
+        <createTable tableName="ec_close">
+            <column name="ec_close_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="close_reason" type="varchar(255)"/>
+
+            <column name="other_close_reason" type="varchar(255)"/>
+
+            <column name="is_sterilization_death" type="varchar(255)"/>
+
+            <column name="sterilization_death_date" type="varchar(255)"/>
+
+            <column name="is_maternal_death" type="varchar(255)"/>
+
+            <column name="maternal_death_date" type="varchar(255)"/>
+
+            <column name="maternal_death_cause" type="varchar(255)"/>
+
+            <column name="other_maternal_death_cause" type="varchar(255)"/>
+
+            <column name="is_ec_close_confirmed" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="13" author="maha">
+        <createTable tableName="ec_edit">
+            <column name="ec_edit_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="id" type="varchar(255)"/>
@@ -51,17 +949,99 @@
 
             <column name="head_of_household" type="varchar(255)"/>
 
-            <column name="ec_number" type="varchar(255)"/>
-
             <column name="wife_name" type="varchar(255)"/>
-
-            <column name="wife_name2" type="varchar(255)"/>
 
             <column name="aadhar_number" type="varchar(255)"/>
 
             <column name="wife_age" type="varchar(255)"/>
 
+            <column name="husband_age" type="varchar(255)"/>
+
             <column name="woman_dob" type="varchar(255)"/>
+
+            <column name="husband_dob" type="varchar(255)"/>
+
+            <column name="husband_name" type="varchar(255)"/>
+
+            <column name="phone_number" type="varchar(255)"/>
+
+            <column name="religion" type="varchar(255)"/>
+
+            <column name="educational_level" type="varchar(255)"/>
+
+            <column name="husband_educational_level" type="varchar(255)"/>
+
+            <column name="number_of_pregnancies" type="varchar(255)"/>
+
+            <column name="number_of_live_births" type="varchar(255)"/>
+
+            <column name="number_of_abortions" type="varchar(255)"/>
+
+            <column name="number_of_spontaneous_abortions" type="varchar(255)"/>
+
+            <column name="number_of_induced_abortions" type="varchar(255)"/>
+
+            <column name="number_of_still_births" type="varchar(255)"/>
+
+            <column name="number_of_living_children" type="varchar(255)"/>
+
+            <column name="number_of_living_male_children" type="varchar(255)"/>
+
+            <column name="number_of_living_female_child" type="varchar(255)"/>
+
+            <column name="current_method" type="varchar(255)"/>
+
+            <column name="abortion_risk" type="varchar(255)"/>
+
+            <column name="parity_risk_priority" type="varchar(255)"/>
+
+            <column name="age_risk_priority" type="varchar(255)"/>
+
+            <column name="partity" type="varchar(255)"/>
+
+            <column name="young_child_risk_priority" type="varchar(255)"/>
+
+            <column name="is_high_priority" type="varchar(255)"/>
+
+            <column name="high_priority_reason" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="14" author="maha">
+        <createTable tableName="ec_registration">
+            <column name="ec_registration_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="phc" type="varchar(255)"/>
+
+            <column name="sub_center" type="varchar(255)"/>
+
+            <column name="village" type="varchar(255)"/>
+
+            <column name="household_number" type="varchar(255)"/>
+
+            <column name="household_address" type="varchar(255)"/>
+
+            <column name="head_of_household" type="varchar(255)"/>
+
+            <column name="ec_number" type="varchar(255)"/>
+
+            <column name="wife_name" type="varchar(255)"/>
+
+            <column name="aadhar_number" type="varchar(255)"/>
+
+            <column name="wife_age" type="varchar(255)"/>
+
+            <column name="husband_age" type="varchar(255)"/>
+
+            <column name="woman_dob" type="varchar(255)"/>
+
+            <column name="husband_dob" type="varchar(255)"/>
 
             <column name="husband_name" type="varchar(255)"/>
 
@@ -105,9 +1085,9 @@
 
             <column name="youngest_child_age" type="varchar(255)"/>
 
-            <column name="current_method" type="varchar(255)"/>
+            <column name="youngest_child_dob" type="varchar(255)"/>
 
-            <column name="other_current_method" type="varchar(255)"/>
+            <column name="current_method" type="varchar(255)"/>
 
             <column name="iud_place" type="varchar(255)"/>
 
@@ -141,10 +1121,6 @@
 
             <column name="ocp_refill_date" type="varchar(255)"/>
 
-            <column name="husband_age" type="varchar(255)"/>
-
-            <column name="husband_dob" type="varchar(255)"/>
-
             <column name="husband_education_level" type="varchar(255)"/>
 
             <column name="lmp_date" type="varchar(255)"/>
@@ -159,4 +1135,559 @@
 
         </createTable>
     </changeSet>
+
+    <changeSet id="15" author="maha">
+        <createTable tableName="fp_change">
+            <column name="fp_change_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="current_method" type="varchar(255)"/>
+
+            <column name="new_method" type="varchar(255)"/>
+
+            <column name="iud_removal_date" type="varchar(255)"/>
+
+            <column name="iud_removal_place" type="varchar(255)"/>
+
+            <column name="family_planning_method_change_date" type="varchar(255)"/>
+
+            <column name="iud_place" type="varchar(255)"/>
+
+            <column name="iud_person" type="varchar(255)"/>
+
+            <column name="three_months_from_sterilization_date" type="varchar(255)"/>
+
+            <column name="male_sterilization_message" type="varchar(255)"/>
+
+            <column name="number_of_condoms_supplied" type="varchar(255)"/>
+
+            <column name="number_of_ocp_delivered" type="varchar(255)"/>
+
+            <column name="number_of_centchroman_pills_delivered" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+            <column name="lmp_date" type="varchar(255)"/>
+
+            <column name="upt_result" type="varchar(255)"/>
+
+            <column name="sterilization_doctor_name" type="varchar(255)"/>
+
+            <column name="male_sterilization_type" type="varchar(255)"/>
+
+            <column name="female_sterilization_type" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="16" author="maha">
+        <createTable tableName="fp_complications">
+            <column name="fp_complications_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="current_method" type="varchar(255)"/>
+
+            <column name="current_method_note" type="varchar(255)"/>
+
+            <column name="complication_date" type="varchar(255)"/>
+
+            <column name="is_sterilization_failure" type="varchar(255)"/>
+
+            <column name="condom_side_effect" type="varchar(255)"/>
+
+            <column name="iud_sid_effect" type="varchar(255)"/>
+
+            <column name="ocp_side_effect" type="varchar(255)"/>
+
+            <column name="sterilization_side_effect" type="varchar(255)"/>
+
+            <column name="injectable_side_effect" type="varchar(255)"/>
+
+            <column name="other_side_effect" type="varchar(255)"/>
+
+            <column name="refer_couple_fp_method_complication" type="varchar(255)"/>
+
+            <column name="refer_couple_fp_method_complication_place" type="varchar(255)"/>
+
+            <column name="refer_couple_fp_method_complication_place_other" type="varchar(255)"/>
+
+            <column name="fp_method_complication_treatment_plan" type="varchar(255)"/>
+
+            <column name="fp_method_complication_treatment_plan_other" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+            <column name="needs_referral_followup" type="varchar(255)"/>
+
+            <column name="needs_followup" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="17" author="maha">
+        <createTable tableName="fp_followup">
+            <column name="fp_followup_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="needs_followup" type="varchar(255)"/>
+
+            <column name="current_method" type="varchar(255)"/>
+
+            <column name="current_method_note" type="varchar(255)"/>
+
+            <column name="fp_followup_date" type="varchar(255)"/>
+
+            <column name="is_sterilization_failure" type="varchar(255)"/>
+
+            <column name="iud_sid_effect" type="varchar(255)"/>
+
+            <column name="sterilization_side_effect" type="varchar(255)"/>
+
+            <column name="other_side_effect" type="varchar(255)"/>
+
+            <column name="side_effect" type="varchar(255)"/>
+
+            <column name="is_fp_method_complication_resolved" type="varchar(255)"/>
+
+            <column name="refer_couple_fp_method_complication" type="varchar(255)"/>
+
+            <column name="refer_couple_fp_method_complication_place" type="varchar(255)"/>
+
+            <column name="refer_couple_fp_method_complication_place_other" type="varchar(255)"/>
+
+            <column name="needs_referral_followup" type="varchar(255)"/>
+
+            <column name="fp_method_complication_treatment_plan" type="varchar(255)"/>
+
+            <column name="fp_method_complication_treatment_plan_other" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="18" author="maha">
+        <createTable tableName="hb_test">
+            <column name="hb_test_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="hb_test_date" type="varchar(255)"/>
+
+            <column name="hb_test_place" type="varchar(255)"/>
+
+            <column name="hb_level" type="varchar(255)"/>
+
+            <column name="anaemic_status" type="varchar(255)"/>
+
+            <column name="high_risk_reason" type="varchar(255)"/>
+
+            <column name="is_high_risk_till_delivery" type="varchar(255)"/>
+
+            <column name="is_high_risk_till_delivery_reason" type="varchar(255)"/>
+
+            <column name="is_high_risk_till_pnc_close" type="varchar(255)"/>
+
+            <column name="is_high_risk_till_pnc_close_reason" type="varchar(255)"/>
+
+            <column name="is_high_risk" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="19" author="maha">
+        <createTable tableName="ifa">
+            <column name="ifa_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="ifa_tablets_place" type="varchar(255)"/>
+
+            <column name="number_of_ifa_tablets_given" type="varchar(255)"/>
+
+            <column name="ifa_tablets_date" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20" author="maha">
+        <createTable tableName="pnc_close">
+            <column name="pnc_close_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="close_reason" type="varchar(255)"/>
+
+            <column name="death_date" type="varchar(255)"/>
+
+            <column name="is_maternal_death" type="varchar(255)"/>
+
+            <column name="maternal_death_cause" type="varchar(255)"/>
+
+            <column name="other_maternal_death_cause" type="varchar(255)"/>
+
+            <column name="is_pnc_close_confirmed" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="21" author="maha">
+        <createTable tableName="pnc_registration_oa">
+            <column name="pnc_registration_oa_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="mother_id" type="varchar(255)"/>
+
+            <column name="registration_date" type="varchar(255)"/>
+
+            <column name="phc" type="varchar(255)"/>
+
+            <column name="sub_center" type="varchar(255)"/>
+
+            <column name="village" type="varchar(255)"/>
+
+            <column name="household_address" type="varchar(255)"/>
+
+            <column name="wife_name" type="varchar(255)"/>
+
+            <column name="wife_age" type="varchar(255)"/>
+
+            <column name="thayi_card_number" type="varchar(255)"/>
+
+            <column name="aadhaar_number" type="varchar(255)"/>
+
+            <column name="husband_name" type="varchar(255)"/>
+
+            <column name="phone_number" type="varchar(255)"/>
+
+            <column name="phone_owner" type="varchar(255)"/>
+
+            <column name="economic_status" type="varchar(255)"/>
+
+            <column name="bpl_card_number" type="varchar(255)"/>
+
+            <column name="caste" type="varchar(255)"/>
+
+            <column name="reference_date" type="varchar(255)"/>
+
+            <column name="delivery_place" type="varchar(255)"/>
+
+            <column name="delivery_facility_name" type="varchar(255)"/>
+
+            <column name="is_skilled_delivery" type="varchar(255)"/>
+
+            <column name="delivery_type" type="varchar(255)"/>
+
+            <column name="delivery_outcome" type="varchar(255)"/>
+
+            <column name="cause_of_still_birth" type="varchar(255)"/>
+
+            <column name="other_cause_of_still_birth" type="varchar(255)"/>
+
+            <column name="did_breastfeeding_start" type="varchar(255)"/>
+
+            <column name="had_delivery_complications" type="varchar(255)"/>
+
+            <column name="delivery_complications" type="varchar(255)"/>
+
+            <column name="other_delivery_complications" type="varchar(255)"/>
+
+            <column name="is_high_risk" type="varchar(255)"/>
+
+            <column name="high_risk_reason" type="varchar(255)"/>
+
+            <column name="period_of_stay" type="varchar(255)"/>
+
+            <column name="did_woman_survive" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+            <column name="type" type="varchar(255)"/>
+
+            <column name="is_closed" type="varchar(255)"/>
+
+            <column name="is_out_of_area" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="22" author="maha">
+        <createTable tableName="pnc_visit">
+            <column name="pnc_visit_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="ec_id" type="varchar(255)"/>
+
+            <column name="wife_name" type="varchar(255)"/>
+
+            <column name="delivery_outcome" type="varchar(255)"/>
+
+            <column name="did_woman_survive" type="varchar(255)"/>
+
+            <column name="did_mother_survive" type="varchar(255)"/>
+
+            <column name="delivery_place" type="varchar(255)"/>
+
+            <column name="discharge_date" type="varchar(255)"/>
+
+            <column name="delivery_type" type="varchar(255)"/>
+
+            <column name="reference_date" type="varchar(255)"/>
+
+            <column name="pnc_visit_date" type="varchar(255)"/>
+
+            <column name="pnc_visit_day" type="varchar(255)"/>
+
+            <column name="pnc_visit_place" type="varchar(255)"/>
+
+            <column name="pnc_visit_person" type="varchar(255)"/>
+
+            <column name="difficulties1" type="varchar(255)"/>
+
+            <column name="abdominal_problems" type="varchar(255)"/>
+
+            <column name="vaginal_problems" type="varchar(255)"/>
+
+            <column name="difficulties2" type="varchar(255)"/>
+
+            <column name="breast_problems" type="varchar(255)"/>
+
+            <column name="cesarean_incision_area" type="varchar(255)"/>
+
+            <column name="has_fever_symptoms" type="varchar(255)"/>
+
+            <column name="temperature" type="varchar(255)"/>
+
+            <column name="has_fever" type="varchar(255)"/>
+
+            <column name="pulse_rate" type="varchar(255)"/>
+
+            <column name="bp_systolic" type="varchar(255)"/>
+
+            <column name="bp_diastolic" type="varchar(255)"/>
+
+            <column name="hb_level" type="varchar(255)"/>
+
+            <column name="number_of_ifa_tablets_given" type="varchar(255)"/>
+
+            <column name="immediate_referral" type="varchar(255)"/>
+
+            <column name="immediate_referral_reason" type="varchar(255)"/>
+
+            <column name="anaemic_status" type="varchar(255)"/>
+
+            <column name="pih" type="varchar(255)"/>
+
+            <column name="pre_eclampsia" type="varchar(255)"/>
+
+            <column name="is_high_risk_till_pnc_close" type="varchar(255)"/>
+
+            <column name="high_risk_till_pnc_close_reason" type="varchar(255)"/>
+
+            <column name="high_risk_reason" type="varchar(255)"/>
+
+            <column name="is_high_risk" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="23" author="maha">
+        <createTable tableName="postpartum_family_planning">
+            <column name="postpartum_family_planning_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="ec_id" type="varchar(255)"/>
+
+            <column name="is_fp_post_delivery" type="varchar(255)"/>
+
+            <column name="pp_fp_method1" type="varchar(255)"/>
+
+            <column name="pp_fp_method1_start_date" type="varchar(255)"/>
+
+            <column name="iud_place1" type="varchar(255)"/>
+
+            <column name="iud_place1_name" type="varchar(255)"/>
+
+            <column name="iud_person1" type="varchar(255)"/>
+
+            <column name="iud_person1_other" type="varchar(255)"/>
+
+            <column name="iud_person1_name" type="varchar(255)"/>
+
+            <column name="sterilization_doctor_name1" type="varchar(255)"/>
+
+            <column name="female_sterilization_type1" type="varchar(255)"/>
+
+            <column name="reference_date" type="varchar(255)"/>
+
+            <column name="is_exclusive_breast_feeding" type="varchar(255)"/>
+
+            <column name="is_partial_breast_feeding" type="varchar(255)"/>
+
+            <column name="has_monthly_bleeding_returned" type="varchar(255)"/>
+
+            <column name="is_lam_continued" type="varchar(255)"/>
+
+            <column name="preference_future_children" type="varchar(255)"/>
+
+            <column name="pp_fp_method2" type="varchar(255)"/>
+
+            <column name="pp_fp_method2_start_date" type="varchar(255)"/>
+
+            <column name="iud_place2" type="varchar(255)"/>
+
+            <column name="iud_place2_name" type="varchar(255)"/>
+
+            <column name="iud_person2" type="varchar(255)"/>
+
+            <column name="iud_person2_other" type="varchar(255)"/>
+
+            <column name="iud_person2_name" type="varchar(255)"/>
+
+            <column name="sterilization_doctor_name2" type="varchar(255)"/>
+
+            <column name="female_sterilization_type2" type="varchar(255)"/>
+
+            <column name="male_sterilization_type" type="varchar(255)"/>
+
+            <column name="number_of_ocp_delivered" type="varchar(255)"/>
+
+            <column name="number_of_condoms_supplied" type="varchar(255)"/>
+
+            <column name="number_of_centchroman_pills_supplied" type="varchar(255)"/>
+
+            <column name="hep_b" type="varchar(255)"/>
+
+            <column name="current_method" type="varchar(255)"/>
+
+            <column name="family_planning_method_change_date" type="varchar(255)"/>
+
+            <column name="iud_place" type="varchar(255)"/>
+
+            <column name="iud_place_name" type="varchar(255)"/>
+
+            <column name="iud_person" type="varchar(255)"/>
+
+            <column name="iud_person_other" type="varchar(255)"/>
+
+            <column name="iud_person_name" type="varchar(255)"/>
+
+            <column name="sterilization_doctor_name" type="varchar(255)"/>
+
+            <column name="female_sterilization_type" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="24" author="maha">
+        <createTable tableName="record_ecps">
+            <column name="record_ecps_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="number_of_ec_ps_given" type="varchar(255)"/>
+
+            <column name="ecp_date" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="25" author="maha">
+        <createTable tableName="renew_fp_product">
+            <column name="renew_fp_product_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="current_method" type="varchar(255)"/>
+
+            <column name="fp_renew_method_visit_date" type="varchar(255)"/>
+
+            <column name="was_fp_method_renewed" type="varchar(255)"/>
+
+            <column name="dmpa_injection_date" type="varchar(255)"/>
+
+            <column name="number_of_condoms_supplied" type="varchar(255)"/>
+
+            <column name="number_of_ocp_delivered" type="varchar(255)"/>
+
+            <column name="number_of_centchroman_pills_supplied" type="varchar(255)"/>
+
+            <column name="ocp_refill_date" type="varchar(255)"/>
+
+            <column name="reason_for_not_renewal_of_fp_product" type="varchar(255)"/>
+
+            <column name="reason_for_couple_to_refuse_renewal_of_fp_product" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="26" author="maha">
+        <createTable tableName="tt">
+            <column name="tt_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="tt_dose" type="varchar(255)"/>
+
+            <column name="tt_injection_place" type="varchar(255)"/>
+
+            <column name="tt_date" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="27" author="maha">
+        <createTable tableName="vitamin_a">
+            <column name="vitamin_a_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id" type="varchar(255)"/>
+
+            <column name="date_of_birth" type="varchar(255)"/>
+
+            <column name="vitamin_a_dose" type="varchar(255)"/>
+
+            <column name="vitamin_a_date" type="varchar(255)"/>
+
+            <column name="vitamin_a_place" type="varchar(255)"/>
+
+            <column name="submission_date" type="varchar(255)"/>
+
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>

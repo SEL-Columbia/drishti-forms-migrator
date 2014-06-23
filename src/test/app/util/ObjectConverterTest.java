@@ -13,7 +13,6 @@ public class ObjectConverterTest{
     @Test
     public void shouldCreateObjectFromTheCorrespondingMap() throws Exception {
         HashMap hashMap = new HashMap();
-        hashMap.put("district", "koppal");
         hashMap.put("phc", "phc_betagera");
         hashMap.put("subCenter", "katarki");
         hashMap.put("village", "belur");
@@ -26,7 +25,6 @@ public class ObjectConverterTest{
 
         EcRegistration entityForm = (EcRegistration) new ObjectConverter().create(hashMap);
 
-        assertEquals(hashMap.get("district"), entityForm.getDistrict());
         assertEquals(hashMap.get("phc"), entityForm.getPhc());
         assertEquals(hashMap.get("subCenter"), entityForm.getSubCenter());
         assertEquals(hashMap.get("village"), entityForm.getVillage());

@@ -26,7 +26,6 @@ public class MapTransformer {
         });
     }
 
-    // needed only for now
     private List<Map<String, Object>> filter(List<Map<String, Object>> formData) {
         List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
 

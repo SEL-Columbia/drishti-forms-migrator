@@ -1,0 +1,135 @@
+{
+    "anmId*": "demo1",
+    "instanceId*": "24759433-263a-495c-a541-98ba8db7df30",
+    "entityId*": "05160f4b-296e-4aef-8583-bf528e200cdb",
+    "formName*": "anc_close",
+    "formInstance": {
+    "form_data_definition_version*": "1",
+    "form": {
+        "bind_type*": "mother",
+        "default_bind_path": "/model/instance/ANC_Close_EngKan/",
+        "fields": [
+            {
+                "name": "id",
+                "value": "05160f4b-296e-4aef-8583-bf528e200cdb",
+                "source": "mother.id"
+            },
+            {
+                "name": "closeReason",
+                "value": "spontaneous_abortion",
+                "source": "mother.closeReason"
+            },
+            {
+                "name": "numberOfAbortions",
+                "source": "mother.numberOfAbortions"
+            },
+            {
+                "name": "numberOfAbortions",
+                "value": "NaN",
+                "source": "mother.numberOfAbortions"
+            },
+            {
+                "name": "isMaternalDeath",
+                "source": "mother.isMaternalDeath"
+            },
+            {
+                "name": "numberOfSpontaneousAbortions",
+                "value": "NaN",
+                "source": "mother.numberOfSpontaneousAbortions"
+            },
+            {
+                "name": "numberOfSpontaneousAbortions",
+                "value": "NaN",
+                "source": "mother.numberOfSpontaneousAbortions"
+            },
+            {
+                "name": "dateOfSpontaneousAbortion",
+                "value": "2014-03-03",
+                "source": "mother.dateOfSpontaneousAbortion"
+            },
+            {
+                "name": "referenceDate",
+                "value": "2013-11-23",
+                "source": "mother.referenceDate"
+            },
+            {
+                "name": "numberOfWeeksPregnantWhenSpontaneousAbortionHappened",
+                "value": "14",
+                "source": "mother.numberOfWeeksPregnantWhenSpontaneousAbortionHappened"
+            },
+            {
+                "name": "causeOfSpontaneousAbortion",
+                "value": "rh_incompatibility",
+                "source": "mother.causeOfSpontaneousAbortion"
+            },
+            {
+                "name": "otherCauseOfSpontaneousAbortion",
+                "source": "mother.otherCauseOfSpontaneousAbortion"
+            },
+            {
+                "name": "placeOfSpontaneousAbortion",
+                "value": "sub_center",
+                "source": "mother.placeOfSpontaneousAbortion"
+            },
+            {
+                "name": "isRHNegative",
+                "source": "mother.isRHNegative"
+            },
+            {
+                "name": "numberOfInducedAbortions",
+                "value": "NaN",
+                "source": "mother.numberOfInducedAbortions"
+            },
+            {
+                "name": "numberOfInducedAbortions",
+                "value": "NaN",
+                "source": "mother.numberOfInducedAbortions"
+            },
+            {
+                "name": "timeOfInducedAbortion",
+                "source": "mother.timeOfInducedAbortion"
+            },
+            {
+                "name": "dateOfInducedAbortion",
+                "source": "mother.dateOfInducedAbortion"
+            },
+            {
+                "name": "maternalDeathDate",
+                "source": "mother.maternalDeathDate"
+            },
+            {
+                "name": "maternalDeathTrimester",
+                "source": "mother.maternalDeathTrimester"
+            },
+            {
+                "name": "maternalDeathCause",
+                "source": "mother.maternalDeathCause"
+            },
+            {
+                "name": "otherMaternalDeathCause",
+                "source": "mother.otherMaternalDeathCause"
+            },
+            {
+                "name": "rhInjectionGiven",
+                "source": "mother.rhInjectionGiven"
+            },
+            {
+                "name": "isANCCloseConfirmed",
+                "value": "yes",
+                "source": "mother.isANCCloseConfirmed"
+            },
+            {
+                "name": "hasANCLeftPlace",
+                "source": "mother.hasANCLeftPlace"
+            },
+            {
+                "name": "submissionDate",
+                "value": "2014-03-03",
+                "source": "mother.submissionDate"
+            }
+        ]
+    }
+},
+    "clientVersion*": "1393847323770",
+    "serverVersion*": "1393847428311",
+    "formDataDefinitionVersion*": "1"}

@@ -18,10 +18,6 @@ public class EcRegistration extends EntityForm {
     @JsonProperty("id")
     private String id;
 
-    @Column(name = "district")
-    @JsonProperty("district")
-    private String district;
-
     @Column(name = "phc")
     @JsonProperty("phc")
     private String phc;
@@ -54,10 +50,6 @@ public class EcRegistration extends EntityForm {
     @JsonProperty("wifeName")
     private String wifeName;
 
-    @Column(name = "wife_name2")
-    @JsonProperty("wifeName2")
-    private String wifeName2;
-
     @Column(name = "aadhar_number")
     @JsonProperty("aadharNumber")
     private String aadharNumber;
@@ -66,9 +58,17 @@ public class EcRegistration extends EntityForm {
     @JsonProperty("wifeAge")
     private String wifeAge;
 
+    @Column(name = "husband_age")
+    @JsonProperty("husbandAge")
+    private String husbandAge;
+
     @Column(name = "woman_dob")
     @JsonProperty("womanDOB")
     private String womanDOB;
+
+    @Column(name = "husband_dob")
+    @JsonProperty("husbandDOB")
+    private String husbandDOB;
 
     @Column(name = "husband_name")
     @JsonProperty("husbandName")
@@ -154,13 +154,13 @@ public class EcRegistration extends EntityForm {
     @JsonProperty("youngestChildAge")
     private String youngestChildAge;
 
+    @Column(name = "youngest_child_dob")
+    @JsonProperty("youngestChildDOB")
+    private String youngestChildDOB;
+
     @Column(name = "current_method")
     @JsonProperty("currentMethod")
     private String currentMethod;
-
-    @Column(name = "other_current_method")
-    @JsonProperty("otherCurrentMethod")
-    private String otherCurrentMethod;
 
     @Column(name = "iud_place")
     @JsonProperty("iudPlace")
@@ -225,14 +225,6 @@ public class EcRegistration extends EntityForm {
     @Column(name = "ocp_refill_date")
     @JsonProperty("ocpRefillDate")
     private String ocpRefillDate;
-
-    @Column(name = "husband_age")
-    @JsonProperty("husbandAge")
-    private String husbandAge;
-
-    @Column(name = "husband_dob")
-    @JsonProperty("husbandDOB")
-    private String husbandDOB;
 
     @Column(name = "husband_education_level")
     @JsonProperty("husbandEducationLevel")

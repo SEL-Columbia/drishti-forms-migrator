@@ -13,7 +13,7 @@ import de.spinscale.dropwizard.jobs.annotations.Every;
 import java.util.List;
 import java.util.Map;
 
-@Every("10s")
+@Every("30min")
 public class JobScheduler extends Job {
     private final Context context;
 
@@ -36,9 +36,9 @@ public class JobScheduler extends Job {
         MigratorConfiguration configuration = context.configuration();
         List<Map<String, Object>> responseData = HttpClient.call(configuration.getPollingUrl(), configuration.getPollingUrlUsername(), configuration.getPollingUrlPassword());
         List<Map<String, Object>> mappedData = new MapTransformer().transform(responseData);
-//        for (Map<String, Object> map : mappedData) {
-            persist(ObjectConverter.create(mappedData.get(0)));
-//        }
+        for (Map<String, Object> map : mappedData) {
+            persist(ObjectConverter.create(map));
+        }
 
     }
 
