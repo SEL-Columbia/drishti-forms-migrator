@@ -1,8 +1,8 @@
 package app;
 
+import app.model.EcRegistration;
 import app.model.Person;
 import app.model.Student;
-import app.model.ec_registration;
 import app.repository.Repository;
 import app.scheduler.JobScheduler;
 import com.yammer.dropwizard.Service;
@@ -23,7 +23,7 @@ public class ApplicationService extends Service<MigratorConfiguration> {
     }
 
     private final HibernateBundle<MigratorConfiguration> hibernateBundle =
-            new HibernateBundle<MigratorConfiguration>(Person.class, Student.class, ec_registration.class) {
+            new HibernateBundle<MigratorConfiguration>(Person.class, Student.class, EcRegistration.class) {
                 @Override
                 public DatabaseConfiguration getDatabaseConfiguration(MigratorConfiguration configuration) {
                     return configuration.getDatabase();

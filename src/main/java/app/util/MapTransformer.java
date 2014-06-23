@@ -2,7 +2,6 @@ package app.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Function;
-import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 
 import java.io.IOException;
@@ -12,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import static app.Constants.*;
-import static java.lang.String.valueOf;
+import static com.google.common.base.Strings.emptyToNull;
 
 public class MapTransformer {
 
@@ -32,7 +31,7 @@ public class MapTransformer {
         List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
 
         for (Map<String, Object> map : formData) {
-            if(map.get("formName").equals("ec_registration")) {
+            if(ObjectConverter.getAllFormNames().contains(map.get(FORM_NAME))) {
                 result.add(map);
             }
         }
@@ -51,9 +50,7 @@ public class MapTransformer {
             List<Map<String, Object>> allFieldsMap = (List<Map<String, Object>>) formInfo.get(FIELDS);
 
             for (Map<String, Object> field : allFieldsMap) {
-                if(!valueOf(field.get(NAME)).equals("id")) {
-                    resultMap.put((String) field.get(NAME), Strings.emptyToNull((String) field.get(VALUE)));
-                }
+                resultMap.put((String) field.get(NAME), emptyToNull((String) field.get(VALUE)));
             }
         } catch (IOException e) {
             e.printStackTrace();

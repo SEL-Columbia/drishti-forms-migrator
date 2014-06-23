@@ -32,9 +32,11 @@
 
     <changeSet id="3" author="maha">
         <createTable tableName="ec_registration">
-            <column name="id" type="bigint" autoIncrement="true">
+            <column name="ec_registration_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="id" type="varchar(255)"/>
+
             <column name="district" type="varchar(255)"/>
 
             <column name="phc" type="varchar(255)"/>
@@ -53,15 +55,13 @@
 
             <column name="wife_name" type="varchar(255)"/>
 
+            <column name="wife_name2" type="varchar(255)"/>
+
             <column name="aadhar_number" type="varchar(255)"/>
 
             <column name="wife_age" type="varchar(255)"/>
 
-            <column name="husband_age" type="varchar(255)"/>
-
             <column name="woman_dob" type="varchar(255)"/>
-
-            <column name="husband_dob" type="varchar(255)"/>
 
             <column name="husband_name" type="varchar(255)"/>
 
@@ -105,9 +105,9 @@
 
             <column name="youngest_child_age" type="varchar(255)"/>
 
-            <column name="youngest_child_dob" type="varchar(255)"/>
-
             <column name="current_method" type="varchar(255)"/>
+
+            <column name="other_current_method" type="varchar(255)"/>
 
             <column name="iud_place" type="varchar(255)"/>
 
@@ -140,6 +140,10 @@
             <column name="dmpa_injection_date" type="varchar(255)"/>
 
             <column name="ocp_refill_date" type="varchar(255)"/>
+
+            <column name="husband_age" type="varchar(255)"/>
+
+            <column name="husband_dob" type="varchar(255)"/>
 
             <column name="husband_education_level" type="varchar(255)"/>
 

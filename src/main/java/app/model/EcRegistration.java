@@ -2,15 +2,21 @@ package app.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Data
 @Table(name = "ec_registration")
-public class ec_registration extends EntityForm{
+public class EcRegistration extends EntityForm {
     @Id
+    @Column(name = "ec_registration_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long ecRegistrationId;
+
+    @Column(name = "id")
+    @JsonProperty("id")
+    private String id;
 
     @Column(name = "district")
     @JsonProperty("district")
@@ -48,6 +54,10 @@ public class ec_registration extends EntityForm{
     @JsonProperty("wifeName")
     private String wifeName;
 
+    @Column(name = "wife_name2")
+    @JsonProperty("wifeName2")
+    private String wifeName2;
+
     @Column(name = "aadhar_number")
     @JsonProperty("aadharNumber")
     private String aadharNumber;
@@ -56,17 +66,9 @@ public class ec_registration extends EntityForm{
     @JsonProperty("wifeAge")
     private String wifeAge;
 
-    @Column(name = "husband_age")
-    @JsonProperty("husbandAge")
-    private String husbandAge;
-
     @Column(name = "woman_dob")
     @JsonProperty("womanDOB")
     private String womanDOB;
-
-    @Column(name = "husband_dob")
-    @JsonProperty("husbandDOB")
-    private String husbandDOB;
 
     @Column(name = "husband_name")
     @JsonProperty("husbandName")
@@ -152,13 +154,13 @@ public class ec_registration extends EntityForm{
     @JsonProperty("youngestChildAge")
     private String youngestChildAge;
 
-    @Column(name = "youngest_child_dob")
-    @JsonProperty("youngestChildDOB")
-    private String youngestChildDOB;
-
     @Column(name = "current_method")
     @JsonProperty("currentMethod")
     private String currentMethod;
+
+    @Column(name = "other_current_method")
+    @JsonProperty("otherCurrentMethod")
+    private String otherCurrentMethod;
 
     @Column(name = "iud_place")
     @JsonProperty("iudPlace")
@@ -224,6 +226,14 @@ public class ec_registration extends EntityForm{
     @JsonProperty("ocpRefillDate")
     private String ocpRefillDate;
 
+    @Column(name = "husband_age")
+    @JsonProperty("husbandAge")
+    private String husbandAge;
+
+    @Column(name = "husband_dob")
+    @JsonProperty("husbandDOB")
+    private String husbandDOB;
+
     @Column(name = "husband_education_level")
     @JsonProperty("husbandEducationLevel")
     private String husbandEducationLevel;
@@ -247,4 +257,5 @@ public class ec_registration extends EntityForm{
     @Column(name = "female_sterilization_type")
     @JsonProperty("femaleSterilizationType")
     private String femaleSterilizationType;
+
 }

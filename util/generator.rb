@@ -2,29 +2,36 @@ require 'json'
 require 'fileutils'
 require './string_util.rb'
 
-print "\n !!! Starting the generating script !!! \n"
-
-$data_json = JSON.parse(File.read('samples/1.json'))
 $destination_dir = "generated"
-$fileName = $data_json['formName']
-print "\n file name : " + $fileName
+$source_dir = "samples"
 
-unless File.directory?($destination_dir)
-  FileUtils.mkdir_p($destination_dir)
+def read_sample_files
+  print "\n !!! Starting the generating script !!! \n"
+
+  Dir.foreach($source_dir) do |item|
+    next if item == '.' or item == '..'
+
+    data_json = JSON.parse(File.read('samples/' + item))
+    puts "\n processing : " + data_json['formName'] + " form"
+
+    generate_class_file data_json
+    generate_migration_script data_json
+  end
+
+  print "\n !!! Done generating !!! \n"
 end
 
-def generate_migration_script
-  File.open($destination_dir + "/" + $fileName + '.xml', 'w') do |file|
-    file.puts "<createTable tableName=\"" + $fileName + "\">\n"
-    file.puts "<column name=\"id\" type=\"bigint\" autoIncrement=\"true\">\n"
+
+def generate_migration_script form_data
+  form_name = form_data['formName']
+  File.open($destination_dir + "/migrations/" + form_name + '.xml', 'w') do |file|
+    file.puts "<createTable tableName=\"" + form_name + "\">\n"
+    file.puts "<column name=\"#{form_name + "_id"}\" type=\"bigint\" autoIncrement=\"true\">\n"
     file.puts "<constraints primaryKey=\"true\" nullable=\"false\"/>\n"
     file.puts "</column>\n"
 
-    $data_json["formInstance"]["form"]["fields"].each do |fieldHash|
+    form_data["formInstance"]["form"]["fields"].each do |fieldHash|
       field = fieldHash["name"].to_underscore
-      if field == "id" then
-        next
-      end;
       file.puts "<column name=\"" + field +"\" type=\"varchar(255)\"/>\n"
       file.puts "\n"
     end
@@ -33,24 +40,28 @@ def generate_migration_script
   end
 end
 
-def generate_class_file
-  File.open($destination_dir + "/" + $fileName + '.java', 'w') do |file|
+def generate_class_file form_data
+  form_name = form_data['formName']
+  className = form_name.to_camel_case
+  id_column_name = form_name + "_id"
+
+  File.open($destination_dir + "/classes/" + className + '.java', 'w') do |file|
     file.puts "package app.model;\n\n"
     file.puts "import com.fasterxml.jackson.annotation.JsonProperty;\n"
     file.puts "import lombok.Data;\n"
     file.puts "import javax.persistence.*;\n\n"
     file.puts "@Entity\n"
     file.puts "@Data\n"
-    file.puts "@Table(name = \"" + $fileName + "\")\n"
-    file.puts "public class " + $fileName + " extends EntityForm{"
-    file.puts "@Id\n@GeneratedValue(strategy = GenerationType.IDENTITY)\nprivate long id;\n"
+    file.puts "@Table(name = \"#{form_name}\")\n"
+    file.puts "public class #{className} extends EntityForm{"
+    file.puts "@Id\n"
+    file.puts "@Column(name = \"#{id_column_name}\")\n"
+    file.puts "@GeneratedValue(strategy = GenerationType.IDENTITY)\n"
+    file.puts "private long " + id_column_name.to_camel_case_lower + ";\n"
     file.puts "\n"
 
-    $data_json["formInstance"]["form"]["fields"].each do |fieldHash|
+    form_data["formInstance"]["form"]["fields"].each do |fieldHash|
       field = fieldHash["name"]
-      if field == "id" then
-        next
-      end;
       file.puts "@Column(name = \"" + field.to_underscore + "\")"
       file.puts "@JsonProperty(\"" + field + "\")"
       file.puts "private String " + field + ";"
@@ -61,7 +72,15 @@ def generate_class_file
   end
 end
 
-generate_class_file
-generate_migration_script
+def create_dirs(dir)
+  unless File.directory?(dir)
+    FileUtils.mkdir_p(dir)
+  end
+end
 
-print "\n !!! Done generating !!! \n"
+
+create_dirs $destination_dir
+create_dirs($destination_dir + "/classes")
+create_dirs($destination_dir + "/migrations")
+
+read_sample_files

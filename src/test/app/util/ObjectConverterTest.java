@@ -1,6 +1,6 @@
 package app.util;
 
-import app.model.ec_registration;
+import app.model.EcRegistration;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -24,7 +24,7 @@ public class ObjectConverterTest{
         hashMap.put("formName", "ec_registration");
         hashMap.put("anmId", "someId");
 
-        ec_registration entityForm = (ec_registration) new ObjectConverter().create(hashMap);
+        EcRegistration entityForm = (EcRegistration) new ObjectConverter().create(hashMap);
 
         assertEquals(hashMap.get("district"), entityForm.getDistrict());
         assertEquals(hashMap.get("phc"), entityForm.getPhc());
