@@ -11,6 +11,20 @@
             <column name="anc_close_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="close_reason" type="varchar(255)"/>
@@ -65,6 +79,20 @@
             <column name="anc_registration_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="mother_id" type="varchar(255)"/>
@@ -149,6 +177,20 @@
             <column name="anc_registration_oa_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="original_village" type="varchar(255)"/>
@@ -263,6 +305,20 @@
             <column name="anc_visit_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="ec_id" type="varchar(255)"/>
@@ -339,6 +395,20 @@
             <column name="child_close_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="close_reason" type="varchar(255)"/>
@@ -367,6 +437,20 @@
             <column name="child_illness_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="sick_visit_date" type="varchar(255)"/>
@@ -403,6 +487,20 @@
             <column name="child_immunizations_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="previous_immunizations" type="varchar(255)"/>
@@ -427,6 +525,20 @@
             <column name="child_registration_ec_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="mother_id" type="varchar(255)"/>
@@ -555,6 +667,20 @@
             <column name="child_registration_oa_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="registration_date" type="varchar(255)"/>
@@ -689,6 +815,20 @@
             <column name="delivery_outcome_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="ec_id" type="varchar(255)"/>
@@ -791,6 +931,20 @@
             <column name="delivery_plan_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="ec_id" type="varchar(255)"/>
@@ -903,6 +1057,20 @@
             <column name="ec_close_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="close_reason" type="varchar(255)"/>
@@ -933,6 +1101,20 @@
             <column name="ec_edit_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="district" type="varchar(255)"/>
@@ -1015,6 +1197,20 @@
             <column name="ec_registration_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="phc" type="varchar(255)"/>
@@ -1141,6 +1337,20 @@
             <column name="fp_change_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="current_method" type="varchar(255)"/>
@@ -1187,6 +1397,20 @@
             <column name="fp_complications_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="current_method" type="varchar(255)"/>
@@ -1233,6 +1457,20 @@
             <column name="fp_followup_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="needs_followup" type="varchar(255)"/>
@@ -1277,6 +1515,20 @@
             <column name="hb_test_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="hb_test_date" type="varchar(255)"/>
@@ -1309,6 +1561,20 @@
             <column name="ifa_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="ifa_tablets_place" type="varchar(255)"/>
@@ -1327,6 +1593,20 @@
             <column name="pnc_close_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="close_reason" type="varchar(255)"/>
@@ -1351,6 +1631,20 @@
             <column name="pnc_registration_oa_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="mother_id" type="varchar(255)"/>
@@ -1433,6 +1727,20 @@
             <column name="pnc_visit_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="ec_id" type="varchar(255)"/>
@@ -1517,6 +1825,20 @@
             <column name="postpartum_family_planning_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="ec_id" type="varchar(255)"/>
@@ -1609,6 +1931,20 @@
             <column name="record_ecps_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="number_of_ec_ps_given" type="varchar(255)"/>
@@ -1625,6 +1961,20 @@
             <column name="renew_fp_product_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="current_method" type="varchar(255)"/>
@@ -1657,6 +2007,20 @@
             <column name="tt_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="tt_dose" type="varchar(255)"/>
@@ -1675,6 +2039,20 @@
             <column name="vitamin_a_id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="varchar(255)"/>
+
+            <column name="server_version" type="varchar(255)"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
             <column name="id" type="varchar(255)"/>
 
             <column name="date_of_birth" type="varchar(255)"/>
@@ -1689,5 +2067,4 @@
 
         </createTable>
     </changeSet>
-
 </databaseChangeLog>

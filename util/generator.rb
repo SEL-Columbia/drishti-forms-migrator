@@ -4,6 +4,7 @@ require './string_util.rb'
 
 $destination_dir = "generated"
 $source_dir = "samples"
+$common_columns = [ "anm_id", "instance_id", "entity_id", "form_name", "client_version", "server_version", "form_data_definition_version"]
 
 def read_sample_files
   print "\n !!! Starting the generating script !!! \n"
@@ -34,13 +35,16 @@ def generate_migration_script form_data, count
     file.puts "<constraints primaryKey=\"true\" nullable=\"false\"/>\n"
     file.puts "</column>\n"
 
+    $common_columns.each do |column|
+      file.puts "<column name=\"#{column}\" type=\"varchar(255)\"/>\n\n"
+    end
+
     form_data["formInstance"]["form"]["fields"].each do |fieldHash|
       next if current_field_map.has_key?(fieldHash["name"])
       current_field_map[fieldHash["name"]] = true
-
       field = fieldHash["name"].to_underscore
-      file.puts "<column name=\"" + field.gsub(".", "_") +"\" type=\"varchar(255)\"/>\n"
-      file.puts "\n"
+
+      file.puts "<column name=\"" + field.gsub(".", "_") +"\" type=\"varchar(255)\"/>\n\n"
     end
 
     file.puts "</createTable>\n"

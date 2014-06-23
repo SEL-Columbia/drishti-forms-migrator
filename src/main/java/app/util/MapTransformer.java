@@ -12,10 +12,11 @@ import java.util.Map;
 
 import static app.Constants.*;
 import static com.google.common.base.Strings.emptyToNull;
+import static com.google.common.collect.Lists.*;
 
 public class MapTransformer {
 
-    private final ArrayList<String> otherFields = Lists.newArrayList("anmId", FORM_NAME);
+    private final ArrayList<String> otherFields = newArrayList(ANM_ID, INSTANCE_ID, ENTITY_ID, FORM_NAME, CLIENT_VERSION, SERVER_VERSION, FORM_DATA_DEFINITION_VERSION);
 
     public List<Map<String, Object>> transform(List<Map<String, Object>> formData) {
         return Lists.transform(filter(formData), new Function<Map<String, Object>, Map<String, Object>>() {
