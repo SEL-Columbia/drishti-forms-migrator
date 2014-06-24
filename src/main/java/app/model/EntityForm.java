@@ -1,20 +1,16 @@
 package app.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @MappedSuperclass
-public class EntityForm {
-    @Id
-    @Column(name = "id")
-    @JsonIgnore
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
+@Data
+public class EntityForm extends BaseEntityForm {
     @Column(name = "anm_id")
     @JsonProperty("anmId")
     private String anmId;

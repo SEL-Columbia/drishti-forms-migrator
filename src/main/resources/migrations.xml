@@ -2067,4 +2067,38 @@
 
         </createTable>
     </changeSet>
+
+    <changeSet id="28" author="maha">
+        <createTable tableName="pnc_registration_oa_child">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="sub_form_name" type="varchar(255)"/>
+
+            <column name="child_id" type="varchar(255)"/>
+
+            <column name="gender" type="varchar(255)"/>
+
+            <column name="weight" type="varchar(255)"/>
+
+            <column name="blood_group" type="varchar(255)"/>
+
+            <column name="immunizations_given" type="varchar(255)"/>
+
+            <column name="is_child_high_risk1" type="varchar(255)"/>
+
+            <column name="is_child_high_risk" type="varchar(255)"/>
+
+            <column name="child_high_risk_reasons" type="varchar(255)"/>
+
+            <column name="pnc_registration_oa_id" type="bigint"/>
+
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="pnc_registration_oa_id"
+                                 baseTableName="pnc_registration_oa_child"
+                                 constraintName="fk_pnc_registration_oa_child_pnc_registration_oa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pnc_registration_oa"/>
+
+    </changeSet>
 </databaseChangeLog>

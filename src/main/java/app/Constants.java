@@ -1,16 +1,18 @@
 package app;
 
 public class Constants {
-    public static String NAME = "name";
-    public static String VALUE = "value";
-    public static String FIELDS = "fields";
-    public static String FORM_INSTANCE = "formInstance";
-    public static String FORM = "form";
-    public static String FORM_NAME = "formName";
-    public static String ANM_ID = "anmId";
-    public static String INSTANCE_ID = "instanceId";
-    public static String ENTITY_ID = "entityId";
-    public static String CLIENT_VERSION = "clientVersion";
-    public static String SERVER_VERSION = "serverVersion";
-    public static String FORM_DATA_DEFINITION_VERSION = "formDataDefinitionVersion";
+    public static final String NAME = "name";
+    public static final String VALUE = "value";
+    public static final String FIELDS = "fields";
+    public static final String FORM_INSTANCE = "formInstance";
+    public static final String FORM = "form";
+    public static final String FORM_NAME = "formName";
+    public static final String ANM_ID = "anmId";
+    public static final String INSTANCE_ID = "instanceId";
+    public static final String ENTITY_ID = "entityId";
+    public static final String CLIENT_VERSION = "clientVersion";
+    public static final String SERVER_VERSION = "serverVersion";
+    public static final String FORM_DATA_DEFINITION_VERSION = "formDataDefinitionVersion";
+    public static final String SUB_FORMS = "sub_forms";
+    public static final String INSTANCES = "instances";
 }

@@ -1,15 +1,19 @@
 package app.util;
 
 import app.model.*;
+import app.model.subForms.PncChildRegistration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
+
+import static app.Constants.FORM_NAME;
+import static app.Constants.NAME;
 
 public class ObjectConverter {
     private static HashMap<String, Type> formNameMap;
+    private static HashMap<String, Type> subFormNameMap;
 
     static {
         formNameMap = new HashMap<String, Type>();
@@ -44,13 +48,19 @@ public class ObjectConverter {
         formNameMap.put("tt_2", Tt.class);
         formNameMap.put("tt_booster", Tt.class);
         formNameMap.put("vitamin_a", VitaminA.class);
+
+        subFormNameMap = new HashMap<String, Type>();
+        subFormNameMap.put("child_registration_oa", PncChildRegistration.class);
     }
 
-    public static EntityForm create(Map hashMap){
-        return (EntityForm) new ObjectMapper().convertValue(hashMap, (Class<Object>) formNameMap.get(hashMap.get("formName")));
-    }
+    public static BaseEntityForm create(Map hashMap) {
+        boolean isBaseForm = hashMap.containsKey(FORM_NAME);
+        Class<Object> classType = isBaseForm ?
+                (Class<Object>) formNameMap.get(hashMap.get(FORM_NAME)) :
+                (Class<Object>) subFormNameMap.get(hashMap.get(NAME));
 
-    public static Set<String> getAllFormNames() {
-        return formNameMap.keySet();
+        if (classType == null)
+            return null;
+        return (BaseEntityForm) new ObjectMapper().convertValue(hashMap, classType);
     }
 }

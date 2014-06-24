@@ -1,6 +1,7 @@
 package app;
 
 import app.model.*;
+import app.model.subForms.PncChildRegistration;
 import app.repository.Repository;
 import app.scheduler.JobScheduler;
 import com.yammer.dropwizard.Service;
@@ -28,7 +29,7 @@ public class ApplicationService extends Service<MigratorConfiguration> {
                     FpChange.class, FpComplications.class, FpFollowup.class,
                     HbTest.class, Ifa.class,
                     PncClose.class, PncRegistrationOa.class, PncVisit.class, PostpartumFamilyPlanning.class,
-                    RecordEcps.class, RenewFpProduct.class, Tt.class, VitaminA.class) {
+                    RecordEcps.class, RenewFpProduct.class, Tt.class, VitaminA.class, PncChildRegistration.class) {
                 @Override
                 public DatabaseConfiguration getDatabaseConfiguration(MigratorConfiguration configuration) {
                     return configuration.getDatabase();
