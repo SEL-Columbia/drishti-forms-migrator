@@ -8,7 +8,7 @@
 
     <changeSet id="1" author="maha">
         <createTable tableName="anc_close">
-            <column name="anc_close_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -25,7 +25,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="mother_id" type="varchar(255)"/>
 
             <column name="close_reason" type="varchar(255)"/>
 
@@ -76,7 +76,7 @@
 
     <changeSet id="2" author="maha">
         <createTable tableName="anc_registration">
-            <column name="anc_registration_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -93,7 +93,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="eligible_couple_id" type="varchar(255)"/>
 
             <column name="mother_id" type="varchar(255)"/>
 
@@ -174,7 +174,7 @@
 
     <changeSet id="3" author="maha">
         <createTable tableName="anc_registration_oa">
-            <column name="anc_registration_oa_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -191,7 +191,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="eligible_couple_id" type="varchar(255)"/>
 
             <column name="original_village" type="varchar(255)"/>
 
@@ -302,7 +302,7 @@
 
     <changeSet id="4" author="maha">
         <createTable tableName="anc_visit">
-            <column name="anc_visit_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -319,7 +319,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="mother_id" type="varchar(255)"/>
 
             <column name="ec_id" type="varchar(255)"/>
 
@@ -392,7 +392,7 @@
 
     <changeSet id="5" author="maha">
         <createTable tableName="child_close">
-            <column name="child_close_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -409,7 +409,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="child_id" type="varchar(255)"/>
 
             <column name="close_reason" type="varchar(255)"/>
 
@@ -434,7 +434,7 @@
 
     <changeSet id="6" author="maha">
         <createTable tableName="child_illness">
-            <column name="child_illness_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -451,7 +451,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="child_id" type="varchar(255)"/>
 
             <column name="sick_visit_date" type="varchar(255)"/>
 
@@ -484,7 +484,7 @@
 
     <changeSet id="7" author="maha">
         <createTable tableName="child_immunizations">
-            <column name="child_immunizations_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -501,7 +501,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="child_id" type="varchar(255)"/>
 
             <column name="previous_immunizations" type="varchar(255)"/>
 
@@ -522,7 +522,7 @@
 
     <changeSet id="8" author="maha">
         <createTable tableName="child_registration_ec">
-            <column name="child_registration_ec_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -539,7 +539,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="eligible_couple_id" type="varchar(255)"/>
 
             <column name="mother_id" type="varchar(255)"/>
 
@@ -664,7 +664,7 @@
 
     <changeSet id="9" author="maha">
         <createTable tableName="child_registration_oa">
-            <column name="child_registration_oa_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -681,7 +681,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="child_id" type="varchar(255)"/>
 
             <column name="registration_date" type="varchar(255)"/>
 
@@ -812,7 +812,7 @@
 
     <changeSet id="10" author="maha">
         <createTable tableName="delivery_outcome">
-            <column name="delivery_outcome_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -829,7 +829,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="mother_id" type="varchar(255)"/>
 
             <column name="ec_id" type="varchar(255)"/>
 
@@ -928,7 +928,7 @@
 
     <changeSet id="11" author="maha">
         <createTable tableName="delivery_plan">
-            <column name="delivery_plan_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -945,7 +945,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="mother_id" type="varchar(255)"/>
 
             <column name="ec_id" type="varchar(255)"/>
 
@@ -1054,7 +1054,7 @@
 
     <changeSet id="12" author="maha">
         <createTable tableName="ec_close">
-            <column name="ec_close_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1071,7 +1071,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="eligible_couple_id" type="varchar(255)"/>
 
             <column name="close_reason" type="varchar(255)"/>
 
@@ -1098,7 +1098,7 @@
 
     <changeSet id="13" author="maha">
         <createTable tableName="ec_edit">
-            <column name="ec_edit_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1115,7 +1115,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="eligible_couple_id" type="varchar(255)"/>
 
             <column name="district" type="varchar(255)"/>
 
@@ -1194,7 +1194,7 @@
 
     <changeSet id="14" author="maha">
         <createTable tableName="ec_registration">
-            <column name="ec_registration_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1211,7 +1211,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="eligible_couple_id" type="varchar(255)"/>
 
             <column name="phc" type="varchar(255)"/>
 
@@ -1334,7 +1334,7 @@
 
     <changeSet id="15" author="maha">
         <createTable tableName="fp_change">
-            <column name="fp_change_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1351,7 +1351,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="eligible_couple_id" type="varchar(255)"/>
 
             <column name="current_method" type="varchar(255)"/>
 
@@ -1394,7 +1394,7 @@
 
     <changeSet id="16" author="maha">
         <createTable tableName="fp_complications">
-            <column name="fp_complications_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1411,7 +1411,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="eligible_couple_id" type="varchar(255)"/>
 
             <column name="current_method" type="varchar(255)"/>
 
@@ -1454,7 +1454,7 @@
 
     <changeSet id="17" author="maha">
         <createTable tableName="fp_followup">
-            <column name="fp_followup_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1471,7 +1471,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="eligible_couple_id" type="varchar(255)"/>
 
             <column name="needs_followup" type="varchar(255)"/>
 
@@ -1512,7 +1512,7 @@
 
     <changeSet id="18" author="maha">
         <createTable tableName="hb_test">
-            <column name="hb_test_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1529,7 +1529,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="mother_id" type="varchar(255)"/>
 
             <column name="hb_test_date" type="varchar(255)"/>
 
@@ -1558,7 +1558,7 @@
 
     <changeSet id="19" author="maha">
         <createTable tableName="ifa">
-            <column name="ifa_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1575,7 +1575,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="mother_id" type="varchar(255)"/>
 
             <column name="ifa_tablets_place" type="varchar(255)"/>
 
@@ -1590,7 +1590,7 @@
 
     <changeSet id="20" author="maha">
         <createTable tableName="pnc_close">
-            <column name="pnc_close_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1607,7 +1607,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="mother_id" type="varchar(255)"/>
 
             <column name="close_reason" type="varchar(255)"/>
 
@@ -1628,7 +1628,7 @@
 
     <changeSet id="21" author="maha">
         <createTable tableName="pnc_registration_oa">
-            <column name="pnc_registration_oa_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1645,7 +1645,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="eligible_couple_id" type="varchar(255)"/>
 
             <column name="mother_id" type="varchar(255)"/>
 
@@ -1724,7 +1724,7 @@
 
     <changeSet id="22" author="maha">
         <createTable tableName="pnc_visit">
-            <column name="pnc_visit_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1741,7 +1741,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="mother_id" type="varchar(255)"/>
 
             <column name="ec_id" type="varchar(255)"/>
 
@@ -1822,7 +1822,7 @@
 
     <changeSet id="23" author="maha">
         <createTable tableName="postpartum_family_planning">
-            <column name="postpartum_family_planning_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1839,7 +1839,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="mother_id" type="varchar(255)"/>
 
             <column name="ec_id" type="varchar(255)"/>
 
@@ -1928,7 +1928,7 @@
 
     <changeSet id="24" author="maha">
         <createTable tableName="record_ecps">
-            <column name="record_ecps_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1945,7 +1945,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="eligible_couple_id" type="varchar(255)"/>
 
             <column name="number_of_ec_ps_given" type="varchar(255)"/>
 
@@ -1958,7 +1958,7 @@
 
     <changeSet id="25" author="maha">
         <createTable tableName="renew_fp_product">
-            <column name="renew_fp_product_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -1975,7 +1975,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="eligible_couple_id" type="varchar(255)"/>
 
             <column name="current_method" type="varchar(255)"/>
 
@@ -2004,7 +2004,7 @@
 
     <changeSet id="26" author="maha">
         <createTable tableName="tt">
-            <column name="tt_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -2021,7 +2021,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="mother_id" type="varchar(255)"/>
 
             <column name="tt_dose" type="varchar(255)"/>
 
@@ -2036,7 +2036,7 @@
 
     <changeSet id="27" author="maha">
         <createTable tableName="vitamin_a">
-            <column name="vitamin_a_id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="anm_id" type="varchar(255)"/>
@@ -2053,7 +2053,7 @@
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
-            <column name="id" type="varchar(255)"/>
+            <column name="child_id" type="varchar(255)"/>
 
             <column name="date_of_birth" type="varchar(255)"/>
 

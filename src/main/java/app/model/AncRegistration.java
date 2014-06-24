@@ -9,14 +9,10 @@ import javax.persistence.*;
 @Data
 @Table(name = "anc_registration")
 public class AncRegistration extends EntityForm {
-    @Id
-    @Column(name = "anc_registration_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long ancRegistrationId;
 
-    @Column(name = "id")
+    @Column(name = "eligible_couple_id")
     @JsonProperty("id")
-    private String id;
+    private String eligibleCoupleId;
 
     @Column(name = "mother_id")
     @JsonProperty("motherId")

@@ -18,6 +18,14 @@ class String
     self.split('_').inject([]) { |buffer, e| buffer.push(buffer.empty? ? e : e.capitalize) }.join
   end
 
+  def to_column_name
+    self.gsub(".", "_").to_underscore
+  end
+
+  def to_field_name
+    self.gsub(".", "_").to_camel_case_lower
+  end
+
   def integer?
     true if Integer(self) rescue false
   end

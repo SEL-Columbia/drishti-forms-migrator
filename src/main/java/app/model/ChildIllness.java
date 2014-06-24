@@ -3,20 +3,18 @@ package app.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Data
 @Table(name = "child_illness")
 public class ChildIllness extends EntityForm {
-    @Id
-    @Column(name = "child_illness_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long childIllnessId;
 
-    @Column(name = "id")
+    @Column(name = "child_id")
     @JsonProperty("id")
-    private String id;
+    private String childId;
 
     @Column(name = "sick_visit_date")
     @JsonProperty("sickVisitDate")

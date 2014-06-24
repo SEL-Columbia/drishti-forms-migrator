@@ -3,20 +3,18 @@ package app.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Data
 @Table(name = "child_close")
 public class ChildClose extends EntityForm {
-    @Id
-    @Column(name = "child_close_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long childCloseId;
 
-    @Column(name = "id")
+    @Column(name = "child_id")
     @JsonProperty("id")
-    private String id;
+    private String childId;
 
     @Column(name = "close_reason")
     @JsonProperty("closeReason")
@@ -51,7 +49,7 @@ public class ChildClose extends EntityForm {
     private String submissionDate;
 
     @Column(name = "child_mother_eligible_couple_id")
-    @JsonProperty("child_mother_eligible_couple_id")
-    private String child_mother_eligible_couple_id;
+    @JsonProperty("child.mother.eligible_couple.id")
+    private String childMotherEligibleCoupleId;
 
 }

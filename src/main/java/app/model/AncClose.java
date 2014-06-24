@@ -2,23 +2,17 @@ package app.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
 @Entity
 @Data
-@EqualsAndHashCode(callSuper=false)
 @Table(name = "anc_close")
 public class AncClose extends EntityForm {
-    @Id
-    @Column(name = "anc_close_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long ancCloseId;
 
-    @Column(name = "id")
+    @Column(name = "mother_id")
     @JsonProperty("id")
-    private String id;
+    private String motherId;
 
     @Column(name = "close_reason")
     @JsonProperty("closeReason")
