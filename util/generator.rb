@@ -24,6 +24,19 @@ def read_sample_files
   print "\n !!! Done generating !!! \n"
 end
 
+def get_java_type field_value
+  return "Integer" if field_value.integer?
+  return "Boolean" if field_value.bool?
+  return "Date" if field_value.date?
+  return "String"
+end
+
+def get_sql_type field_value
+  return "integer" if field_value.integer?
+  return "boolean" if field_value.bool?
+  return "date" if field_value.date?
+  return "varchar(255)"
+end
 
 def generate_migration_script form_data, count
   form_name = form_data['formName']
@@ -44,7 +57,7 @@ def generate_migration_script form_data, count
       current_field_map[fieldHash["name"]] = true
       field = fieldHash["name"].to_underscore
 
-      file.puts "<column name=\"" + field.gsub(".", "_") +"\" type=\"varchar(255)\"/>\n\n"
+      file.puts "<column name=\"" + field.gsub(".", "_") +"\" type=\"#{get_sql_type(fieldHash["value"])}\"/>\n\n"
     end
 
     file.puts "</createTable>\n"
@@ -80,7 +93,7 @@ def generate_class_file form_data
       field = fieldHash["name"]
       file.puts "@Column(name = \"" + field.to_underscore.gsub(".", "_") + "\")"
       file.puts "@JsonProperty(\"" + field.gsub(".", "_") + "\")"
-      file.puts "private String " + field.gsub(".", "_") + ";"
+      file.puts "private #{get_java_type(fieldHash["value"])} " + field.gsub(".", "_") + ";"
       file.puts "\n"
     end
 
