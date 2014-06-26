@@ -5,6 +5,8 @@ import app.MigratorConfiguration;
 import app.util.HttpClient;
 import de.spinscale.dropwizard.jobs.Job;
 import de.spinscale.dropwizard.jobs.annotations.Every;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -12,6 +14,7 @@ import java.util.Map;
 @Every("30min")
 public class JobScheduler extends Job {
     private final Context context;
+    private final Logger logger = LoggerFactory.getLogger(JobScheduler.class);
 
     public JobScheduler() {
         context = Context.getInstance();
@@ -19,13 +22,13 @@ public class JobScheduler extends Job {
 
     @Override
     public void doJob() {
-        System.out.println("************");
-        System.out.println("Started the job");
+        logger.info("************");
+        logger.info("Scheduled job started");
 
         process();
 
-        System.out.println("Job Ended");
-        System.out.println("************");
+        logger.info("Scheduled job ended");
+        logger.info("************");
     }
 
     private void process() {
