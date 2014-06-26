@@ -1,6 +1,8 @@
 package app.util;
 
 import app.model.*;
+import app.model.subForms.ChildPncVisit;
+import app.model.subForms.ChildRegistration;
 import app.model.subForms.PncChildRegistration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -51,6 +53,8 @@ public class ObjectConverter {
 
         subFormNameMap = new HashMap<String, Type>();
         subFormNameMap.put("child_registration_oa", PncChildRegistration.class);
+        subFormNameMap.put("child_registration", ChildRegistration.class);
+        subFormNameMap.put("child_pnc_visit", ChildPncVisit.class);
     }
 
     public static BaseEntityForm create(Map hashMap) {

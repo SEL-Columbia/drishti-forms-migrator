@@ -2101,4 +2101,100 @@
                                  referencedTableName="pnc_registration_oa"/>
 
     </changeSet>
+
+    <changeSet id="29" author="maha">
+        <createTable tableName="delivery_out_come_child_registration">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="sub_form_name" type="varchar(255)"/>
+
+            <column name="child_id" type="varchar(255)"/>
+
+            <column name="gender" type="varchar(255)"/>
+
+            <column name="weight" type="varchar(255)"/>
+
+            <column name="blood_group" type="varchar(255)"/>
+
+            <column name="immunizations_given" type="varchar(255)"/>
+
+            <column name="is_child_high_risk1" type="varchar(255)"/>
+
+            <column name="is_child_high_risk" type="varchar(255)"/>
+
+            <column name="child_high_risk_reasons" type="varchar(255)"/>
+
+            <column name="hep_b" type="varchar(255)"/>
+
+            <column name="is_hep_b_prophylaxis_provided" type="varchar(255)"/>
+
+            <column name="lbw" type="varchar(255)"/>
+
+            <column name="vlbw" type="varchar(255)"/>
+
+            <column name="premature" type="varchar(255)"/>
+
+            <column name="delivery_outcome_id" type="bigint"/>
+
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="delivery_outcome_id"
+                                 baseTableName="delivery_out_come_child_registration"
+                                 constraintName="fk_delivery_out_come_child_registration_delivery_outcome_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="delivery_outcome"/>
+
+    </changeSet>
+
+    <changeSet id="30" author="maha">
+        <createTable tableName="pnc_child_visit">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="sub_form_name" type="varchar(255)"/>
+
+            <column name="child_id" type="varchar(255)"/>
+
+            <column name="gender" type="varchar(255)"/>
+
+            <column name="weight" type="varchar(255)"/>
+
+            <column name="immunizations_given" type="varchar(255)"/>
+
+            <column name="urine_stool_problems" type="varchar(255)"/>
+
+            <column name="days_of_diarrhea" type="varchar(255)"/>
+
+            <column name="blood_in_stool" type="varchar(255)"/>
+
+            <column name="activity_problems" type="varchar(255)"/>
+
+            <column name="breathing_problems" type="varchar(255)"/>
+
+            <column name="respiration_rate" type="integer"/>
+
+            <column name="skin_problems" type="varchar(255)"/>
+
+            <column name="has_fever_symptoms" type="varchar(255)"/>
+
+            <column name="temperature" type="varchar(255)"/>
+
+            <column name="child_exclusive_bf" type="varchar(255)"/>
+
+            <column name="immediate_referral" type="varchar(255)"/>
+
+            <column name="immediate_referral_reason" type="varchar(255)"/>
+
+            <column name="is_child_high_risk" type="varchar(255)"/>
+
+            <column name="pnc_visit_id" type="bigint"/>
+
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="pnc_visit_id"
+                                 baseTableName="pnc_child_visit"
+                                 constraintName="fk_pnc_child_visit_pnc_visit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pnc_visit"/>
+
+    </changeSet>
 </databaseChangeLog>

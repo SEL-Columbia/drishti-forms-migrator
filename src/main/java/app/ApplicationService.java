@@ -1,6 +1,7 @@
 package app;
 
 import app.model.*;
+import app.model.subForms.ChildRegistration;
 import app.model.subForms.PncChildRegistration;
 import app.repository.Repository;
 import app.scheduler.JobScheduler;
@@ -29,7 +30,8 @@ public class ApplicationService extends Service<MigratorConfiguration> {
                     FpChange.class, FpComplications.class, FpFollowup.class,
                     HbTest.class, Ifa.class,
                     PncClose.class, PncRegistrationOa.class, PncVisit.class, PostpartumFamilyPlanning.class,
-                    RecordEcps.class, RenewFpProduct.class, Tt.class, VitaminA.class, PncChildRegistration.class) {
+                    RecordEcps.class, RenewFpProduct.class, Tt.class, VitaminA.class,
+                    PncChildRegistration.class, ChildRegistration.class, PncChildRegistration.class) {
                 @Override
                 public DatabaseConfiguration getDatabaseConfiguration(MigratorConfiguration configuration) {
                     return configuration.getDatabase();
