@@ -57,7 +57,7 @@ public class ObjectConverter {
         subFormNameMap.put("child_pnc_visit", ChildPncVisit.class);
     }
 
-    public static BaseEntityForm create(Map hashMap) {
+    public BaseEntityForm create(Map hashMap) {
         boolean isBaseForm = hashMap.containsKey(FORM_NAME);
         Class<Object> classType = isBaseForm ?
                 (Class<Object>) formNameMap.get(hashMap.get(FORM_NAME)) :

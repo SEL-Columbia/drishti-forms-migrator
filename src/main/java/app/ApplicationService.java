@@ -1,9 +1,10 @@
 package app;
 
 import app.model.*;
+import app.model.subForms.ChildPncVisit;
 import app.model.subForms.ChildRegistration;
 import app.model.subForms.PncChildRegistration;
-import app.repository.Repository;
+import app.resource.FormResource;
 import app.scheduler.JobScheduler;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
@@ -31,7 +32,7 @@ public class ApplicationService extends Service<MigratorConfiguration> {
                     HbTest.class, Ifa.class,
                     PncClose.class, PncRegistrationOa.class, PncVisit.class, PostpartumFamilyPlanning.class,
                     RecordEcps.class, RenewFpProduct.class, Tt.class, VitaminA.class,
-                    PncChildRegistration.class, ChildRegistration.class, PncChildRegistration.class) {
+                    PncChildRegistration.class, ChildRegistration.class, ChildPncVisit.class) {
                 @Override
                 public DatabaseConfiguration getDatabaseConfiguration(MigratorConfiguration configuration) {
                     return configuration.getDatabase();
@@ -55,15 +56,11 @@ public class ApplicationService extends Service<MigratorConfiguration> {
 
     @Override
     public void run(MigratorConfiguration configuration, Environment environment) throws Exception {
-        Repository repository = new Repository(hibernateBundle.getSessionFactory());
-
         Context context = Context.getInstance();
         context.updateSessionFactory(hibernateBundle.getSessionFactory())
             .updateConfiguration(configuration);
 
-//        final DBIFactory factory = new DBIFactory();
-//        final DBI jdbi = factory.build(environment, configuration.getDatabase(), contentMigrator);
-
         new JobScheduler().doJob();
+        environment.addResource(new FormResource(context.formService()));
     }
 }

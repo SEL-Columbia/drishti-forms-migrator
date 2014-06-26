@@ -15,6 +15,8 @@ public class Repository extends AbstractDAO<BaseEntityForm> {
     }
 
     public BaseEntityForm create(BaseEntityForm entityForm) {
+        if(entityForm == null)
+            return null;
         Session session = sessionFactory.openSession();
         try {
             ManagedSessionContext.bind(session);

@@ -2171,7 +2171,7 @@
 
             <column name="breathing_problems" type="varchar(255)"/>
 
-            <column name="respiration_rate" type="integer"/>
+            <column name="respiration_rate" type="varchar(255)"/>
 
             <column name="skin_problems" type="varchar(255)"/>
 

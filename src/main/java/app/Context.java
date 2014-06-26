@@ -1,11 +1,15 @@
 package app;
 
 import app.repository.Repository;
+import app.service.FormService;
+import app.util.MapTransformer;
+import app.util.ObjectConverter;
 import org.hibernate.SessionFactory;
 
 public class Context {
     private static Context context;
     private Repository repository;
+    private FormService formService;
     private SessionFactory sessionFactory;
     private MigratorConfiguration configuration;
 
@@ -18,8 +22,7 @@ public class Context {
         return context;
     }
 
-    public Repository repository() throws ClassNotFoundException {
-
+    public Repository repository() {
         if (repository == null) {
             repository = new Repository(sessionFactory);
         }
@@ -38,5 +41,12 @@ public class Context {
 
     public MigratorConfiguration configuration() {
         return configuration;
+    }
+
+    public FormService formService() {
+        if(formService == null) {
+            formService = new FormService(repository(), new MapTransformer(), new ObjectConverter());
+        }
+        return formService;
     }
 }
