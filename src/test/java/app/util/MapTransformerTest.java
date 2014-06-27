@@ -32,7 +32,7 @@ public class MapTransformerTest {
 
     @Test
     public void shouldTransformTheGivenMap() throws JsonProcessingException {
-        Map<String, Object> transformedMap = mapTransformer.transform(newArrayList(formData)).get(0);
+        Map<String, Object> transformedMap = mapTransformer.transform(newArrayList(formData)).findFirst().get();
 
         assertEquals("demo1", transformedMap.get("anmId"));
         assertEquals("pnc_registration_oa", transformedMap.get(FORM_NAME));
@@ -45,7 +45,7 @@ public class MapTransformerTest {
 
     @Test
     public void shouldTransformTheSubFormsInAGivenMap() throws JsonProcessingException {
-        Map<String, Object> transformedMap = mapTransformer.transform(newArrayList(formData)).get(0);
+        Map<String, Object> transformedMap = mapTransformer.transform(newArrayList(formData)).findFirst().get();
 
         assertEquals("demo1", transformedMap.get("anmId"));
 

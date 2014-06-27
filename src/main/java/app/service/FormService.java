@@ -7,6 +7,7 @@ import app.util.ObjectConverter;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import static app.Constants.PARENT_ID;
 import static app.Constants.SUB_FORMS;
@@ -23,18 +24,17 @@ public class FormService {
     }
 
     public void save(List<Map<String, Object>> responseData) {
-        List<Map<String, Object>> mappedData = mapTransformer.transform(responseData);
+        Stream<Map<String, Object>> mappedData = mapTransformer.transform(responseData);
 
-        for (Map<String, Object> map : mappedData) {
+        mappedData.forEach(map -> {
             BaseEntityForm savedEntity = repository.create(objectConverter.create(map));
 
             if (savedEntity != null && map.containsKey(SUB_FORMS) && map.get(SUB_FORMS) != null) {
-                for (Map<String, Object> subForm : (List<Map<String, Object>>) map.get(SUB_FORMS)) {
+                ((List<Map<String, Object>>) map.get(SUB_FORMS)).forEach(subForm -> {
                     subForm.put(PARENT_ID, savedEntity.getId());
-                    BaseEntityForm entityForm = objectConverter.create(subForm);
-                    repository.create(entityForm);
-                }
+                    repository.create(objectConverter.create(subForm));
+                });
             }
-        }
+        });
     }
 }

@@ -1,8 +1,5 @@
 ['java', 'idea', 'application', 'fatjar'].each({ apply plugin: it })
 
-sourceCompatibility = 1.5
-version = '1.0'
-
 project.ext {
     dropwizardVersion = '0.6.2'
 }
@@ -36,19 +33,16 @@ dependencies {
     compile group: 'com.yammer.dropwizard', name: 'dropwizard-testing', version: dropwizardVersion
     compile group: 'com.yammer.dropwizard', name: 'dropwizard-hibernate', version: dropwizardVersion
     compile group: 'org.codehaus.jackson', name: 'jackson-core-lgpl', version: '1.9.10'
-    compile group: 'org.projectlombok', name: 'lombok', version: '0.11.8'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.14.2'
     compile fileTree('lib')
     runtime group: 'postgresql', name: 'postgresql', version: '9.1-901.jdbc4'
+
+    testCompile 'junit:junit:4.8.2'
+    testCompile 'org.mockito:mockito-all:1.9.5'
 }
 
 run {
     args 'server', 'content-migrator.yml'
-}
-
-sourceSets {
-    test {
-        java.srcDir file('src/test/')
-    }
 }
 
 fatJar {
