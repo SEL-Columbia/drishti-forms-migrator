@@ -5,7 +5,6 @@ import app.model.subForms.ChildPncVisit;
 import app.model.subForms.ChildRegistration;
 import app.model.subForms.PncChildRegistration;
 import app.resource.FormResource;
-import app.scheduler.JobScheduler;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
@@ -60,7 +59,6 @@ public class ApplicationService extends Service<MigratorConfiguration> {
         context.updateSessionFactory(hibernateBundle.getSessionFactory())
             .updateConfiguration(configuration);
 
-        new JobScheduler().doJob();
         environment.addResource(new FormResource(context.formService()));
     }
 }
