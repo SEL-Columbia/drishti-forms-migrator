@@ -1,6 +1,6 @@
 package app.service;
 
-import app.model.BaseEntityForm;
+import app.model.BaseEntity;
 import app.repository.Repository;
 import app.util.MapTransformer;
 import app.util.ObjectConverter;
@@ -27,7 +27,7 @@ public class FormService {
         Stream<Map<String, Object>> mappedData = mapTransformer.transform(responseData);
 
         mappedData.forEach(map -> {
-            BaseEntityForm savedEntity = repository.create(objectConverter.create(map));
+            BaseEntity savedEntity = repository.create(objectConverter.create(map));
 
             if (savedEntity != null && map.containsKey(SUB_FORMS) && map.get(SUB_FORMS) != null) {
                 ((List<Map<String, Object>>) map.get(SUB_FORMS)).forEach(subForm -> {

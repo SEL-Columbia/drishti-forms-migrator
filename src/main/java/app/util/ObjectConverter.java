@@ -1,6 +1,7 @@
 package app.util;
 
-import app.model.*;
+import app.model.BaseEntity;
+import app.model.forms.*;
 import app.model.subForms.ChildPncVisit;
 import app.model.subForms.ChildRegistration;
 import app.model.subForms.PncChildRegistration;
@@ -51,13 +52,13 @@ public class ObjectConverter {
         formNameMap.put("tt_booster", Tt.class);
         formNameMap.put("vitamin_a", VitaminA.class);
 
-        subFormNameMap = new HashMap<String, Type>();
+        subFormNameMap = new HashMap<>();
         subFormNameMap.put("child_registration_oa", PncChildRegistration.class);
         subFormNameMap.put("child_registration", ChildRegistration.class);
         subFormNameMap.put("child_pnc_visit", ChildPncVisit.class);
     }
 
-    public BaseEntityForm create(Map hashMap) {
+    public BaseEntity create(Map hashMap) {
         boolean isBaseForm = hashMap.containsKey(FORM_NAME);
         Class<Object> classType = isBaseForm ?
                 (Class<Object>) formNameMap.get(hashMap.get(FORM_NAME)) :
@@ -65,6 +66,6 @@ public class ObjectConverter {
 
         if (classType == null)
             return null;
-        return (BaseEntityForm) new ObjectMapper().convertValue(hashMap, classType);
+        return (BaseEntity) new ObjectMapper().convertValue(hashMap, classType);
     }
 }

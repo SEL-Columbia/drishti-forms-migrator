@@ -1,7 +1,7 @@
 package app.service;
 
-import app.model.BaseEntityForm;
-import app.model.PncVisit;
+import app.model.BaseEntity;
+import app.model.forms.PncVisit;
 import app.model.subForms.ChildPncVisit;
 import app.repository.Repository;
 import app.util.MapTransformer;
@@ -66,7 +66,7 @@ public class FormServiceTest {
 
         when(mapTransformer.transform(allFormData)).thenReturn(allFormData.stream());
         when(objectConverter.create(any(Map.class))).thenReturn(pncVisit).thenReturn(childPncVisit);
-        when(repository.create(any(BaseEntityForm.class))).thenReturn(pncVisit);
+        when(repository.create(any(BaseEntity.class))).thenReturn(pncVisit);
 
         formService.save(allFormData);
 

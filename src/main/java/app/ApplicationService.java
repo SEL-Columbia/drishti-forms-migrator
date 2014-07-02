@@ -1,6 +1,6 @@
 package app;
 
-import app.model.*;
+import app.model.forms.*;
 import app.model.subForms.ChildPncVisit;
 import app.model.subForms.ChildRegistration;
 import app.model.subForms.PncChildRegistration;

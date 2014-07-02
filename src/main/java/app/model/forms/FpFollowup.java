@@ -1,5 +1,6 @@
-package app.model;
+package app.model.forms;
 
+import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
@@ -9,12 +10,16 @@ import javax.persistence.Table;
 
 @Entity
 @Data
-@Table(name = "fp_complications")
-public class FpComplications extends EntityForm {
+@Table(name = "fp_followup")
+public class FpFollowup extends FromEntity {
 
     @Column(name = "eligible_couple_id")
     @JsonProperty("id")
     private String eligibleCoupleId;
+
+    @Column(name = "needs_followup")
+    @JsonProperty("needsFollowup")
+    private String needsFollowup;
 
     @Column(name = "current_method")
     @JsonProperty("currentMethod")
@@ -24,37 +29,33 @@ public class FpComplications extends EntityForm {
     @JsonProperty("currentMethodNote")
     private String currentMethodNote;
 
-    @Column(name = "complication_date")
-    @JsonProperty("complicationDate")
-    private String complicationDate;
+    @Column(name = "fp_followup_date")
+    @JsonProperty("fpFollowupDate")
+    private String fpFollowupDate;
 
     @Column(name = "is_sterilization_failure")
     @JsonProperty("isSterilizationFailure")
     private String isSterilizationFailure;
 
-    @Column(name = "condom_side_effect")
-    @JsonProperty("condomSideEffect")
-    private String condomSideEffect;
-
     @Column(name = "iud_sid_effect")
     @JsonProperty("iudSidEffect")
     private String iudSidEffect;
-
-    @Column(name = "ocp_side_effect")
-    @JsonProperty("ocpSideEffect")
-    private String ocpSideEffect;
 
     @Column(name = "sterilization_side_effect")
     @JsonProperty("sterilizationSideEffect")
     private String sterilizationSideEffect;
 
-    @Column(name = "injectable_side_effect")
-    @JsonProperty("injectableSideEffect")
-    private String injectableSideEffect;
-
     @Column(name = "other_side_effect")
     @JsonProperty("otherSideEffect")
     private String otherSideEffect;
+
+    @Column(name = "side_effect")
+    @JsonProperty("sideEffect")
+    private String sideEffect;
+
+    @Column(name = "is_fp_method_complication_resolved")
+    @JsonProperty("isFPMethodComplicationResolved")
+    private String isFPMethodComplicationResolved;
 
     @Column(name = "refer_couple_fp_method_complication")
     @JsonProperty("referCoupleFPMethodComplication")
@@ -68,6 +69,10 @@ public class FpComplications extends EntityForm {
     @JsonProperty("referCoupleFPMethodComplicationPlaceOther")
     private String referCoupleFPMethodComplicationPlaceOther;
 
+    @Column(name = "needs_referral_followup")
+    @JsonProperty("needsReferralFollowup")
+    private String needsReferralFollowup;
+
     @Column(name = "fp_method_complication_treatment_plan")
     @JsonProperty("fpMethodComplicationTreatmentPlan")
     private String fpMethodComplicationTreatmentPlan;
@@ -79,13 +84,5 @@ public class FpComplications extends EntityForm {
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
     private String submissionDate;
-
-    @Column(name = "needs_referral_followup")
-    @JsonProperty("needsReferralFollowup")
-    private String needsReferralFollowup;
-
-    @Column(name = "needs_followup")
-    @JsonProperty("needsFollowup")
-    private String needsFollowup;
 
 }

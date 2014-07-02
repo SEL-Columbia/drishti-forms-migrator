@@ -1,18 +1,85 @@
-package app.model;
+package app.model.forms;
 
+import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Data
-@Table(name = "anc_registration")
-public class AncRegistration extends EntityForm {
+@Table(name = "anc_registration_oa")
+public class AncRegistrationOa extends FromEntity {
 
     @Column(name = "eligible_couple_id")
     @JsonProperty("id")
     private String eligibleCoupleId;
+
+    @Column(name = "original_village")
+    @JsonProperty("originalVillage")
+    private String originalVillage;
+
+    @Column(name = "phc")
+    @JsonProperty("phc")
+    private String phc;
+
+    @Column(name = "sub_center")
+    @JsonProperty("subCenter")
+    private String subCenter;
+
+    @Column(name = "village")
+    @JsonProperty("village")
+    private String village;
+
+    @Column(name = "household_address")
+    @JsonProperty("householdAddress")
+    private String householdAddress;
+
+    @Column(name = "wife_name")
+    @JsonProperty("wifeName")
+    private String wifeName;
+
+    @Column(name = "aadhar_number")
+    @JsonProperty("aadharNumber")
+    private String aadharNumber;
+
+    @Column(name = "wife_age")
+    @JsonProperty("wifeAge")
+    private String wifeAge;
+
+    @Column(name = "husband_name")
+    @JsonProperty("husbandName")
+    private String husbandName;
+
+    @Column(name = "phone_number")
+    @JsonProperty("phoneNumber")
+    private String phoneNumber;
+
+    @Column(name = "phone_owner")
+    @JsonProperty("phoneOwner")
+    private String phoneOwner;
+
+    @Column(name = "alternate_phone_number")
+    @JsonProperty("alternatePhoneNumber")
+    private String alternatePhoneNumber;
+
+    @Column(name = "alternate_phone_owner")
+    @JsonProperty("alternatePhoneOwner")
+    private String alternatePhoneOwner;
+
+    @Column(name = "economic_status")
+    @JsonProperty("economicStatus")
+    private String economicStatus;
+
+    @Column(name = "bpl_card_number")
+    @JsonProperty("bplCardNumber")
+    private String bplCardNumber;
+
+    @Column(name = "caste")
+    @JsonProperty("caste")
+    private String caste;
 
     @Column(name = "mother_id")
     @JsonProperty("motherId")
@@ -21,18 +88,6 @@ public class AncRegistration extends EntityForm {
     @Column(name = "registration_date")
     @JsonProperty("registrationDate")
     private String registrationDate;
-
-    @Column(name = "registration_place")
-    @JsonProperty("registrationPlace")
-    private String registrationPlace;
-
-    @Column(name = "wife_name")
-    @JsonProperty("wifeName")
-    private String wifeName;
-
-    @Column(name = "number_of_pregnancies")
-    @JsonProperty("numberOfPregnancies")
-    private String numberOfPregnancies;
 
     @Column(name = "thayi_card_number")
     @JsonProperty("thayiCardNumber")
@@ -62,13 +117,21 @@ public class AncRegistration extends EntityForm {
     @JsonProperty("edd")
     private String edd;
 
-    @Column(name = "linked_facility_for_delivery")
-    @JsonProperty("linkedFacilityForDelivery")
-    private String linkedFacilityForDelivery;
+    @Column(name = "is_first_pregnancy")
+    @JsonProperty("isFirstPregnancy")
+    private String isFirstPregnancy;
 
-    @Column(name = "facility_name")
-    @JsonProperty("facilityName")
-    private String facilityName;
+    @Column(name = "had_three_or_more_births")
+    @JsonProperty("hadThreeOrMoreBirths")
+    private String hadThreeOrMoreBirths;
+
+    @Column(name = "had_three_or_more_abortions")
+    @JsonProperty("hadThreeOrMoreAbortions")
+    private String hadThreeOrMoreAbortions;
+
+    @Column(name = "is_youngest_child_under_two")
+    @JsonProperty("isYoungestChildUnderTwo")
+    private String isYoungestChildUnderTwo;
 
     @Column(name = "complications")
     @JsonProperty("complications")
@@ -142,6 +205,10 @@ public class AncRegistration extends EntityForm {
     @JsonProperty("isHighRisk")
     private String isHighRisk;
 
+    @Column(name = "is_birth_planning_done")
+    @JsonProperty("isBirthPlanningDone")
+    private String isBirthPlanningDone;
+
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
     private String submissionDate;
@@ -154,12 +221,8 @@ public class AncRegistration extends EntityForm {
     @JsonProperty("isClosed")
     private String isClosed;
 
-    @Column(name = "current_method")
-    @JsonProperty("currentMethod")
-    private String currentMethod;
-
-    @Column(name = "family_planning_method_change_date")
-    @JsonProperty("familyPlanningMethodChangeDate")
-    private String familyPlanningMethodChangeDate;
+    @Column(name = "is_out_of_area")
+    @JsonProperty("isOutOfArea")
+    private String isOutOfArea;
 
 }

@@ -1,6 +1,6 @@
 package app.repository;
 
-import app.model.BaseEntityForm;
+import app.model.BaseEntity;
 import com.yammer.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -8,7 +8,7 @@ import org.hibernate.context.internal.ManagedSessionContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Repository extends AbstractDAO<BaseEntityForm> {
+public class Repository extends AbstractDAO<BaseEntity> {
     private SessionFactory sessionFactory;
     private Logger logger = LoggerFactory.getLogger(Repository.class);
 
@@ -17,7 +17,7 @@ public class Repository extends AbstractDAO<BaseEntityForm> {
         this.sessionFactory = sessionFactory;
     }
 
-    public BaseEntityForm create(BaseEntityForm entityForm) {
+    public BaseEntity create(BaseEntity entityForm) {
         if(entityForm == null)
             return null;
         Session session = sessionFactory.openSession();

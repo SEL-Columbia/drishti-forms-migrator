@@ -9,7 +9,7 @@ import javax.persistence.*;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @MappedSuperclass
 @Data
-public class BaseEntityForm {
+public class BaseEntity {
     @Id
     @Column(name = "id")
     @JsonIgnore

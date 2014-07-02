@@ -1,6 +1,6 @@
 package app.util;
 
-import app.model.EcRegistration;
+import app.model.forms.EcRegistration;
 import app.model.subForms.PncChildRegistration;
 import org.junit.Test;
 

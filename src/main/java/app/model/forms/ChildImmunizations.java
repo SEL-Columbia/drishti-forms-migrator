@@ -1,5 +1,6 @@
-package app.model;
+package app.model.forms;
 
+import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Data
 @Table(name = "child_immunizations")
-public class ChildImmunizations extends EntityForm {
+public class ChildImmunizations extends FromEntity {
 
     @Column(name = "child_id")
     @JsonProperty("id")

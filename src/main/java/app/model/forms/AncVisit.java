@@ -1,5 +1,6 @@
-package app.model;
+package app.model.forms;
 
+import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Data
 @Table(name = "anc_visit")
-public class AncVisit extends EntityForm {
+public class AncVisit extends FromEntity {
 
     @Column(name = "mother_id")
     @JsonProperty("id")

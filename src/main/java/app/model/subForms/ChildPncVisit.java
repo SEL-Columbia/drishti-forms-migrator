@@ -1,6 +1,6 @@
 package app.model.subForms;
 
-import app.model.BaseEntityForm;
+import app.model.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Data
 @Table(name = "pnc_child_visit")
-public class ChildPncVisit extends BaseEntityForm {
+public class ChildPncVisit extends BaseEntity {
 
     @Column(name = "child_id")
     @JsonProperty("id")

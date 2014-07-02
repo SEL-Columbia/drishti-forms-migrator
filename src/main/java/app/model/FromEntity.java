@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @MappedSuperclass
 @Data
-public class EntityForm extends BaseEntityForm {
+public class FromEntity extends BaseEntity {
     @Column(name = "anm_id")
     @JsonProperty("anmId")
     private String anmId;

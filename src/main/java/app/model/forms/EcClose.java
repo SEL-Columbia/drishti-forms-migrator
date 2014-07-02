@@ -1,5 +1,6 @@
-package app.model;
+package app.model.forms;
 
+import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Data
 @Table(name = "ec_close")
-public class EcClose extends EntityForm {
+public class EcClose extends FromEntity {
 
     @Column(name = "eligible_couple_id")
     @JsonProperty("id")
