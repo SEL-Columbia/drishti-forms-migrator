@@ -1,4 +1,4 @@
-pollingUrl: http://uat.smartregistries.org/form-submissions?anm-id=demo1&timestamp=1400501224756
+pollingUrl: https://smartregistries.org/form-submissions?anm-id=demo1&timestamp=0
 pollingUrlUsername: demo1
 pollingUrlPassword: 1
 

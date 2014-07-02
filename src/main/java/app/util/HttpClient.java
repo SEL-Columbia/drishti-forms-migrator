@@ -1,10 +1,7 @@
 package app.util;
 
-import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
-import com.sun.jersey.api.client.config.ClientConfig;
-import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 
 import javax.ws.rs.core.MediaType;
@@ -16,12 +13,10 @@ import java.util.Map;
 public class HttpClient {
 
     public static List<Map<String, Object>> call(String uri, String username, String password) {
-        ClientConfig config = new DefaultClientConfig();
-        config.getClasses().add(JacksonJsonProvider.class);
-
-        Client client = Client.create(config);
+        Client client = Client.create(HttpClientHelper.configureClient());
         client.addFilter(new HTTPBasicAuthFilter(username, password));
         WebResource service = client.resource(getBaseURI(uri));
+
         return (List<Map<String, Object>>)service.accept(MediaType.APPLICATION_JSON).get(List.class);
     }
 
