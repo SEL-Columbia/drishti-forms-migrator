@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
 
@@ -25,8 +27,8 @@ public class HttpClientTest {
     }
 
     @Test
-    public void shouldMakeHttpCallAndFetchResult() throws IOException {
-        List<Map<String, Object>> result = HttpClient.call(uri, username, password);
+    public void shouldMakeHttpCallAndFetchResult() throws IOException, URISyntaxException {
+        List<Map<String, Object>> result = HttpClient.call(new URI(uri), username, password);
 
         assertNotEquals(0, result.size());
 

@@ -8,8 +8,13 @@ import de.spinscale.dropwizard.jobs.annotations.Every;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.ws.rs.core.UriBuilder;
+import java.net.URI;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
+
+import static app.Constants.TIMESTAMP;
 
 @Every("30min")
 public class JobScheduler extends Job {
@@ -33,11 +38,18 @@ public class JobScheduler extends Job {
 
     private void process() {
         MigratorConfiguration configuration = context.configuration();
+        URI pollingUri = getBaseURI(configuration.getPollingUrl());
 
-        List<Map<String, Object>> responseData = HttpClient.call(configuration.getPollingUrl(),
-                configuration.getPollingUrlUsername(),
-                configuration.getPollingUrlPassword());
+        logger.info("Fetching form entries from: " + pollingUri.toString());
+
+        List<Map<String, Object>> responseData = HttpClient.call(pollingUri, configuration.getPollingUrlUsername(), configuration.getPollingUrlPassword());
+
+        logger.info("Processing " + responseData.size() + " form entries");
 
         context.formService().save(responseData);
+    }
+
+    private static URI getBaseURI(String uri) {
+        return UriBuilder.fromUri(uri).replaceQueryParam(TIMESTAMP, new Date().getTime()).build();
     }
 }
