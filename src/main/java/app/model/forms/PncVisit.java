@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "pnc_visit")
+@EqualsAndHashCode(callSuper = true)
 public class PncVisit extends FromEntity {
-
     @Column(name = "mother_id")
     @JsonProperty("id")
     private String motherId;
@@ -43,7 +45,7 @@ public class PncVisit extends FromEntity {
 
     @Column(name = "discharge_date")
     @JsonProperty("dischargeDate")
-    private String dischargeDate;
+    private Date dischargeDate;
 
     @Column(name = "delivery_type")
     @JsonProperty("deliveryType")
@@ -51,15 +53,15 @@ public class PncVisit extends FromEntity {
 
     @Column(name = "reference_date")
     @JsonProperty("referenceDate")
-    private String referenceDate;
+    private Date referenceDate;
 
     @Column(name = "pnc_visit_date")
     @JsonProperty("pncVisitDate")
-    private String pncVisitDate;
+    private Date pncVisitDate;
 
     @Column(name = "pnc_visit_day")
     @JsonProperty("pncVisitDay")
-    private String pncVisitDay;
+    private Integer pncVisitDay;
 
     @Column(name = "pnc_visit_place")
     @JsonProperty("pncVisitPlace")
@@ -99,7 +101,7 @@ public class PncVisit extends FromEntity {
 
     @Column(name = "temperature")
     @JsonProperty("temperature")
-    private String temperature;
+    private Float temperature;
 
     @Column(name = "has_fever")
     @JsonProperty("hasFever")
@@ -107,23 +109,23 @@ public class PncVisit extends FromEntity {
 
     @Column(name = "pulse_rate")
     @JsonProperty("pulseRate")
-    private String pulseRate;
+    private Integer pulseRate;
 
     @Column(name = "bp_systolic")
     @JsonProperty("bpSystolic")
-    private String bpSystolic;
+    private Float bpSystolic;
 
     @Column(name = "bp_diastolic")
     @JsonProperty("bpDiastolic")
-    private String bpDiastolic;
+    private Float bpDiastolic;
 
     @Column(name = "hb_level")
     @JsonProperty("hbLevel")
-    private String hbLevel;
+    private Float hbLevel;
 
     @Column(name = "number_of_ifa_tablets_given")
     @JsonProperty("numberOfIFATabletsGiven")
-    private String numberOfIFATabletsGiven;
+    private Integer numberOfIFATabletsGiven;
 
     @Column(name = "immediate_referral")
     @JsonProperty("immediateReferral")
@@ -163,6 +165,6 @@ public class PncVisit extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
 }

@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "pnc_registration_oa")
+@EqualsAndHashCode(callSuper = true)
 public class PncRegistrationOa extends FromEntity {
-
     @Column(name = "eligible_couple_id")
     @JsonProperty("id")
     private String eligibleCoupleId;
@@ -23,7 +25,7 @@ public class PncRegistrationOa extends FromEntity {
 
     @Column(name = "registration_date")
     @JsonProperty("registrationDate")
-    private String registrationDate;
+    private Date registrationDate;
 
     @Column(name = "phc")
     @JsonProperty("phc")
@@ -47,7 +49,7 @@ public class PncRegistrationOa extends FromEntity {
 
     @Column(name = "wife_age")
     @JsonProperty("wifeAge")
-    private String wifeAge;
+    private Integer wifeAge;
 
     @Column(name = "thayi_card_number")
     @JsonProperty("thayiCardNumber")
@@ -83,7 +85,7 @@ public class PncRegistrationOa extends FromEntity {
 
     @Column(name = "reference_date")
     @JsonProperty("referenceDate")
-    private String referenceDate;
+    private Date referenceDate;
 
     @Column(name = "delivery_place")
     @JsonProperty("deliveryPlace")
@@ -147,7 +149,7 @@ public class PncRegistrationOa extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
     @Column(name = "type")
     @JsonProperty("type")

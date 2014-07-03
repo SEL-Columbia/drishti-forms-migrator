@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "fp_complications")
+@EqualsAndHashCode(callSuper = true)
 public class FpComplications extends FromEntity {
-
     @Column(name = "eligible_couple_id")
     @JsonProperty("id")
     private String eligibleCoupleId;
@@ -27,7 +29,7 @@ public class FpComplications extends FromEntity {
 
     @Column(name = "complication_date")
     @JsonProperty("complicationDate")
-    private String complicationDate;
+    private Date complicationDate;
 
     @Column(name = "is_sterilization_failure")
     @JsonProperty("isSterilizationFailure")
@@ -79,7 +81,7 @@ public class FpComplications extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
     @Column(name = "needs_referral_followup")
     @JsonProperty("needsReferralFollowup")

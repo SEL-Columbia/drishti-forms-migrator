@@ -27,17 +27,20 @@ def read_sample_files
   print "\n !!! Done generating !!! \n"
 end
 
-def get_java_type field_value
+def get_java_type field_type
   # return "Integer" if field_value.integer?
   # return "Boolean" if field_value.bool?
   # return "Date" if field_value.date?
-  return "String"
+  return field_type || "String"
 end
 
-def get_sql_type field_value
-  # return "integer" if field_value.integer?
-  # return "boolean" if field_value.bool?
-  # return "date" if field_value.date?
+def get_sql_type field_type
+  return "varchar(255)" if field_type.nil?
+
+  type = field_type.downcase
+  return "integer" if type == "integer"
+  return "decimal" if type == "float"
+  return "date" if type == "date"
   return "varchar(255)"
 end
 
@@ -62,7 +65,7 @@ def generate_migration_script form_data, count
 
     field = fieldHash["name"] == "id" ? fieldHash["source"] : fieldHash["name"]
 
-    file_content += "<column name=\"#{field.to_column_name}\" type=\"#{get_sql_type(fieldHash["value"])}\"/>\n\n"
+    file_content += "<column name=\"#{field.to_column_name}\" type=\"#{get_sql_type(fieldHash["type"])}\"/>\n\n"
   end
   file_content += "</createTable>\n"
   file_content += "</changeSet>\n"
@@ -81,14 +84,16 @@ def generate_class_file form_data
   current_field_map = {}
 
   file_content = ""
-  file_content += "package app.model;\n\n"
+  file_content += "package app.model.forms;\n\n"
+  file_content += "import app.model.FromEntity;\n"
   file_content += "import com.fasterxml.jackson.annotation.JsonProperty;\n"
   file_content += "import lombok.Data;\n"
   file_content += "import javax.persistence.*;\n\n"
   file_content += "@Entity\n"
   file_content += "@Data\n"
   file_content += "@Table(name = \"#{form_name}\")\n"
-  file_content += "public class #{className} extends EntityForm{"
+  file_content += "@EqualsAndHashCode(callSuper = true)\n"
+  file_content += "public class #{className} extends FromEntity{"
   file_content += "\n"
 
   form_data["formInstance"]["form"]["fields"].each do |fieldHash|
@@ -102,7 +107,7 @@ def generate_class_file form_data
 
     file_content += "@Column(name = \"#{field.to_column_name}\")\n"
     file_content += "@JsonProperty(\"" + fieldHash["name"] + "\")\n"
-    file_content += "private #{get_java_type(fieldHash["value"])} #{field.to_field_name};\n"
+    file_content += "private #{get_java_type(fieldHash["type"])} #{field.to_field_name};\n"
     file_content += "\n"
   end
   file_content += "}"

@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "fp_followup")
+@EqualsAndHashCode(callSuper = true)
 public class FpFollowup extends FromEntity {
-
     @Column(name = "eligible_couple_id")
     @JsonProperty("id")
     private String eligibleCoupleId;
@@ -31,7 +33,7 @@ public class FpFollowup extends FromEntity {
 
     @Column(name = "fp_followup_date")
     @JsonProperty("fpFollowupDate")
-    private String fpFollowupDate;
+    private Date fpFollowupDate;
 
     @Column(name = "is_sterilization_failure")
     @JsonProperty("isSterilizationFailure")
@@ -41,13 +43,13 @@ public class FpFollowup extends FromEntity {
     @JsonProperty("iudSidEffect")
     private String iudSidEffect;
 
-    @Column(name = "sterilization_side_effect")
-    @JsonProperty("sterilizationSideEffect")
-    private String sterilizationSideEffect;
-
     @Column(name = "other_side_effect")
     @JsonProperty("otherSideEffect")
     private String otherSideEffect;
+
+    @Column(name = "sterilization_side_effect")
+    @JsonProperty("sterilizationSideEffect")
+    private String sterilizationSideEffect;
 
     @Column(name = "side_effect")
     @JsonProperty("sideEffect")
@@ -83,6 +85,6 @@ public class FpFollowup extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
 }

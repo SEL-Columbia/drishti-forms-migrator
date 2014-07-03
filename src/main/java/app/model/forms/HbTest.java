@@ -3,23 +3,25 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "hb_test")
+@EqualsAndHashCode(callSuper = true)
 public class HbTest extends FromEntity {
-
     @Column(name = "mother_id")
     @JsonProperty("id")
     private String motherId;
 
     @Column(name = "hb_test_date")
     @JsonProperty("hbTestDate")
-    private String hbTestDate;
+    private Date hbTestDate;
 
     @Column(name = "hb_test_place")
     @JsonProperty("hbTestPlace")
@@ -27,7 +29,7 @@ public class HbTest extends FromEntity {
 
     @Column(name = "hb_level")
     @JsonProperty("hbLevel")
-    private String hbLevel;
+    private Float hbLevel;
 
     @Column(name = "anaemic_status")
     @JsonProperty("anaemicStatus")
@@ -59,6 +61,6 @@ public class HbTest extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
 }

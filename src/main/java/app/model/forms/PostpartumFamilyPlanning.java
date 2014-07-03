@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "postpartum_family_planning")
+@EqualsAndHashCode(callSuper = true)
 public class PostpartumFamilyPlanning extends FromEntity {
-
     @Column(name = "mother_id")
     @JsonProperty("id")
     private String motherId;
@@ -31,7 +33,7 @@ public class PostpartumFamilyPlanning extends FromEntity {
 
     @Column(name = "pp_fp_method1_start_date")
     @JsonProperty("ppFPMethod1StartDate")
-    private String ppFPMethod1StartDate;
+    private Date ppFPMethod1StartDate;
 
     @Column(name = "iud_place1")
     @JsonProperty("iudPlace1")
@@ -63,7 +65,7 @@ public class PostpartumFamilyPlanning extends FromEntity {
 
     @Column(name = "reference_date")
     @JsonProperty("referenceDate")
-    private String referenceDate;
+    private Date referenceDate;
 
     @Column(name = "is_exclusive_breast_feeding")
     @JsonProperty("isExclusiveBreastFeeding")
@@ -91,7 +93,7 @@ public class PostpartumFamilyPlanning extends FromEntity {
 
     @Column(name = "pp_fp_method2_start_date")
     @JsonProperty("ppFPMethod2StartDate")
-    private String ppFPMethod2StartDate;
+    private Date ppFPMethod2StartDate;
 
     @Column(name = "iud_place2")
     @JsonProperty("iudPlace2")
@@ -127,15 +129,15 @@ public class PostpartumFamilyPlanning extends FromEntity {
 
     @Column(name = "number_of_ocp_delivered")
     @JsonProperty("numberOfOCPDelivered")
-    private String numberOfOCPDelivered;
+    private Integer numberOfOCPDelivered;
 
     @Column(name = "number_of_condoms_supplied")
     @JsonProperty("numberOfCondomsSupplied")
-    private String numberOfCondomsSupplied;
+    private Integer numberOfCondomsSupplied;
 
     @Column(name = "number_of_centchroman_pills_supplied")
     @JsonProperty("numberOfCentchromanPillsSupplied")
-    private String numberOfCentchromanPillsSupplied;
+    private Integer numberOfCentchromanPillsSupplied;
 
     @Column(name = "hep_b")
     @JsonProperty("hepB")
@@ -147,7 +149,7 @@ public class PostpartumFamilyPlanning extends FromEntity {
 
     @Column(name = "family_planning_method_change_date")
     @JsonProperty("familyPlanningMethodChangeDate")
-    private String familyPlanningMethodChangeDate;
+    private Date familyPlanningMethodChangeDate;
 
     @Column(name = "iud_place")
     @JsonProperty("iudPlace")
@@ -179,6 +181,6 @@ public class PostpartumFamilyPlanning extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
 }
