@@ -2197,4 +2197,14 @@
                                  referencedTableName="pnc_visit"/>
 
     </changeSet>
+
+    <changeSet id="31" author="maha">
+        <createTable tableName="migration_audit">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="last_polled_timestamp" type="bigint"/>
+            <column name="no_of_form_entries" type="bigint"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>

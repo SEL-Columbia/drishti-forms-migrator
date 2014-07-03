@@ -1,4 +1,4 @@
-pollingUrl: https://smartregistries.org/form-submissions?anm-id=demo1&timestamp=0
+pollingUrl: https://smartregistries.org/form-submissions?anm-id=demo1&timestamp=0&batch-size=100
 pollingUrlUsername: demo1
 pollingUrlPassword: 1
 

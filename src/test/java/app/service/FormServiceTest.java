@@ -1,5 +1,6 @@
 package app.service;
 
+import app.model.Audit;
 import app.model.BaseEntity;
 import app.model.forms.PncVisit;
 import app.model.subForms.ChildPncVisit;
@@ -16,6 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static app.Constants.FORM_NAME;
+import static app.Constants.SERVER_VERSION;
 import static app.Constants.SUB_FORMS;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
@@ -38,6 +40,7 @@ public class FormServiceTest {
         formService = new FormService(repository, mapTransformer, objectConverter);
         formData = new HashMap<>();
         formData.put(FORM_NAME, "pnc_visit");
+        formData.put(SERVER_VERSION, "1");
     }
 
     @Test
@@ -52,6 +55,25 @@ public class FormServiceTest {
 
         verify(objectConverter, times(1)).create(any(Map.class));
         verify(repository).create(responseFormObj);
+    }
+
+    @Test
+    public void shouldCreateAuditEntryWithMaximumServerVersion(){
+        Long lastPolledTimestamp = 10000L;
+
+        HashMap<String, Object> formData2 = new HashMap<>();
+        formData2.put(FORM_NAME, "pnc_visit");
+        formData2.put(SERVER_VERSION, lastPolledTimestamp.toString());
+
+        ArrayList<Map<String, Object>> allFormData = Lists.<Map<String, Object>>newArrayList(formData, formData2);
+        PncVisit responseFormObj = new PncVisit();
+
+        when(mapTransformer.transform(allFormData)).thenReturn(allFormData.stream());
+        when(objectConverter.create(any(Map.class))).thenReturn(responseFormObj);
+
+        formService.save(allFormData);
+
+        verify(repository).create(new Audit(lastPolledTimestamp, (long) allFormData.size()));
     }
 
     @Test

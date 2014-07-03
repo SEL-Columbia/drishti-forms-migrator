@@ -1,5 +1,6 @@
 package app;
 
+import app.model.Audit;
 import app.model.forms.*;
 import app.model.subForms.ChildPncVisit;
 import app.model.subForms.ChildRegistration;
@@ -31,7 +32,8 @@ public class ApplicationService extends Service<MigratorConfiguration> {
                     HbTest.class, Ifa.class,
                     PncClose.class, PncRegistrationOa.class, PncVisit.class, PostpartumFamilyPlanning.class,
                     RecordEcps.class, RenewFpProduct.class, Tt.class, VitaminA.class,
-                    PncChildRegistration.class, ChildRegistration.class, ChildPncVisit.class) {
+                    PncChildRegistration.class, ChildRegistration.class, ChildPncVisit.class,
+                    Audit.class) {
                 @Override
                 public DatabaseConfiguration getDatabaseConfiguration(MigratorConfiguration configuration) {
                     return configuration.getDatabase();
@@ -57,7 +59,7 @@ public class ApplicationService extends Service<MigratorConfiguration> {
     public void run(MigratorConfiguration configuration, Environment environment) throws Exception {
         Context context = Context.getInstance();
         context.updateSessionFactory(hibernateBundle.getSessionFactory())
-            .updateConfiguration(configuration);
+                .updateConfiguration(configuration);
 
         environment.addResource(new FormResource(context.formService()));
     }
