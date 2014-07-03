@@ -12,182 +12,220 @@
                 {
                     "name": "id",
                     "value": "0ca62fa2-eccf-4bfd-b2fe-1602b7a263d0",
-                    "source": "eligible_couple.id"
+                    "source": "eligible_couple.id",
+                    "type": "String"
                 },
                 {
                     "name": "motherId",
                     "value": "99f42bc6-1fc2-4b67-8917-924335e1972f",
-                    "source": "eligible_couple.mother.id"
+                    "source": "eligible_couple.mother.id",
+                    "type": "String"
                 },
                 {
                     "name": "registrationDate",
                     "value": "2013-08-07",
-                    "source": "eligible_couple.mother.registrationDate"
+                    "source": "eligible_couple.mother.registrationDate",
+                    "type": "Date"
                 },
                 {
                     "name": "phc",
                     "value": "bherya",
-                    "source": "eligible_couple.phc"
+                    "source": "eligible_couple.phc",
+                    "type": "String"
                 },
                 {
                     "name": "subCenter",
                     "value": "bherya_a",
-                    "source": "eligible_couple.subCenter"
+                    "source": "eligible_couple.subCenter",
+                    "type": "String"
                 },
                 {
                     "name": "village",
                     "value": "geradada",
-                    "source": "eligible_couple.village"
+                    "source": "eligible_couple.village",
+                    "type": "String"
                 },
                 {
                     "name": "householdAddress",
-                    "source": "eligible_couple.householdAddress"
+                    "source": "eligible_couple.householdAddress",
+                    "type": "String"
                 },
                 {
                     "name": "wifeName",
                     "value": "sarala",
-                    "source": "eligible_couple.wifeName"
+                    "source": "eligible_couple.wifeName",
+                    "type": "String"
                 },
                 {
                     "name": "wifeAge",
                     "value": "26",
-                    "source": "eligible_couple.wifeAge"
+                    "source": "eligible_couple.wifeAge",
+                    "type": "Integer"
                 },
                 {
                     "name": "thayiCardNumber",
                     "value": "1234567",
-                    "source": "eligible_couple.mother.thayiCardNumber"
+                    "source": "eligible_couple.mother.thayiCardNumber",
+                    "type": "String"
                 },
                 {
                     "name": "aadhaarNumber",
-                    "source": "eligible_couple.aadhaarNumber"
+                    "source": "eligible_couple.aadhaarNumber",
+                    "type": "String"
                 },
                 {
                     "name": "husbandName",
                     "value": "shashikumar",
-                    "source": "eligible_couple.husbandName"
+                    "source": "eligible_couple.husbandName",
+                    "type": "String"
                 },
                 {
                     "name": "phoneNumber",
-                    "source": "eligible_couple.phoneNumber"
+                    "source": "eligible_couple.phoneNumber",
+                    "type": "String"
                 },
                 {
                     "name": "phoneOwner",
-                    "source": "eligible_couple.phoneOwner"
+                    "source": "eligible_couple.phoneOwner",
+                    "type": "String"
                 },
                 {
                     "name": "economicStatus",
                     "value": "bpl",
-                    "source": "eligible_couple.economicStatus"
+                    "source": "eligible_couple.economicStatus",
+                    "type": "String"
                 },
                 {
                     "name": "bplCardNumber",
-                    "source": "eligible_couple.bplCardNumber"
+                    "source": "eligible_couple.bplCardNumber",
+                    "type": "String"
                 },
                 {
                     "name": "caste",
                     "value": "sc",
-                    "source": "eligible_couple.caste"
+                    "source": "eligible_couple.caste",
+                    "type": "String"
                 },
                 {
                     "name": "referenceDate",
                     "value": "2013-08-07",
-                    "source": "eligible_couple.mother.referenceDate"
+                    "source": "eligible_couple.mother.referenceDate",
+                    "type": "Date"
                 },
                 {
                     "name": "deliveryPlace",
                     "value": "phc",
-                    "source": "eligible_couple.mother.deliveryPlace"
+                    "source": "eligible_couple.mother.deliveryPlace",
+                    "type": "String"
                 },
                 {
                     "name": "deliveryFacilityName",
                     "value": "phc",
-                    "source": "eligible_couple.mother.deliveryFacilityName"
+                    "source": "eligible_couple.mother.deliveryFacilityName",
+                    "type": "String"
                 },
                 {
                     "name": "isSkilledDelivery",
-                    "source": "eligible_couple.mother.isSkilledDelivery"
+                    "source": "eligible_couple.mother.isSkilledDelivery",
+                    "type": "String"
                 },
                 {
                     "name": "deliveryType",
                     "value": "normal",
-                    "source": "eligible_couple.mother.deliveryType"
+                    "source": "eligible_couple.mother.deliveryType",
+                    "type": "String"
                 },
                 {
                     "name": "deliveryOutcome",
                     "value": "live_birth",
-                    "source": "eligible_couple.mother.deliveryOutcome"
+                    "source": "eligible_couple.mother.deliveryOutcome",
+                    "type": "String"
                 },
                 {
                     "name": "causeOfStillBirth",
-                    "source": "eligible_couple.mother.causeOfStillBirth"
+                    "source": "eligible_couple.mother.causeOfStillBirth",
+                    "type": "String"
                 },
                 {
                     "name": "otherCauseOfStillBirth",
-                    "source": "eligible_couple.mother.otherCauseOfStillBirth"
+                    "source": "eligible_couple.mother.otherCauseOfStillBirth",
+                    "type": "String"
                 },
                 {
                     "name": "didBreastfeedingStart",
                     "value": "yes",
-                    "source": "eligible_couple.mother.didBreastfeedingStart"
+                    "source": "eligible_couple.mother.didBreastfeedingStart",
+                    "type": "String"
                 },
                 {
                     "name": "hadDeliveryComplications",
                     "value": "yes",
-                    "source": "eligible_couple.mother.hadDeliveryComplications"
+                    "source": "eligible_couple.mother.hadDeliveryComplications",
+                    "type": "String"
                 },
                 {
                     "name": "deliveryComplications",
                     "value": "hemorrhage",
-                    "source": "eligible_couple.mother.deliveryComplications"
+                    "source": "eligible_couple.mother.deliveryComplications",
+                    "type": "String"
                 },
                 {
                     "name": "otherDeliveryComplications",
-                    "source": "eligible_couple.mother.otherDeliveryComplications"
+                    "source": "eligible_couple.mother.otherDeliveryComplications",
+                    "type": "String"
                 },
                 {
                     "name": "isHighRisk",
                     "value": "no",
-                    "source": "eligible_couple.mother.isHighRisk"
+                    "source": "eligible_couple.mother.isHighRisk",
+                    "type": "String"
                 },
                 {
                     "name": "highRiskReason",
-                    "source": "eligible_couple.mother.highRiskReason"
+                    "source": "eligible_couple.mother.highRiskReason",
+                    "type": "String"
                 },
                 {
                     "name": "periodOfStay",
                     "value": "dont_know",
-                    "source": "eligible_couple.mother.periodOfStay"
+                    "source": "eligible_couple.mother.periodOfStay",
+                    "type": "String"
                 },
                 {
                     "name": "didWomanSurvive",
                     "value": "yes",
-                    "source": "eligible_couple.mother.didWomanSurvive"
+                    "source": "eligible_couple.mother.didWomanSurvive",
+                    "type": "String"
                 },
                 {
                     "name": "submissionDate",
                     "value": "2013-08-31",
-                    "source": "eligible_couple.mother.submissionDate"
+                    "source": "eligible_couple.mother.submissionDate",
+                    "type": "Date"
                 },
                 {
                     "name": "type",
                     "value": "PNC",
-                    "source": "eligible_couple.mother.type"
+                    "source": "eligible_couple.mother.type",
+                    "type": "String"
                 },
                 {
                     "name": "isClosed",
                     "value": "false",
-                    "source": "eligible_couple.mother.isClosed"
+                    "source": "eligible_couple.mother.isClosed",
+                    "type": "String"
                 },
                 {
                     "name": "isClosed",
                     "value": "false",
-                    "source": "eligible_couple.isClosed"
+                    "source": "eligible_couple.isClosed",
+                    "type": "String"
                 },
                 {
                     "name": "isOutOfArea",
                     "value": "true",
-                    "source": "eligible_couple.isOutOfArea"
+                    "source": "eligible_couple.isOutOfArea",
+                    "type": "String"
                 }
             ],
             "sub_forms": [
