@@ -7,27 +7,32 @@
             {
                 "name": "id",
                 "value": "84645820-1c9c-49b0-8ff9-3b6067d77cbb",
-                "source": "mother.id"
+                "source": "mother.id",
+                "type": "String"
             },
             {
                 "name": "ttDose",
                 "value": "tt2",
-                "source": "mother.ttDose"
+                "source": "mother.ttDose",
+                "type": "String"
             },
             {
                 "name": "ttInjectionPlace",
                 "value": "phc",
-                "source": "mother.ttInjectionPlace"
+                "source": "mother.ttInjectionPlace",
+                "type": "String"
             },
             {
                 "name": "ttDate",
                 "value": "2013-08-31",
-                "source": "mother.ttDate"
+                "source": "mother.ttDate",
+                "type": "Date"
             },
             {
                 "name": "submissionDate",
                 "value": "2013-08-31",
-                "source": "mother.submissionDate"
+                "source": "mother.submissionDate",
+                "type": "Date"
             }
         ]
     }
