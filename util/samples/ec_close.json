@@ -1,58 +1,78 @@
-{"anmId": "demo1", "instanceId": "05a26378-369e-4d55-822a-af4d016a2989", "entityId": "fe7c55bd-088f-4d57-97f5-91f8a00fd96e", "formName": "ec_close", "formInstance": {
-    "form_data_definition_version": "1",
-    "form": {
-        "bind_type": "eligible_couple",
-        "default_bind_path": "/model/instance/EC_Close_EngKan/",
-        "fields": [
-            {
-                "name": "id",
-                "value": "fe7c55bd-088f-4d57-97f5-91f8a00fd96e",
-                "source": "eligible_couple.id"
-            },
-            {
-                "name": "closeReason",
-                "value": "death_of_husband",
-                "source": "eligible_couple.closeReason"
-            },
-            {
-                "name": "otherCloseReason",
-                "source": "eligible_couple.otherCloseReason"
-            },
-            {
-                "name": "isSterilizationDeath",
-                "value": "no",
-                "source": "eligible_couple.isSterilizationDeath"
-            },
-            {
-                "name": "sterilizationDeathDate",
-                "source": "eligible_couple.sterilizationDeathDate"
-            },
-            {
-                "name": "isMaternalDeath",
-                "source": "eligible_couple.isMaternalDeath"
-            },
-            {
-                "name": "maternalDeathDate",
-                "source": "eligible_couple.maternalDeathDate"
-            },
-            {
-                "name": "maternalDeathCause",
-                "source": "eligible_couple.maternalDeathCause"
-            },
-            {
-                "name": "otherMaternalDeathCause",
-                "source": "eligible_couple.otherMaternalDeathCause"
-            },
-            {
-                "name": "isECCloseConfirmed",
-                "value": "yes",
-                "source": "eligible_couple.isECCloseConfirmed"
-            },
-            {
-                "name": "submissionDate",
-                "value": "2013-10-15",
-                "source": "eligible_couple.submissionDate"
-            }
-        ]
-    }
-}, "clientVersion": "1381820002937", "serverVersion": "1381833160517", "formDataDefinitionVersion": "1"}
+{
+    "anmId": "demo1", 
+    "clientVersion": "1381820002937", 
+    "entityId": "fe7c55bd-088f-4d57-97f5-91f8a00fd96e", 
+    "formDataDefinitionVersion": "1", 
+    "formInstance": {
+        "form": {
+            "bind_type": "eligible_couple", 
+            "default_bind_path": "/model/instance/EC_Close_EngKan/", 
+            "fields": [
+                {
+                    "name": "id", 
+                    "source": "eligible_couple.id", 
+                    "type": "String", 
+                    "value": "fe7c55bd-088f-4d57-97f5-91f8a00fd96e"
+                }, 
+                {
+                    "name": "closeReason", 
+                    "source": "eligible_couple.closeReason", 
+                    "type": "String", 
+                    "value": "death_of_husband"
+                }, 
+                {
+                    "name": "otherCloseReason", 
+                    "source": "eligible_couple.otherCloseReason", 
+                    "type": "String"
+                }, 
+                {
+                    "name": "isSterilizationDeath", 
+                    "source": "eligible_couple.isSterilizationDeath", 
+                    "value": "no",
+                    "type": "String"
+                }, 
+                {
+                    "name": "sterilizationDeathDate", 
+                    "source": "eligible_couple.sterilizationDeathDate",
+                    "type": "Date"
+                }, 
+                {
+                    "name": "isMaternalDeath", 
+                    "source": "eligible_couple.isMaternalDeath",
+                    "type": "String"
+                }, 
+                {
+                    "name": "maternalDeathDate", 
+                    "source": "eligible_couple.maternalDeathDate",
+                    "type": "Date"
+                }, 
+                {
+                    "name": "maternalDeathCause", 
+                    "source": "eligible_couple.maternalDeathCause",
+                    "type": "String"
+                }, 
+                {
+                    "name": "otherMaternalDeathCause", 
+                    "source": "eligible_couple.otherMaternalDeathCause",
+                    "type": "String"
+                }, 
+                {
+                    "name": "isECCloseConfirmed", 
+                    "source": "eligible_couple.isECCloseConfirmed", 
+                    "value": "yes",
+                    "type": "String"
+                }, 
+                {
+                    "name": "submissionDate", 
+                    "source": "eligible_couple.submissionDate", 
+                    "value": "2013-10-15",
+                    "type": "Date"
+                }
+            ]
+        }, 
+        "form_data_definition_version": "1"
+    }, 
+    "formName": "ec_close", 
+    "instanceId": "05a26378-369e-4d55-822a-af4d016a2989", 
+    "serverVersion": "1381833160517"
+}

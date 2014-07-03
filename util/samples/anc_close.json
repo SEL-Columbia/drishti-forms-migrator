@@ -12,120 +12,146 @@
                 {
                     "name": "id",
                     "value": "05160f4b-296e-4aef-8583-bf528e200cdb",
-                    "source": "mother.id"
+                    "source": "mother.id",
+					"type": "String"
                 },
                 {
                     "name": "closeReason",
                     "value": "spontaneous_abortion",
-                    "source": "mother.closeReason"
+                    "source": "mother.closeReason",
+					"type": "String"
                 },
                 {
                     "name": "numberOfAbortions",
-                    "source": "mother.numberOfAbortions"
+                    "source": "mother.numberOfAbortions",
+					"type": "Integer"
                 },
                 {
                     "name": "numberOfAbortions",
                     "value": "NaN",
-                    "source": "mother.numberOfAbortions"
+                    "source": "mother.numberOfAbortions",
+					"type": "Integer"
                 },
                 {
                     "name": "isMaternalDeath",
-                    "source": "mother.isMaternalDeath"
+                    "source": "mother.isMaternalDeath",
+					"type": "String"
                 },
                 {
                     "name": "numberOfSpontaneousAbortions",
                     "value": "NaN",
-                    "source": "mother.numberOfSpontaneousAbortions"
+                    "source": "mother.numberOfSpontaneousAbortions",
+					"type": "Integer"
                 },
                 {
                     "name": "numberOfSpontaneousAbortions",
                     "value": "NaN",
-                    "source": "mother.numberOfSpontaneousAbortions"
+                    "source": "mother.numberOfSpontaneousAbortions",
+					"type": "Integer"
                 },
                 {
                     "name": "dateOfSpontaneousAbortion",
                     "value": "2014-03-03",
-                    "source": "mother.dateOfSpontaneousAbortion"
+                    "source": "mother.dateOfSpontaneousAbortion",
+					"type": "Date"
                 },
                 {
                     "name": "referenceDate",
                     "value": "2013-11-23",
-                    "source": "mother.referenceDate"
+                    "source": "mother.referenceDate",
+					"type": "Date"
                 },
                 {
                     "name": "numberOfWeeksPregnantWhenSpontaneousAbortionHappened",
                     "value": "14",
-                    "source": "mother.numberOfWeeksPregnantWhenSpontaneousAbortionHappened"
+                    "source": "mother.numberOfWeeksPregnantWhenSpontaneousAbortionHappened",
+					"type": "Integer"
                 },
                 {
                     "name": "causeOfSpontaneousAbortion",
                     "value": "rh_incompatibility",
-                    "source": "mother.causeOfSpontaneousAbortion"
+                    "source": "mother.causeOfSpontaneousAbortion",
+					"type": "String"
                 },
                 {
                     "name": "otherCauseOfSpontaneousAbortion",
-                    "source": "mother.otherCauseOfSpontaneousAbortion"
+                    "source": "mother.otherCauseOfSpontaneousAbortion",
+					"type": "String"
                 },
                 {
                     "name": "placeOfSpontaneousAbortion",
                     "value": "sub_center",
-                    "source": "mother.placeOfSpontaneousAbortion"
+                    "source": "mother.placeOfSpontaneousAbortion",
+					"type": "String"
                 },
                 {
                     "name": "isRHNegative",
-                    "source": "mother.isRHNegative"
+                    "source": "mother.isRHNegative",
+					"type": "String"
                 },
                 {
                     "name": "numberOfInducedAbortions",
                     "value": "NaN",
-                    "source": "mother.numberOfInducedAbortions"
+                    "source": "mother.numberOfInducedAbortions",
+					"type": "Integer"
                 },
                 {
                     "name": "numberOfInducedAbortions",
                     "value": "NaN",
-                    "source": "mother.numberOfInducedAbortions"
+                    "source": "mother.numberOfInducedAbortions",
+					"type": "Integer"
                 },
                 {
                     "name": "timeOfInducedAbortion",
-                    "source": "mother.timeOfInducedAbortion"
+                    "source": "mother.timeOfInducedAbortion",
+					"type": "String"
                 },
                 {
                     "name": "dateOfInducedAbortion",
-                    "source": "mother.dateOfInducedAbortion"
+                    "source": "mother.dateOfInducedAbortion",
+					"type": "Date"
                 },
                 {
                     "name": "maternalDeathDate",
-                    "source": "mother.maternalDeathDate"
+                    "source": "mother.maternalDeathDate",
+					"type": "String"
                 },
                 {
                     "name": "maternalDeathTrimester",
-                    "source": "mother.maternalDeathTrimester"
+                    "source": "mother.maternalDeathTrimester",
+                    "type": "Integer"
                 },
                 {
                     "name": "maternalDeathCause",
-                    "source": "mother.maternalDeathCause"
+                    "source": "mother.maternalDeathCause",
+                    "type": "String"
                 },
                 {
                     "name": "otherMaternalDeathCause",
-                    "source": "mother.otherMaternalDeathCause"
+                    "source": "mother.otherMaternalDeathCause",
+                    "type": "String"
                 },
                 {
                     "name": "rhInjectionGiven",
-                    "source": "mother.rhInjectionGiven"
+                    "source": "mother.rhInjectionGiven",
+                    "type": "String"
                 },
                 {
                     "name": "isANCCloseConfirmed",
                     "value": "yes",
-                    "source": "mother.isANCCloseConfirmed"
+                    "source": "mother.isANCCloseConfirmed",
+                    "type": "String"
                 },
                 {
                     "name": "hasANCLeftPlace",
-                    "source": "mother.hasANCLeftPlace"
+                    "source": "mother.hasANCLeftPlace",
+                    "type": "String"
                 },
                 {
                     "name": "submissionDate",
                     "value": "2014-03-03",
-                    "source": "mother.submissionDate"
+                    "source": "mother.submissionDate",
+                    "type": "Date"
                 }
             ]
         }
