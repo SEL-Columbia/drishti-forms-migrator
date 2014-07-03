@@ -29,17 +29,17 @@
 
             <column name="close_reason" type="varchar(255)"/>
 
-            <column name="number_of_abortions" type="varchar(255)"/>
+            <column name="number_of_abortions" type="integer"/>
 
             <column name="is_maternal_death" type="varchar(255)"/>
 
-            <column name="number_of_spontaneous_abortions" type="varchar(255)"/>
+            <column name="number_of_spontaneous_abortions" type="integer"/>
 
-            <column name="date_of_spontaneous_abortion" type="varchar(255)"/>
+            <column name="date_of_spontaneous_abortion" type="date"/>
 
-            <column name="reference_date" type="varchar(255)"/>
+            <column name="reference_date" type="date"/>
 
-            <column name="number_of_weeks_pregnant_when_spontaneous_abortion_happened" type="varchar(255)"/>
+            <column name="number_of_weeks_pregnant_when_spontaneous_abortion_happened" type="integer"/>
 
             <column name="cause_of_spontaneous_abortion" type="varchar(255)"/>
 
@@ -49,15 +49,15 @@
 
             <column name="is_rh_negative" type="varchar(255)"/>
 
-            <column name="number_of_induced_abortions" type="varchar(255)"/>
+            <column name="number_of_induced_abortions" type="integer"/>
 
             <column name="time_of_induced_abortion" type="varchar(255)"/>
 
-            <column name="date_of_induced_abortion" type="varchar(255)"/>
+            <column name="date_of_induced_abortion" type="date"/>
 
             <column name="maternal_death_date" type="varchar(255)"/>
 
-            <column name="maternal_death_trimester" type="varchar(255)"/>
+            <column name="maternal_death_trimester" type="integer"/>
 
             <column name="maternal_death_cause" type="varchar(255)"/>
 
@@ -69,7 +69,7 @@
 
             <column name="has_anc_left_place" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
         </createTable>
     </changeSet>
@@ -97,13 +97,13 @@
 
             <column name="mother_id" type="varchar(255)"/>
 
-            <column name="registration_date" type="varchar(255)"/>
+            <column name="registration_date" type="date"/>
 
             <column name="registration_place" type="varchar(255)"/>
 
             <column name="wife_name" type="varchar(255)"/>
 
-            <column name="number_of_pregnancies" type="varchar(255)"/>
+            <column name="number_of_pregnancies" type="integer"/>
 
             <column name="thayi_card_number" type="varchar(255)"/>
 
@@ -115,9 +115,9 @@
 
             <column name="asha_phone_number" type="varchar(255)"/>
 
-            <column name="reference_date" type="varchar(255)"/>
+            <column name="reference_date" type="date"/>
 
-            <column name="edd" type="varchar(255)"/>
+            <column name="edd" type="date"/>
 
             <column name="linked_facility_for_delivery" type="varchar(255)"/>
 
@@ -139,9 +139,9 @@
 
             <column name="is_rh_incompatible_couple" type="varchar(255)"/>
 
-            <column name="height" type="varchar(255)"/>
+            <column name="height" type="integer"/>
 
-            <column name="weight" type="varchar(255)"/>
+            <column name="weight" type="integer"/>
 
             <column name="is_tobacco_used" type="varchar(255)"/>
 
@@ -159,7 +159,7 @@
 
             <column name="is_high_risk" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
             <column name="type" type="varchar(255)"/>
 
@@ -167,7 +167,7 @@
 
             <column name="current_method" type="varchar(255)"/>
 
-            <column name="family_planning_method_change_date" type="varchar(255)"/>
+            <column name="family_planning_method_change_date" type="date"/>
 
         </createTable>
     </changeSet>
@@ -207,7 +207,7 @@
 
             <column name="aadhar_number" type="varchar(255)"/>
 
-            <column name="wife_age" type="varchar(255)"/>
+            <column name="wife_age" type="integer"/>
 
             <column name="husband_name" type="varchar(255)"/>
 
@@ -227,7 +227,7 @@
 
             <column name="mother_id" type="varchar(255)"/>
 
-            <column name="registration_date" type="varchar(255)"/>
+            <column name="registration_date" type="date"/>
 
             <column name="thayi_card_number" type="varchar(255)"/>
 
@@ -239,9 +239,9 @@
 
             <column name="asha_phone_number" type="varchar(255)"/>
 
-            <column name="reference_date" type="varchar(255)"/>
+            <column name="reference_date" type="date"/>
 
-            <column name="edd" type="varchar(255)"/>
+            <column name="edd" type="date"/>
 
             <column name="is_first_pregnancy" type="varchar(255)"/>
 
@@ -267,9 +267,9 @@
 
             <column name="is_rh_incompatible_couple" type="varchar(255)"/>
 
-            <column name="height" type="varchar(255)"/>
+            <column name="height" type="integer"/>
 
-            <column name="weight" type="varchar(255)"/>
+            <column name="weight" type="integer"/>
 
             <column name="is_tobacco_used" type="varchar(255)"/>
 
@@ -289,7 +289,7 @@
 
             <column name="is_birth_planning_done" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
             <column name="type" type="varchar(255)"/>
 
@@ -325,9 +325,9 @@
 
             <column name="wife_name" type="varchar(255)"/>
 
-            <column name="anc_visit_number" type="varchar(255)"/>
+            <column name="anc_visit_number" type="integer"/>
 
-            <column name="anc_visit_date" type="varchar(255)"/>
+            <column name="anc_visit_date" type="date"/>
 
             <column name="anc_visit_person" type="varchar(255)"/>
 
@@ -341,17 +341,17 @@
 
             <column name="vitals_taken" type="varchar(255)"/>
 
-            <column name="bp_systolic" type="varchar(255)"/>
+            <column name="bp_systolic" type="integer"/>
 
-            <column name="bp_diastolic" type="varchar(255)"/>
+            <column name="bp_diastolic" type="integer"/>
 
-            <column name="pulse_rate" type="varchar(255)"/>
+            <column name="pulse_rate" type="integer"/>
 
-            <column name="temperature" type="varchar(255)"/>
+            <column name="temperature" type="decimal"/>
 
-            <column name="weight" type="varchar(255)"/>
+            <column name="weight" type="integer"/>
 
-            <column name="reference_date" type="varchar(255)"/>
+            <column name="reference_date" type="date"/>
 
             <column name="abdominals_observed" type="varchar(255)"/>
 
@@ -385,7 +385,7 @@
 
             <column name="is_birth_planning_done" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
         </createTable>
     </changeSet>
@@ -413,7 +413,7 @@
 
             <column name="close_reason" type="varchar(255)"/>
 
-            <column name="number_of_living_children" type="varchar(255)"/>
+            <column name="number_of_living_children" type="integer"/>
 
             <column name="is_immunization_death" type="varchar(255)"/>
 
@@ -421,11 +421,11 @@
 
             <column name="other_death_cause" type="varchar(255)"/>
 
-            <column name="death_date" type="varchar(255)"/>
+            <column name="death_date" type="date"/>
 
             <column name="is_close_confirmed" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
             <column name="child_mother_eligible_couple_id" type="varchar(255)"/>
 
@@ -453,9 +453,9 @@
 
             <column name="child_id" type="varchar(255)"/>
 
-            <column name="sick_visit_date" type="varchar(255)"/>
+            <column name="sick_visit_date" type="date"/>
 
-            <column name="date_of_birth" type="varchar(255)"/>
+            <column name="date_of_birth" type="date"/>
 
             <column name="child_signs" type="varchar(255)"/>
 
@@ -469,15 +469,15 @@
 
             <column name="report_child_disease_other" type="varchar(255)"/>
 
-            <column name="report_child_disease_date" type="varchar(255)"/>
+            <column name="report_child_disease_date" type="date"/>
 
-            <column name="report_child_disease_place" type="varchar(255)"/>
+            <column name="report_child_disease_place" type="date"/>
 
-            <column name="number_of_ors_given" type="varchar(255)"/>
+            <column name="number_of_ors_given" type="integer"/>
 
             <column name="child_referral" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
         </createTable>
     </changeSet>
@@ -509,13 +509,13 @@
 
             <column name="immunizations_given" type="varchar(255)"/>
 
-            <column name="immunization_date" type="varchar(255)"/>
+            <column name="immunization_date" type="date"/>
 
             <column name="immunization_place" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
-            <column name="date_of_birth" type="varchar(255)"/>
+            <column name="date_of_birth" type="date"/>
 
         </createTable>
     </changeSet>
@@ -577,11 +577,11 @@
 
             <column name="caste" type="varchar(255)"/>
 
-            <column name="registration_date" type="varchar(255)"/>
+            <column name="registration_date" type="date"/>
 
-            <column name="date_of_birth" type="varchar(255)"/>
+            <column name="date_of_birth" type="date"/>
 
-            <column name="age" type="varchar(255)"/>
+            <column name="age" type="integer"/>
 
             <column name="gender" type="varchar(255)"/>
 
@@ -591,63 +591,63 @@
 
             <column name="blood_group" type="varchar(255)"/>
 
-            <column name="weight" type="varchar(255)"/>
+            <column name="weight" type="integer"/>
 
-            <column name="height" type="varchar(255)"/>
+            <column name="height" type="integer"/>
 
             <column name="immunizations_given" type="varchar(255)"/>
 
-            <column name="bcg_date" type="varchar(255)"/>
+            <column name="bcg_date" type="date"/>
 
-            <column name="opv0_date" type="varchar(255)"/>
+            <column name="opv0_date" type="date"/>
 
-            <column name="hepb0_date" type="varchar(255)"/>
+            <column name="hepb0_date" type="date"/>
 
-            <column name="opv1_date" type="varchar(255)"/>
+            <column name="opv1_date" type="date"/>
 
-            <column name="pentavalent1_date" type="varchar(255)"/>
+            <column name="pentavalent1_date" type="date"/>
 
-            <column name="opv2_date" type="varchar(255)"/>
+            <column name="opv2_date" type="date"/>
 
-            <column name="pentavalent2_date" type="varchar(255)"/>
+            <column name="pentavalent2_date" type="date"/>
 
-            <column name="opv3_date" type="varchar(255)"/>
+            <column name="opv3_date" type="date"/>
 
-            <column name="pentavalent3_date" type="varchar(255)"/>
+            <column name="pentavalent3_date" type="date"/>
 
-            <column name="measles_date" type="varchar(255)"/>
+            <column name="measles_date" type="date"/>
 
-            <column name="mmr_date" type="varchar(255)"/>
+            <column name="mmr_date" type="date"/>
 
-            <column name="dptbooster1_date" type="varchar(255)"/>
+            <column name="dptbooster1_date" type="date"/>
 
-            <column name="opvbooster_date" type="varchar(255)"/>
+            <column name="opvbooster_date" type="date"/>
 
-            <column name="je_date" type="varchar(255)"/>
+            <column name="je_date" type="date"/>
 
-            <column name="measlesbooster_date" type="varchar(255)"/>
+            <column name="measlesbooster_date" type="date"/>
 
-            <column name="dptbooster2_date" type="varchar(255)"/>
+            <column name="dptbooster2_date" type="date"/>
 
             <column name="child_vitamin_a_history" type="varchar(255)"/>
 
-            <column name="vitamin1_date" type="varchar(255)"/>
+            <column name="vitamin1_date" type="date"/>
 
-            <column name="vitamin2_date" type="varchar(255)"/>
+            <column name="vitamin2_date" type="date"/>
 
-            <column name="vitamin3_date" type="varchar(255)"/>
+            <column name="vitamin3_date" type="date"/>
 
-            <column name="vitamin4_date" type="varchar(255)"/>
+            <column name="vitamin4_date" type="date"/>
 
-            <column name="vitamin5_date" type="varchar(255)"/>
+            <column name="vitamin5_date" type="date"/>
 
-            <column name="vitamin6_date" type="varchar(255)"/>
+            <column name="vitamin6_date" type="date"/>
 
-            <column name="vitamin7_date" type="varchar(255)"/>
+            <column name="vitamin7_date" type="date"/>
 
-            <column name="vitamin8_date" type="varchar(255)"/>
+            <column name="vitamin8_date" type="date"/>
 
-            <column name="vitamin9_date" type="varchar(255)"/>
+            <column name="vitamin9_date" type="date"/>
 
             <column name="is_child_high_risk" type="varchar(255)"/>
 
@@ -655,7 +655,7 @@
 
             <column name="is_closed" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
             <column name="is_mother_closed" type="varchar(255)"/>
 
@@ -683,7 +683,7 @@
 
             <column name="child_id" type="varchar(255)"/>
 
-            <column name="registration_date" type="varchar(255)"/>
+            <column name="registration_date" type="date"/>
 
             <column name="phc" type="varchar(255)"/>
 
@@ -709,85 +709,85 @@
 
             <column name="name" type="varchar(255)"/>
 
-            <column name="date_of_birth" type="varchar(255)"/>
+            <column name="date_of_birth" type="date"/>
 
             <column name="gender" type="varchar(255)"/>
 
             <column name="blood_group" type="varchar(255)"/>
 
-            <column name="birth_weight" type="varchar(255)"/>
+            <column name="birth_weight" type="integer"/>
 
-            <column name="weight" type="varchar(255)"/>
+            <column name="weight" type="integer"/>
 
-            <column name="height" type="varchar(255)"/>
+            <column name="height" type="integer"/>
 
             <column name="immunizations_given" type="varchar(255)"/>
 
-            <column name="bcg_date" type="varchar(255)"/>
+            <column name="bcg_date" type="date"/>
 
-            <column name="opv0_date" type="varchar(255)"/>
+            <column name="opv0_date" type="date"/>
 
-            <column name="hepb0_date" type="varchar(255)"/>
+            <column name="hepb0_date" type="date"/>
 
-            <column name="opv1_date" type="varchar(255)"/>
+            <column name="opv1_date" type="date"/>
 
-            <column name="dpt1_date" type="varchar(255)"/>
+            <column name="dpt1_date" type="date"/>
 
-            <column name="hepb1_date" type="varchar(255)"/>
+            <column name="hepb1_date" type="date"/>
 
-            <column name="pentavalent1_date" type="varchar(255)"/>
+            <column name="pentavalent1_date" type="date"/>
 
-            <column name="opv2_date" type="varchar(255)"/>
+            <column name="opv2_date" type="date"/>
 
-            <column name="dpt2_date" type="varchar(255)"/>
+            <column name="dpt2_date" type="date"/>
 
-            <column name="hepb2_date" type="varchar(255)"/>
+            <column name="hepb2_date" type="date"/>
 
-            <column name="pentavalent2_date" type="varchar(255)"/>
+            <column name="pentavalent2_date" type="date"/>
 
-            <column name="opv3_date" type="varchar(255)"/>
+            <column name="opv3_date" type="date"/>
 
-            <column name="dpt3_date" type="varchar(255)"/>
+            <column name="dpt3_date" type="date"/>
 
-            <column name="hepb3_date" type="varchar(255)"/>
+            <column name="hepb3_date" type="date"/>
 
-            <column name="pentavalent3_date" type="varchar(255)"/>
+            <column name="pentavalent3_date" type="date"/>
 
-            <column name="measles_date" type="varchar(255)"/>
+            <column name="measles_date" type="date"/>
 
-            <column name="mmr_date" type="varchar(255)"/>
+            <column name="mmr_date" type="date"/>
 
             <column name="dpt_booster1_date" type="varchar(255)"/>
 
-            <column name="opv_booster_date" type="varchar(255)"/>
+            <column name="opv_booster_date" type="date"/>
 
-            <column name="je_date" type="varchar(255)"/>
+            <column name="je_date" type="date"/>
 
-            <column name="je2_date" type="varchar(255)"/>
+            <column name="je2_date" type="date"/>
 
-            <column name="measles_booster_date" type="varchar(255)"/>
+            <column name="measles_booster_date" type="date"/>
 
-            <column name="dpt_booster2_date" type="varchar(255)"/>
+            <column name="dpt_booster2_date" type="date"/>
 
             <column name="child_vitamin_a_history" type="varchar(255)"/>
 
-            <column name="vitamin1_date" type="varchar(255)"/>
+            <column name="vitamin1_date" type="date"/>
 
-            <column name="vitamin2_date" type="varchar(255)"/>
+            <column name="vitamin2_date" type="date"/>
 
-            <column name="vitamin3_date" type="varchar(255)"/>
+            <column name="vitamin3_date" type="date"/>
 
-            <column name="vitamin4_date" type="varchar(255)"/>
+            <column name="vitamin4_date" type="date"/>
 
-            <column name="vitamin5_date" type="varchar(255)"/>
+            <column name="vitamin5_date" type="date"/>
 
-            <column name="vitamin6_date" type="varchar(255)"/>
+            <column name="vitamin6_date" type="date"/>
 
-            <column name="vitamin7_date" type="varchar(255)"/>
+            <column name="vitamin7_date" type="date"/>
 
-            <column name="vitamin8_date" type="varchar(255)"/>
+            <column name="vitamin8_date" type="date"/>
 
-            <column name="vitamin9_date" type="varchar(255)"/>
+            <column name="vitamin9_date" type="date"/>
 
             <column name="is_child_high_risk" type="varchar(255)"/>
 
@@ -805,7 +805,7 @@
 
             <column name="is_out_of_area" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
         </createTable>
     </changeSet>
@@ -833,9 +833,9 @@
 
             <column name="ec_id" type="varchar(255)"/>
 
-            <column name="reference_date" type="varchar(255)"/>
+            <column name="reference_date" type="date"/>
 
-            <column name="delivery_registration_date" type="varchar(255)"/>
+            <column name="delivery_registration_date" type="date"/>
 
             <column name="delivery_place" type="varchar(255)"/>
 
@@ -855,11 +855,11 @@
 
             <column name="delivery_outcome" type="varchar(255)"/>
 
-            <column name="parity" type="varchar(255)"/>
+            <column name="parity" type="integer"/>
 
-            <column name="number_of_live_births" type="varchar(255)"/>
+            <column name="number_of_live_births" type="integer"/>
 
-            <column name="number_of_still_births" type="varchar(255)"/>
+            <column name="number_of_still_births" type="integer"/>
 
             <column name="cause_of_still_birth" type="varchar(255)"/>
 
@@ -903,25 +903,25 @@
 
             <column name="high_risk_reason" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
             <column name="type" type="varchar(255)"/>
 
-            <column name="number_of_living_children" type="varchar(255)"/>
+            <column name="number_of_living_children" type="integer"/>
 
-            <column name="number_of_children_born" type="varchar(255)"/>
+            <column name="number_of_children_born" type="integer"/>
 
-            <column name="number_of_female_children_born" type="varchar(255)"/>
+            <column name="number_of_female_children_born" type="integer"/>
 
-            <column name="number_of_male_children_born" type="varchar(255)"/>
+            <column name="number_of_male_children_born" type="integer"/>
 
-            <column name="number_of_living_female_child" type="varchar(255)"/>
+            <column name="number_of_living_female_child" type="integer"/>
 
-            <column name="number_of_living_male_child" type="varchar(255)"/>
+            <column name="number_of_living_male_child" type="integer"/>
 
-            <column name="youngest_child_dob" type="varchar(255)"/>
+            <column name="youngest_child_dob" type="date"/>
 
-            <column name="youngest_child_age" type="varchar(255)"/>
+            <column name="youngest_child_age" type="integer"/>
 
         </createTable>
     </changeSet>
@@ -1047,7 +1047,7 @@
 
             <column name="birth_planning" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
         </createTable>
     </changeSet>
@@ -1079,11 +1079,11 @@
 
             <column name="is_sterilization_death" type="varchar(255)"/>
 
-            <column name="sterilization_death_date" type="varchar(255)"/>
+            <column name="sterilization_death_date" type="date"/>
 
             <column name="is_maternal_death" type="varchar(255)"/>
 
-            <column name="maternal_death_date" type="varchar(255)"/>
+            <column name="maternal_death_date" type="date"/>
 
             <column name="maternal_death_cause" type="varchar(255)"/>
 
@@ -1091,7 +1091,7 @@
 
             <column name="is_ec_close_confirmed" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
         </createTable>
     </changeSet>
@@ -1135,13 +1135,13 @@
 
             <column name="aadhar_number" type="varchar(255)"/>
 
-            <column name="wife_age" type="varchar(255)"/>
+            <column name="wife_age" type="integer"/>
 
-            <column name="husband_age" type="varchar(255)"/>
+            <column name="husband_age" type="integer"/>
 
-            <column name="woman_dob" type="varchar(255)"/>
+            <column name="woman_dob" type="date"/>
 
-            <column name="husband_dob" type="varchar(255)"/>
+            <column name="husband_dob" type="date"/>
 
             <column name="husband_name" type="varchar(255)"/>
 
@@ -1153,23 +1153,23 @@
 
             <column name="husband_educational_level" type="varchar(255)"/>
 
-            <column name="number_of_pregnancies" type="varchar(255)"/>
+            <column name="number_of_pregnancies" type="integer"/>
 
-            <column name="number_of_live_births" type="varchar(255)"/>
+            <column name="number_of_live_births" type="integer"/>
 
-            <column name="number_of_abortions" type="varchar(255)"/>
+            <column name="number_of_abortions" type="integer"/>
 
-            <column name="number_of_spontaneous_abortions" type="varchar(255)"/>
+            <column name="number_of_spontaneous_abortions" type="integer"/>
 
-            <column name="number_of_induced_abortions" type="varchar(255)"/>
+            <column name="number_of_induced_abortions" type="integer"/>
 
-            <column name="number_of_still_births" type="varchar(255)"/>
+            <column name="number_of_still_births" type="integer"/>
 
-            <column name="number_of_living_children" type="varchar(255)"/>
+            <column name="number_of_living_children" type="integer"/>
 
-            <column name="number_of_living_male_children" type="varchar(255)"/>
+            <column name="number_of_living_male_children" type="integer"/>
 
-            <column name="number_of_living_female_child" type="varchar(255)"/>
+            <column name="number_of_living_female_child" type="integer"/>
 
             <column name="current_method" type="varchar(255)"/>
 
@@ -1179,7 +1179,7 @@
 
             <column name="age_risk_priority" type="varchar(255)"/>
 
-            <column name="partity" type="varchar(255)"/>
+            <column name="partity" type="integer"/>
 
             <column name="young_child_risk_priority" type="varchar(255)"/>
 
@@ -1187,7 +1187,7 @@
 
             <column name="high_priority_reason" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
         </createTable>
     </changeSet>
@@ -1231,13 +1231,13 @@
 
             <column name="aadhar_number" type="varchar(255)"/>
 
-            <column name="wife_age" type="varchar(255)"/>
+            <column name="wife_age" type="integer"/>
 
-            <column name="husband_age" type="varchar(255)"/>
+            <column name="husband_age" type="integer"/>
 
-            <column name="woman_dob" type="varchar(255)"/>
+            <column name="woman_dob" type="date"/>
 
-            <column name="husband_dob" type="varchar(255)"/>
+            <column name="husband_dob" type="date"/>
 
             <column name="husband_name" type="varchar(255)"/>
 
@@ -1259,29 +1259,29 @@
 
             <column name="educational_level" type="varchar(255)"/>
 
-            <column name="number_of_pregnancies" type="varchar(255)"/>
+            <column name="number_of_pregnancies" type="integer"/>
 
-            <column name="number_of_live_births" type="varchar(255)"/>
+            <column name="number_of_live_births" type="integer"/>
 
-            <column name="number_of_abortions" type="varchar(255)"/>
+            <column name="number_of_abortions" type="integer"/>
 
-            <column name="number_of_spontaneous_abortions" type="varchar(255)"/>
+            <column name="number_of_spontaneous_abortions" type="integer"/>
 
-            <column name="number_of_induced_abortions" type="varchar(255)"/>
+            <column name="number_of_induced_abortions" type="integer"/>
 
-            <column name="number_of_still_births" type="varchar(255)"/>
+            <column name="number_of_still_births" type="integer"/>
 
-            <column name="number_of_living_children" type="varchar(255)"/>
+            <column name="number_of_living_children" type="integer"/>
 
-            <column name="number_of_living_male_children" type="varchar(255)"/>
+            <column name="number_of_living_male_children" type="integer"/>
 
-            <column name="number_of_living_female_child" type="varchar(255)"/>
+            <column name="number_of_living_female_child" type="integer"/>
 
             <column name="is_youngest_child_under_two" type="varchar(255)"/>
 
-            <column name="youngest_child_age" type="varchar(255)"/>
+            <column name="youngest_child_age" type="integer"/>
 
-            <column name="youngest_child_dob" type="varchar(255)"/>
+            <column name="youngest_child_dob" type="date"/>
 
             <column name="current_method" type="varchar(255)"/>
 
@@ -1289,15 +1289,15 @@
 
             <column name="iud_person" type="varchar(255)"/>
 
-            <column name="family_planning_method_change_date" type="varchar(255)"/>
+            <column name="family_planning_method_change_date" type="date"/>
 
-            <column name="three_months_from_sterilization_date" type="varchar(255)"/>
+            <column name="three_months_from_sterilization_date" type="date"/>
 
-            <column name="number_of_condoms_supplied" type="varchar(255)"/>
+            <column name="number_of_condoms_supplied" type="integer"/>
 
-            <column name="number_of_ocp_delivered" type="varchar(255)"/>
+            <column name="number_of_ocp_delivered" type="integer"/>
 
-            <column name="number_of_centchroman_pills_delivered" type="varchar(255)"/>
+            <column name="number_of_centchroman_pills_delivered" type="integer"/>
 
             <column name="is_high_priority" type="varchar(255)"/>
 
@@ -1307,19 +1307,19 @@
 
             <column name="is_closed" type="varchar(255)"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
-            <column name="registration_date" type="varchar(255)"/>
+            <column name="registration_date" type="date"/>
 
-            <column name="parity" type="varchar(255)"/>
+            <column name="parity" type="integer"/>
 
-            <column name="dmpa_injection_date" type="varchar(255)"/>
+            <column name="dmpa_injection_date" type="date"/>
 
-            <column name="ocp_refill_date" type="varchar(255)"/>
+            <column name="ocp_refill_date" type="date"/>
 
             <column name="husband_education_level" type="varchar(255)"/>
 
-            <column name="lmp_date" type="varchar(255)"/>
+            <column name="lmp_date" type="date"/>
 
             <column name="upt_result" type="varchar(255)"/>
 
@@ -1357,29 +1357,29 @@
 
             <column name="new_method" type="varchar(255)"/>
 
-            <column name="iud_removal_date" type="varchar(255)"/>
+            <column name="iud_removal_date" type="date"/>
 
             <column name="iud_removal_place" type="varchar(255)"/>
 
-            <column name="family_planning_method_change_date" type="varchar(255)"/>
+            <column name="family_planning_method_change_date" type="date"/>
 
             <column name="iud_place" type="varchar(255)"/>
 
             <column name="iud_person" type="varchar(255)"/>
 
-            <column name="three_months_from_sterilization_date" type="varchar(255)"/>
+            <column name="three_months_from_sterilization_date" type="date"/>
 
             <column name="male_sterilization_message" type="varchar(255)"/>
 
-            <column name="number_of_condoms_supplied" type="varchar(255)"/>
+            <column name="number_of_condoms_supplied" type="integer"/>
 
-            <column name="number_of_ocp_delivered" type="varchar(255)"/>
+            <column name="number_of_ocp_delivered" type="integer"/>
 
-            <column name="number_of_centchroman_pills_delivered" type="varchar(255)"/>
+            <column name="number_of_centchroman_pills_delivered" type="integer"/>
 
-            <column name="submission_date" type="varchar(255)"/>
+            <column name="submission_date" type="date"/>
 
-            <column name="lmp_date" type="varchar(255)"/>
+            <column name="lmp_date" type="date"/>
 
             <column name="upt_result" type="varchar(255)"/>
 

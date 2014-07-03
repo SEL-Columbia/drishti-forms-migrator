@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "delivery_outcome")
+@EqualsAndHashCode(callSuper = true)
 public class DeliveryOutcome extends FromEntity {
-
     @Column(name = "mother_id")
     @JsonProperty("id")
     private String motherId;
@@ -23,11 +25,11 @@ public class DeliveryOutcome extends FromEntity {
 
     @Column(name = "reference_date")
     @JsonProperty("referenceDate")
-    private String referenceDate;
+    private Date referenceDate;
 
     @Column(name = "delivery_registration_date")
     @JsonProperty("deliveryRegistrationDate")
-    private String deliveryRegistrationDate;
+    private Date deliveryRegistrationDate;
 
     @Column(name = "delivery_place")
     @JsonProperty("deliveryPlace")
@@ -67,15 +69,15 @@ public class DeliveryOutcome extends FromEntity {
 
     @Column(name = "parity")
     @JsonProperty("parity")
-    private String parity;
+    private Integer parity;
 
     @Column(name = "number_of_live_births")
     @JsonProperty("numberOfLiveBirths")
-    private String numberOfLiveBirths;
+    private Integer numberOfLiveBirths;
 
     @Column(name = "number_of_still_births")
     @JsonProperty("numberOfStillBirths")
-    private String numberOfStillBirths;
+    private Integer numberOfStillBirths;
 
     @Column(name = "cause_of_still_birth")
     @JsonProperty("causeOfStillBirth")
@@ -163,7 +165,7 @@ public class DeliveryOutcome extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
     @Column(name = "type")
     @JsonProperty("type")
@@ -171,34 +173,34 @@ public class DeliveryOutcome extends FromEntity {
 
     @Column(name = "number_of_living_children")
     @JsonProperty("numberOfLivingChildren")
-    private String numberOfLivingChildren;
+    private Integer numberOfLivingChildren;
 
     @Column(name = "number_of_children_born")
     @JsonProperty("numberOfChildrenBorn")
-    private String numberOfChildrenBorn;
+    private Integer numberOfChildrenBorn;
 
     @Column(name = "number_of_female_children_born")
     @JsonProperty("numberOfFemaleChildrenBorn")
-    private String numberOfFemaleChildrenBorn;
+    private Integer numberOfFemaleChildrenBorn;
 
     @Column(name = "number_of_male_children_born")
     @JsonProperty("numberOfMaleChildrenBorn")
-    private String numberOfMaleChildrenBorn;
+    private Integer numberOfMaleChildrenBorn;
 
     @Column(name = "number_of_living_female_child")
     @JsonProperty("numberOfLivingFemaleChild")
-    private String numberOfLivingFemaleChild;
+    private Integer numberOfLivingFemaleChild;
 
     @Column(name = "number_of_living_male_child")
     @JsonProperty("numberOfLivingMaleChild")
-    private String numberOfLivingMaleChild;
+    private Integer numberOfLivingMaleChild;
 
     @Column(name = "youngest_child_dob")
     @JsonProperty("youngestChildDOB")
-    private String youngestChildDOB;
+    private Date youngestChildDOB;
 
     @Column(name = "youngest_child_age")
     @JsonProperty("youngestChildAge")
-    private String youngestChildAge;
+    private Integer youngestChildAge;
 
 }

@@ -3,14 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "anc_close")
+@EqualsAndHashCode(callSuper = true)
 public class AncClose extends FromEntity {
-
     @Column(name = "mother_id")
     @JsonProperty("id")
     private String motherId;
@@ -21,7 +25,7 @@ public class AncClose extends FromEntity {
 
     @Column(name = "number_of_abortions")
     @JsonProperty("numberOfAbortions")
-    private String numberOfAbortions;
+    private Integer numberOfAbortions;
 
     @Column(name = "is_maternal_death")
     @JsonProperty("isMaternalDeath")
@@ -29,19 +33,19 @@ public class AncClose extends FromEntity {
 
     @Column(name = "number_of_spontaneous_abortions")
     @JsonProperty("numberOfSpontaneousAbortions")
-    private String numberOfSpontaneousAbortions;
+    private Integer numberOfSpontaneousAbortions;
 
     @Column(name = "date_of_spontaneous_abortion")
     @JsonProperty("dateOfSpontaneousAbortion")
-    private String dateOfSpontaneousAbortion;
+    private Date dateOfSpontaneousAbortion;
 
     @Column(name = "reference_date")
     @JsonProperty("referenceDate")
-    private String referenceDate;
+    private Date referenceDate;
 
     @Column(name = "number_of_weeks_pregnant_when_spontaneous_abortion_happened")
     @JsonProperty("numberOfWeeksPregnantWhenSpontaneousAbortionHappened")
-    private String numberOfWeeksPregnantWhenSpontaneousAbortionHappened;
+    private Integer numberOfWeeksPregnantWhenSpontaneousAbortionHappened;
 
     @Column(name = "cause_of_spontaneous_abortion")
     @JsonProperty("causeOfSpontaneousAbortion")
@@ -61,7 +65,7 @@ public class AncClose extends FromEntity {
 
     @Column(name = "number_of_induced_abortions")
     @JsonProperty("numberOfInducedAbortions")
-    private String numberOfInducedAbortions;
+    private Integer numberOfInducedAbortions;
 
     @Column(name = "time_of_induced_abortion")
     @JsonProperty("timeOfInducedAbortion")
@@ -69,7 +73,7 @@ public class AncClose extends FromEntity {
 
     @Column(name = "date_of_induced_abortion")
     @JsonProperty("dateOfInducedAbortion")
-    private String dateOfInducedAbortion;
+    private Date dateOfInducedAbortion;
 
     @Column(name = "maternal_death_date")
     @JsonProperty("maternalDeathDate")
@@ -77,7 +81,7 @@ public class AncClose extends FromEntity {
 
     @Column(name = "maternal_death_trimester")
     @JsonProperty("maternalDeathTrimester")
-    private String maternalDeathTrimester;
+    private Integer maternalDeathTrimester;
 
     @Column(name = "maternal_death_cause")
     @JsonProperty("maternalDeathCause")
@@ -101,6 +105,6 @@ public class AncClose extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
 }

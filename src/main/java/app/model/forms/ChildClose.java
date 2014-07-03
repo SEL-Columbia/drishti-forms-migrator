@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "child_close")
+@EqualsAndHashCode(callSuper = true)
 public class ChildClose extends FromEntity {
-
     @Column(name = "child_id")
     @JsonProperty("id")
     private String childId;
@@ -23,7 +25,7 @@ public class ChildClose extends FromEntity {
 
     @Column(name = "number_of_living_children")
     @JsonProperty("numberOfLivingChildren")
-    private String numberOfLivingChildren;
+    private Integer numberOfLivingChildren;
 
     @Column(name = "is_immunization_death")
     @JsonProperty("isImmunizationDeath")
@@ -39,7 +41,7 @@ public class ChildClose extends FromEntity {
 
     @Column(name = "death_date")
     @JsonProperty("deathDate")
-    private String deathDate;
+    private Date deathDate;
 
     @Column(name = "is_close_confirmed")
     @JsonProperty("isCloseConfirmed")
@@ -47,7 +49,7 @@ public class ChildClose extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
     @Column(name = "child_mother_eligible_couple_id")
     @JsonProperty("child.mother.eligible_couple.id")

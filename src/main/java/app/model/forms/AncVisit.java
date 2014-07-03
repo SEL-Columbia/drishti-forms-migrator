@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "anc_visit")
+@EqualsAndHashCode(callSuper = true)
 public class AncVisit extends FromEntity {
-
     @Column(name = "mother_id")
     @JsonProperty("id")
     private String motherId;
@@ -27,11 +29,11 @@ public class AncVisit extends FromEntity {
 
     @Column(name = "anc_visit_number")
     @JsonProperty("ancVisitNumber")
-    private String ancVisitNumber;
+    private Integer ancVisitNumber;
 
     @Column(name = "anc_visit_date")
     @JsonProperty("ancVisitDate")
-    private String ancVisitDate;
+    private Date ancVisitDate;
 
     @Column(name = "anc_visit_person")
     @JsonProperty("ancVisitPerson")
@@ -59,27 +61,27 @@ public class AncVisit extends FromEntity {
 
     @Column(name = "bp_systolic")
     @JsonProperty("bpSystolic")
-    private String bpSystolic;
+    private Integer bpSystolic;
 
     @Column(name = "bp_diastolic")
     @JsonProperty("bpDiastolic")
-    private String bpDiastolic;
+    private Integer bpDiastolic;
 
     @Column(name = "pulse_rate")
     @JsonProperty("pulseRate")
-    private String pulseRate;
+    private Integer pulseRate;
 
     @Column(name = "temperature")
     @JsonProperty("temperature")
-    private String temperature;
+    private Float temperature;
 
     @Column(name = "weight")
     @JsonProperty("weight")
-    private String weight;
+    private Integer weight;
 
     @Column(name = "reference_date")
     @JsonProperty("referenceDate")
-    private String referenceDate;
+    private Date referenceDate;
 
     @Column(name = "abdominals_observed")
     @JsonProperty("abdominalsObserved")
@@ -147,6 +149,6 @@ public class AncVisit extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
 }

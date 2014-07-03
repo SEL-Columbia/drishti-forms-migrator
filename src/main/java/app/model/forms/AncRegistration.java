@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "anc_registration")
+@EqualsAndHashCode(callSuper = true)
 public class AncRegistration extends FromEntity {
-
     @Column(name = "eligible_couple_id")
     @JsonProperty("id")
     private String eligibleCoupleId;
@@ -23,7 +25,7 @@ public class AncRegistration extends FromEntity {
 
     @Column(name = "registration_date")
     @JsonProperty("registrationDate")
-    private String registrationDate;
+    private Date registrationDate;
 
     @Column(name = "registration_place")
     @JsonProperty("registrationPlace")
@@ -35,7 +37,7 @@ public class AncRegistration extends FromEntity {
 
     @Column(name = "number_of_pregnancies")
     @JsonProperty("numberOfPregnancies")
-    private String numberOfPregnancies;
+    private Integer numberOfPregnancies;
 
     @Column(name = "thayi_card_number")
     @JsonProperty("thayiCardNumber")
@@ -59,11 +61,11 @@ public class AncRegistration extends FromEntity {
 
     @Column(name = "reference_date")
     @JsonProperty("referenceDate")
-    private String referenceDate;
+    private Date referenceDate;
 
     @Column(name = "edd")
     @JsonProperty("edd")
-    private String edd;
+    private Date edd;
 
     @Column(name = "linked_facility_for_delivery")
     @JsonProperty("linkedFacilityForDelivery")
@@ -107,11 +109,11 @@ public class AncRegistration extends FromEntity {
 
     @Column(name = "height")
     @JsonProperty("height")
-    private String height;
+    private Integer height;
 
     @Column(name = "weight")
     @JsonProperty("weight")
-    private String weight;
+    private Integer weight;
 
     @Column(name = "is_tobacco_used")
     @JsonProperty("isTobaccoUsed")
@@ -147,7 +149,7 @@ public class AncRegistration extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
     @Column(name = "type")
     @JsonProperty("type")
@@ -163,6 +165,6 @@ public class AncRegistration extends FromEntity {
 
     @Column(name = "family_planning_method_change_date")
     @JsonProperty("familyPlanningMethodChangeDate")
-    private String familyPlanningMethodChangeDate;
+    private Date familyPlanningMethodChangeDate;
 
 }

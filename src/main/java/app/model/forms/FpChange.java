@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "fp_change")
+@EqualsAndHashCode(callSuper = true)
 public class FpChange extends FromEntity {
-
     @Column(name = "eligible_couple_id")
     @JsonProperty("id")
     private String eligibleCoupleId;
@@ -27,7 +29,7 @@ public class FpChange extends FromEntity {
 
     @Column(name = "iud_removal_date")
     @JsonProperty("iudRemovalDate")
-    private String iudRemovalDate;
+    private Date iudRemovalDate;
 
     @Column(name = "iud_removal_place")
     @JsonProperty("iudRemovalPlace")
@@ -35,7 +37,7 @@ public class FpChange extends FromEntity {
 
     @Column(name = "family_planning_method_change_date")
     @JsonProperty("familyPlanningMethodChangeDate")
-    private String familyPlanningMethodChangeDate;
+    private Date familyPlanningMethodChangeDate;
 
     @Column(name = "iud_place")
     @JsonProperty("iudPlace")
@@ -47,7 +49,7 @@ public class FpChange extends FromEntity {
 
     @Column(name = "three_months_from_sterilization_date")
     @JsonProperty("threeMonthsFromSterilizationDate")
-    private String threeMonthsFromSterilizationDate;
+    private Date threeMonthsFromSterilizationDate;
 
     @Column(name = "male_sterilization_message")
     @JsonProperty("maleSterilizationMessage")
@@ -55,23 +57,23 @@ public class FpChange extends FromEntity {
 
     @Column(name = "number_of_condoms_supplied")
     @JsonProperty("numberOfCondomsSupplied")
-    private String numberOfCondomsSupplied;
+    private Integer numberOfCondomsSupplied;
 
     @Column(name = "number_of_ocp_delivered")
     @JsonProperty("numberOfOCPDelivered")
-    private String numberOfOCPDelivered;
+    private Integer numberOfOCPDelivered;
 
     @Column(name = "number_of_centchroman_pills_delivered")
     @JsonProperty("numberOfCentchromanPillsDelivered")
-    private String numberOfCentchromanPillsDelivered;
+    private Integer numberOfCentchromanPillsDelivered;
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
     @Column(name = "lmp_date")
     @JsonProperty("lmpDate")
-    private String lmpDate;
+    private Date lmpDate;
 
     @Column(name = "upt_result")
     @JsonProperty("uptResult")

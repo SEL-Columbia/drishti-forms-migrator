@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "ec_edit")
+@EqualsAndHashCode(callSuper = true)
 public class EcEdit extends FromEntity {
-
     @Column(name = "eligible_couple_id")
     @JsonProperty("id")
     private String eligibleCoupleId;
@@ -55,19 +57,19 @@ public class EcEdit extends FromEntity {
 
     @Column(name = "wife_age")
     @JsonProperty("wifeAge")
-    private String wifeAge;
+    private Integer wifeAge;
 
     @Column(name = "husband_age")
     @JsonProperty("husbandAge")
-    private String husbandAge;
+    private Integer husbandAge;
 
     @Column(name = "woman_dob")
     @JsonProperty("womanDOB")
-    private String womanDOB;
+    private Date womanDOB;
 
     @Column(name = "husband_dob")
     @JsonProperty("husbandDOB")
-    private String husbandDOB;
+    private Date husbandDOB;
 
     @Column(name = "husband_name")
     @JsonProperty("husbandName")
@@ -91,39 +93,39 @@ public class EcEdit extends FromEntity {
 
     @Column(name = "number_of_pregnancies")
     @JsonProperty("numberOfPregnancies")
-    private String numberOfPregnancies;
+    private Integer numberOfPregnancies;
 
     @Column(name = "number_of_live_births")
     @JsonProperty("numberOfLiveBirths")
-    private String numberOfLiveBirths;
+    private Integer numberOfLiveBirths;
 
     @Column(name = "number_of_abortions")
     @JsonProperty("numberOfAbortions")
-    private String numberOfAbortions;
+    private Integer numberOfAbortions;
 
     @Column(name = "number_of_spontaneous_abortions")
     @JsonProperty("numberOfSpontaneousAbortions")
-    private String numberOfSpontaneousAbortions;
+    private Integer numberOfSpontaneousAbortions;
 
     @Column(name = "number_of_induced_abortions")
     @JsonProperty("numberOfInducedAbortions")
-    private String numberOfInducedAbortions;
+    private Integer numberOfInducedAbortions;
 
     @Column(name = "number_of_still_births")
     @JsonProperty("numberOfStillBirths")
-    private String numberOfStillBirths;
+    private Integer numberOfStillBirths;
 
     @Column(name = "number_of_living_children")
     @JsonProperty("numberOfLivingChildren")
-    private String numberOfLivingChildren;
+    private Integer numberOfLivingChildren;
 
     @Column(name = "number_of_living_male_children")
     @JsonProperty("numberOfLivingMaleChildren")
-    private String numberOfLivingMaleChildren;
+    private Integer numberOfLivingMaleChildren;
 
     @Column(name = "number_of_living_female_child")
     @JsonProperty("numberOfLivingFemaleChild")
-    private String numberOfLivingFemaleChild;
+    private Integer numberOfLivingFemaleChild;
 
     @Column(name = "current_method")
     @JsonProperty("currentMethod")
@@ -143,7 +145,7 @@ public class EcEdit extends FromEntity {
 
     @Column(name = "partity")
     @JsonProperty("partity")
-    private String partity;
+    private Integer partity;
 
     @Column(name = "young_child_risk_priority")
     @JsonProperty("youngChildRiskPriority")
@@ -159,6 +161,6 @@ public class EcEdit extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
 }

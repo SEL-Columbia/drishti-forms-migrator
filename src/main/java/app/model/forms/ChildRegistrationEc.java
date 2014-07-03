@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "child_registration_ec")
+@EqualsAndHashCode(callSuper = true)
 public class ChildRegistrationEc extends FromEntity {
-
     @Column(name = "eligible_couple_id")
     @JsonProperty("id")
     private String eligibleCoupleId;
@@ -91,15 +93,15 @@ public class ChildRegistrationEc extends FromEntity {
 
     @Column(name = "registration_date")
     @JsonProperty("registrationDate")
-    private String registrationDate;
+    private Date registrationDate;
 
     @Column(name = "date_of_birth")
     @JsonProperty("dateOfBirth")
-    private String dateOfBirth;
+    private Date dateOfBirth;
 
     @Column(name = "age")
     @JsonProperty("age")
-    private String age;
+    private Integer age;
 
     @Column(name = "gender")
     @JsonProperty("gender")
@@ -119,11 +121,11 @@ public class ChildRegistrationEc extends FromEntity {
 
     @Column(name = "weight")
     @JsonProperty("weight")
-    private String weight;
+    private Integer weight;
 
     @Column(name = "height")
     @JsonProperty("height")
-    private String height;
+    private Integer height;
 
     @Column(name = "immunizations_given")
     @JsonProperty("immunizationsGiven")
@@ -131,67 +133,67 @@ public class ChildRegistrationEc extends FromEntity {
 
     @Column(name = "bcg_date")
     @JsonProperty("bcgDate")
-    private String bcgDate;
+    private Date bcgDate;
 
     @Column(name = "opv0_date")
     @JsonProperty("opv0Date")
-    private String opv0Date;
+    private Date opv0Date;
 
     @Column(name = "hepb0_date")
     @JsonProperty("hepb0Date")
-    private String hepb0Date;
+    private Date hepb0Date;
 
     @Column(name = "opv1_date")
     @JsonProperty("opv1Date")
-    private String opv1Date;
+    private Date opv1Date;
 
     @Column(name = "pentavalent1_date")
     @JsonProperty("pentavalent1Date")
-    private String pentavalent1Date;
+    private Date pentavalent1Date;
 
     @Column(name = "opv2_date")
     @JsonProperty("opv2Date")
-    private String opv2Date;
+    private Date opv2Date;
 
     @Column(name = "pentavalent2_date")
     @JsonProperty("pentavalent2Date")
-    private String pentavalent2Date;
+    private Date pentavalent2Date;
 
     @Column(name = "opv3_date")
     @JsonProperty("opv3Date")
-    private String opv3Date;
+    private Date opv3Date;
 
     @Column(name = "pentavalent3_date")
     @JsonProperty("pentavalent3Date")
-    private String pentavalent3Date;
+    private Date pentavalent3Date;
 
     @Column(name = "measles_date")
     @JsonProperty("measlesDate")
-    private String measlesDate;
+    private Date measlesDate;
 
     @Column(name = "mmr_date")
     @JsonProperty("mmrDate")
-    private String mmrDate;
+    private Date mmrDate;
 
     @Column(name = "dptbooster1_date")
     @JsonProperty("dptbooster1Date")
-    private String dptbooster1Date;
+    private Date dptbooster1Date;
 
     @Column(name = "opvbooster_date")
     @JsonProperty("opvboosterDate")
-    private String opvboosterDate;
+    private Date opvboosterDate;
 
     @Column(name = "je_date")
     @JsonProperty("jeDate")
-    private String jeDate;
+    private Date jeDate;
 
     @Column(name = "measlesbooster_date")
     @JsonProperty("measlesboosterDate")
-    private String measlesboosterDate;
+    private Date measlesboosterDate;
 
     @Column(name = "dptbooster2_date")
     @JsonProperty("dptbooster2Date")
-    private String dptbooster2Date;
+    private Date dptbooster2Date;
 
     @Column(name = "child_vitamin_a_history")
     @JsonProperty("childVitaminAHistory")
@@ -199,39 +201,39 @@ public class ChildRegistrationEc extends FromEntity {
 
     @Column(name = "vitamin1_date")
     @JsonProperty("vitamin1Date")
-    private String vitamin1Date;
+    private Date vitamin1Date;
 
     @Column(name = "vitamin2_date")
     @JsonProperty("vitamin2Date")
-    private String vitamin2Date;
+    private Date vitamin2Date;
 
     @Column(name = "vitamin3_date")
     @JsonProperty("vitamin3Date")
-    private String vitamin3Date;
+    private Date vitamin3Date;
 
     @Column(name = "vitamin4_date")
     @JsonProperty("vitamin4Date")
-    private String vitamin4Date;
+    private Date vitamin4Date;
 
     @Column(name = "vitamin5_date")
     @JsonProperty("vitamin5Date")
-    private String vitamin5Date;
+    private Date vitamin5Date;
 
     @Column(name = "vitamin6_date")
     @JsonProperty("vitamin6Date")
-    private String vitamin6Date;
+    private Date vitamin6Date;
 
     @Column(name = "vitamin7_date")
     @JsonProperty("vitamin7Date")
-    private String vitamin7Date;
+    private Date vitamin7Date;
 
     @Column(name = "vitamin8_date")
     @JsonProperty("vitamin8Date")
-    private String vitamin8Date;
+    private Date vitamin8Date;
 
     @Column(name = "vitamin9_date")
     @JsonProperty("vitamin9Date")
-    private String vitamin9Date;
+    private Date vitamin9Date;
 
     @Column(name = "is_child_high_risk")
     @JsonProperty("isChildHighRisk")
@@ -247,7 +249,7 @@ public class ChildRegistrationEc extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
     @Column(name = "is_mother_closed")
     @JsonProperty("isMotherClosed")

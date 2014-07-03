@@ -3,16 +3,18 @@ package app.model.forms;
 import app.model.FromEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "delivery_plan")
+@EqualsAndHashCode(callSuper = true)
 public class DeliveryPlan extends FromEntity {
-
     @Column(name = "mother_id")
     @JsonProperty("id")
     private String motherId;
@@ -219,6 +221,6 @@ public class DeliveryPlan extends FromEntity {
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")
-    private String submissionDate;
+    private Date submissionDate;
 
 }
