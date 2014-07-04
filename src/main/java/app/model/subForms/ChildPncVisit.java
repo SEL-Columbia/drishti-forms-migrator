@@ -27,7 +27,7 @@ public class ChildPncVisit extends BaseEntity {
 
     @Column(name = "weight")
     @JsonProperty("weight")
-    private String weight;
+    private Float weight;
 
     @Column(name = "immunizations_given")
     @JsonProperty("immunizationsGiven")
@@ -55,7 +55,7 @@ public class ChildPncVisit extends BaseEntity {
 
     @Column(name = "respiration_rate")
     @JsonProperty("respirationRate")
-    private String respirationRate;
+    private Float respirationRate;
 
     @Column(name = "skin_problems")
     @JsonProperty("skinProblems")
@@ -67,7 +67,7 @@ public class ChildPncVisit extends BaseEntity {
 
     @Column(name = "temperature")
     @JsonProperty("temperature")
-    private String temperature;
+    private Float temperature;
 
     @Column(name = "child_exclusive_bf")
     @JsonProperty("childExclusiveBF")

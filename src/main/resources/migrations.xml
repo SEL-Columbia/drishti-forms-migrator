@@ -2079,7 +2079,7 @@
 
             <column name="gender" type="varchar(255)"/>
 
-            <column name="weight" type="varchar(255)"/>
+            <column name="weight" type="decimal"/>
 
             <column name="blood_group" type="varchar(255)"/>
 
@@ -2113,7 +2113,7 @@
 
             <column name="gender" type="varchar(255)"/>
 
-            <column name="weight" type="varchar(255)"/>
+            <column name="weight" type="decimal"/>
 
             <column name="blood_group" type="varchar(255)"/>
 
@@ -2157,7 +2157,7 @@
 
             <column name="gender" type="varchar(255)"/>
 
-            <column name="weight" type="varchar(255)"/>
+            <column name="weight" type="decimal"/>
 
             <column name="immunizations_given" type="varchar(255)"/>
 
@@ -2171,13 +2171,13 @@
 
             <column name="breathing_problems" type="varchar(255)"/>
 
-            <column name="respiration_rate" type="varchar(255)"/>
+            <column name="respiration_rate" type="decimal"/>
 
             <column name="skin_problems" type="varchar(255)"/>
 
             <column name="has_fever_symptoms" type="varchar(255)"/>
 
-            <column name="temperature" type="varchar(255)"/>
+            <column name="temperature" type="decimal"/>
 
             <column name="child_exclusive_bf" type="varchar(255)"/>
 

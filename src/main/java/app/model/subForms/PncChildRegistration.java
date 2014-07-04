@@ -23,7 +23,7 @@ public class PncChildRegistration extends BaseEntity {
 
     @Column(name = "weight")
     @JsonProperty("weight")
-    private String weight;
+    private Float weight;
 
     @Column(name = "blood_group")
     @JsonProperty("bloodGroup")
