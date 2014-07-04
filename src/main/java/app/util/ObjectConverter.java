@@ -6,8 +6,12 @@ import app.model.subForms.ChildPncVisit;
 import app.model.subForms.ChildRegistration;
 import app.model.subForms.PncChildRegistration;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Type;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,9 +21,10 @@ import static app.Constants.NAME;
 public class ObjectConverter {
     private static HashMap<String, Type> formNameMap;
     private static HashMap<String, Type> subFormNameMap;
+    private Logger logger = LoggerFactory.getLogger(ObjectConverter.class);
 
     static {
-        formNameMap = new HashMap<String, Type>();
+        formNameMap = new HashMap<>();
         formNameMap.put("anc_close", AncClose.class);
         formNameMap.put("anc_registration", AncRegistration.class);
         formNameMap.put("anc_registration_oa", AncRegistrationOa.class);
@@ -66,6 +71,23 @@ public class ObjectConverter {
 
         if (classType == null)
             return null;
-        return (BaseEntity) new ObjectMapper().convertValue(hashMap, classType);
+
+        BaseEntity baseEntity = null;
+        try {
+            baseEntity = (BaseEntity) getObjectMapper().convertValue(hashMap, classType);
+        } catch (IllegalArgumentException e) {
+            logger.error("Could not parse json for :" + hashMap);
+            logger.error(e.getMessage());
+        }
+        return baseEntity;
+    }
+
+    private ObjectMapper getObjectMapper() {
+        SimpleModule module = new SimpleModule("InvalidDateParse");
+        module.addDeserializer(Date.class, new DateTypeDeserializer(Date.class));
+        module.addDeserializer(Integer.class, new IntTypeDeserializer(Integer.class));
+        module.addDeserializer(Float.class, new FloatTypeDeserializer(Float.class));
+
+        return new ObjectMapper().registerModule(module);
     }
 }

@@ -1,9 +1,11 @@
 package app.util;
 
+import app.model.forms.AncVisit;
 import app.model.forms.EcRegistration;
 import app.model.subForms.PncChildRegistration;
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 import static app.Constants.FORM_NAME;
@@ -25,6 +27,8 @@ public class ObjectConverterTest{
         hashMap.put("aadharNumber", "420");
         hashMap.put("formName", "ec_registration");
         hashMap.put("anmId", "someId");
+        hashMap.put("youngestChildDOB", "Sun, 04 May 2014 00:00:00 GMT");
+        hashMap.put("familyPlanningMethodChangeDate", "Invalid Date");
 
         EcRegistration entityForm = (EcRegistration) new ObjectConverter().create(hashMap);
 
@@ -35,6 +39,25 @@ public class ObjectConverterTest{
         assertEquals(hashMap.get("aadharNumber"), entityForm.getAadharNumber());
         assertNull(entityForm.getHeadOfHousehold());
         assertNull(entityForm.getHouseholdAddress());
+        assertEquals("2014-05-04", new SimpleDateFormat("yyyy-MM-dd").format(entityForm.getYoungestChildDOB()));
+        assertNull(entityForm.getFamilyPlanningMethodChangeDate());
+    }
+
+    @Test
+    public void shouldSubstitueNullValueForInvalidValues() throws Exception {
+        HashMap hashMap = new HashMap();
+        hashMap.put("ancVisitNumber", "Nan");
+        hashMap.put("temperature", "Nan");
+        hashMap.put("referenceDate", "Nan");
+        hashMap.put("submissionDate", "Invalid Date");
+        hashMap.put(FORM_NAME, "anc_visit");
+
+        AncVisit entityForm = (AncVisit) new ObjectConverter().create(hashMap);
+
+        assertNull(entityForm.getAncVisitNumber());
+        assertNull(entityForm.getTemperature());
+        assertNull(entityForm.getReferenceDate());
+        assertNull(entityForm.getSubmissionDate());
     }
 
     @Test
