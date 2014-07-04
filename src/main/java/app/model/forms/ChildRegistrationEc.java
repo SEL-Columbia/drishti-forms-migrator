@@ -121,7 +121,7 @@ public class ChildRegistrationEc extends FromEntity {
 
     @Column(name = "weight")
     @JsonProperty("weight")
-    private Integer weight;
+    private Float weight;
 
     @Column(name = "height")
     @JsonProperty("height")

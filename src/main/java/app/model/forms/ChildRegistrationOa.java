@@ -85,11 +85,11 @@ public class ChildRegistrationOa extends FromEntity {
 
     @Column(name = "birth_weight")
     @JsonProperty("birthWeight")
-    private Integer birthWeight;
+    private Float birthWeight;
 
     @Column(name = "weight")
     @JsonProperty("weight")
-    private Integer weight;
+    private Float weight;
 
     @Column(name = "height")
     @JsonProperty("height")

@@ -57,7 +57,7 @@ public class ChildIllness extends FromEntity {
 
     @Column(name = "report_child_disease_place")
     @JsonProperty("reportChildDiseasePlace")
-    private Date reportChildDiseasePlace;
+    private String reportChildDiseasePlace;
 
     @Column(name = "number_of_ors_given")
     @JsonProperty("numberOfORSGiven")

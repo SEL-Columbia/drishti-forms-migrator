@@ -77,7 +77,7 @@ public class AncVisit extends FromEntity {
 
     @Column(name = "weight")
     @JsonProperty("weight")
-    private Integer weight;
+    private Float weight;
 
     @Column(name = "reference_date")
     @JsonProperty("referenceDate")
@@ -105,7 +105,7 @@ public class AncVisit extends FromEntity {
 
     @Column(name = "prasooti1_date")
     @JsonProperty("prasooti1Date")
-    private String prasooti1Date;
+    private Date prasooti1Date;
 
     @Column(name = "pih")
     @JsonProperty("pih")
