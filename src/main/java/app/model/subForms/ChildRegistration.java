@@ -3,6 +3,7 @@ package app.model.subForms;
 import app.model.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Data
 @Table(name = "delivery_out_come_child_registration")
+@EqualsAndHashCode(callSuper = true)
 public class ChildRegistration extends BaseEntity {
 
     @Column(name = "child_id")

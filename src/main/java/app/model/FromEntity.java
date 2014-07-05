@@ -3,6 +3,7 @@ package app.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -11,6 +12,7 @@ import java.util.Date;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @MappedSuperclass
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class FromEntity extends BaseEntity {
     @Column(name = "anm_id")
     @JsonProperty("anmId")
