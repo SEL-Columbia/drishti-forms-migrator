@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import java.util.Date;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @MappedSuperclass
@@ -29,11 +30,11 @@ public class FromEntity extends BaseEntity {
 
     @Column(name = "client_version")
     @JsonProperty("clientVersion")
-    private String clientVersion;
+    private Date clientVersion;
 
     @Column(name = "server_version")
     @JsonProperty("serverVersion")
-    private String serverVersion;
+    private Date serverVersion;
 
     @Column(name = "form_data_definition_version")
     @JsonProperty("formDataDefinitionVersion")

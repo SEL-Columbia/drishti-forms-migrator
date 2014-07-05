@@ -19,9 +19,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -87,9 +87,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -185,9 +185,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -313,9 +313,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -403,9 +403,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -445,9 +445,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -495,9 +495,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -533,9 +533,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -675,9 +675,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -823,9 +823,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -939,9 +939,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1065,9 +1065,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1109,9 +1109,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1205,9 +1205,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1345,9 +1345,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1405,9 +1405,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1465,9 +1465,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1523,9 +1523,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1569,9 +1569,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1601,9 +1601,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1639,9 +1639,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1735,9 +1735,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1833,9 +1833,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1939,9 +1939,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -1969,9 +1969,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -2015,9 +2015,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
@@ -2047,9 +2047,9 @@
 
             <column name="form_name" type="varchar(255)"/>
 
-            <column name="client_version" type="varchar(255)"/>
+            <column name="client_version" type="date"/>
 
-            <column name="server_version" type="varchar(255)"/>
+            <column name="server_version" type="date"/>
 
             <column name="form_data_definition_version" type="varchar(255)"/>
 
