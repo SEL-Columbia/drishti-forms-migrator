@@ -6,7 +6,7 @@ project.ext {
 }
 
 mainClassName = 'app.ApplicationService'
-version = '1.0'
+version = '1.0-SNAPSHOT'
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
@@ -71,6 +71,8 @@ uploadArchives {
             repository(url: "http://nexus.motechproject.org/content/repositories/drishti-forms-migrator") {
                 authentication(userName: System.getenv('NEXUS_USERNAME'), password: System.getenv('NEXUS_PASSWORD'))
             }
+            pom.artifactId = "drishti-forms-migrator"
+            pom.groupId = "app"
         }
     }
 }
