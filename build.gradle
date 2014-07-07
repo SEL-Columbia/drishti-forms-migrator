@@ -1,4 +1,4 @@
-['java', 'idea', 'application'].each({ apply plugin: it })
+['java', 'idea', 'application', 'maven'].each({ apply plugin: it })
 
 project.ext {
     dropwizardVersion = '0.6.2'
@@ -7,6 +7,8 @@ project.ext {
 
 mainClassName = 'app.ApplicationService'
 version = '1.0'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 repositories {
     mavenCentral()
@@ -59,5 +61,15 @@ task cleanDb(dependsOn: 'jar') << {
     javaexec {
         main = '-jar'
         args = [jar.archivePath, 'db', 'drop-all', '--confirm-delete-everything', configFile]
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://nexus.motechproject.org/content/repositories/json-to-xls") {
+                authentication(userName: System.getenv('NEXUS_USERNAME'), password: System.getenv('NEXUS_PASSWORD'))
+            }
+        }
     }
 }
