@@ -68,7 +68,7 @@ task cleanDb(dependsOn: 'jar') << {
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: "http://nexus.motechproject.org/content/repositories/drishti-content-migrator") {
+            repository(url: "http://nexus.motechproject.org/content/repositories/drishti-forms-migrator") {
                 authentication(userName: System.getenv('NEXUS_USERNAME'), password: System.getenv('NEXUS_PASSWORD'))
             }
         }
