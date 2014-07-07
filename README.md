@@ -88,5 +88,4 @@ Once the sample json is placed, you can run
 $ruby generator.rb
 ```
 
-This will create java class file into `util/generated/classes` folder
-and migration script into `util/generated/migrations` folder
+This will create java class file into `util/generated/classes` folder and migration script into `util/generated/migrations` folder
