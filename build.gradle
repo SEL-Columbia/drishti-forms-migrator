@@ -19,6 +19,7 @@ repositories {
 
 dependencies {
     compile group: 'com.yammer.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+    compile group: 'com.sun.jersey', name: 'jersey-client', version: '1.17.1'
     compile group: 'com.yammer.dropwizard', name: 'dropwizard-jdbi', version: dropwizardVersion
     compile group: 'com.yammer.dropwizard', name: 'dropwizard-migrations', version: dropwizardVersion
     compile group: 'com.yammer.dropwizard', name: 'dropwizard-testing', version: dropwizardVersion
