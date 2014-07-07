@@ -37,16 +37,18 @@ run {
     args 'server', configFile
 }
 
-jar {
-    manifest {
-        attributes "Main-Class" : mainClassName
-    }
+if (shouldDoFatJar()) {
+    jar {
+        manifest {
+            attributes "Main-Class": mainClassName
+        }
 
-    doFirst {
-        from (configurations.runtime.resolve().collect { it.isDirectory() ? it : zipTree(it) }) {
-            exclude 'META-INF/*.SF'
-            exclude 'META-INF/*.DSA'
-            exclude 'META-INF/*.RSA'
+        doFirst {
+            from(configurations.runtime.resolve().collect { it.isDirectory() ? it : zipTree(it) }) {
+                exclude 'META-INF/*.SF'
+                exclude 'META-INF/*.DSA'
+                exclude 'META-INF/*.RSA'
+            }
         }
     }
 }
@@ -75,4 +77,8 @@ uploadArchives {
             pom.groupId = "app"
         }
     }
+}
+
+def shouldDoFatJar() {
+    return project.hasProperty("mode") && "dev".equals(project.property("mode"))
 }
