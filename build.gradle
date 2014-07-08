@@ -5,6 +5,8 @@ project.ext {
     configFile = 'content-migrator.yml'
 }
 
+ext.packaging = 'tar'
+
 mainClassName = 'app.ApplicationService'
 version = '1.0-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -15,6 +17,10 @@ repositories {
     maven {
         url "http://repository.codehaus.org/org/codehaus"
     }
+}
+
+artifacts {
+    archives distTar
 }
 
 dependencies {
