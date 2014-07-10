@@ -28,7 +28,7 @@ public class HttpClientTest {
 
     @Test
     public void shouldMakeHttpCallAndFetchResult() throws IOException, URISyntaxException {
-        List<Map<String, Object>> result = HttpClient.call(new URI(uri), username, password);
+        List<Map<String, Object>> result = new HttpClient().call(new URI(uri), username, password);
 
         assertNotEquals(0, result.size());
 

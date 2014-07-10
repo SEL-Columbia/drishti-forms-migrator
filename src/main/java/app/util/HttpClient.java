@@ -15,7 +15,7 @@ import java.util.Map;
 public class HttpClient {
     private static Logger logger = LoggerFactory.getLogger(HttpClient.class);
 
-    public static List<Map<String, Object>> call(URI uri, String username, String password) {
+    public List<Map<String, Object>> call(URI uri, String username, String password) {
         Client client = Client.create(HttpClientHelper.configureClient());
         client.addFilter(new HTTPBasicAuthFilter(username, password));
         WebResource service = client.resource(uri);
