@@ -13,6 +13,7 @@ import com.yammer.dropwizard.db.DatabaseConfiguration;
 import com.yammer.dropwizard.hibernate.HibernateBundle;
 import com.yammer.dropwizard.migrations.MigrationsBundle;
 import de.spinscale.dropwizard.jobs.JobsBundle;
+import de.spinscale.dropwizard.jobs.config.JobConfiguration;
 
 
 public class ApplicationService extends Service<MigratorConfiguration> {
@@ -45,7 +46,13 @@ public class ApplicationService extends Service<MigratorConfiguration> {
     public void initialize(Bootstrap<MigratorConfiguration> bootstrap) {
         bootstrap.setName(contentMigrator);
 
-        bootstrap.addBundle(new JobsBundle("app"));
+        bootstrap.addBundle(new JobsBundle<MigratorConfiguration>() {
+            @Override
+            public JobConfiguration getJobConfiguration(MigratorConfiguration configuration) {
+                return configuration.getJobs();
+            }
+        });
+
         bootstrap.addBundle(new MigrationsBundle<MigratorConfiguration>() {
             @Override
             public DatabaseConfiguration getDatabaseConfiguration(MigratorConfiguration configuration) {

@@ -16,7 +16,7 @@ import java.util.Map;
 
 import static app.Constants.TIMESTAMP;
 
-@Every("3min")
+@Every("default")
 public class JobScheduler extends Job {
     private final Context context;
     private final Logger logger = LoggerFactory.getLogger(JobScheduler.class);

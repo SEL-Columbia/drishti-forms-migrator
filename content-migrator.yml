@@ -17,6 +17,10 @@ database:
   checkConnectionHealthWhenIdleFor: 10s
   closeConnectionIfIdleFor: 1 minute
 
+jobs:
+  scanUrl: app
+  defaultEveryScanInterval: 3min
+
 logging:
   console:
     enabled: true

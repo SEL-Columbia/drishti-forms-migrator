@@ -2,6 +2,7 @@ package app;
 
 import com.yammer.dropwizard.config.Configuration;
 import com.yammer.dropwizard.db.DatabaseConfiguration;
+import de.spinscale.dropwizard.jobs.config.JobConfiguration;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import javax.validation.Valid;
@@ -28,6 +29,11 @@ public class MigratorConfiguration extends Configuration{
     @JsonProperty
     private DatabaseConfiguration database = new DatabaseConfiguration();
 
+    @Valid
+    @NotNull
+    @JsonProperty
+    private JobConfiguration jobs = new JobConfiguration();
+
     public DatabaseConfiguration getDatabase() {
         return database;
     }
@@ -42,5 +48,9 @@ public class MigratorConfiguration extends Configuration{
 
     public String getPollingUrlUsername() {
         return pollingUrlUsername;
+    }
+
+    public JobConfiguration getJobs() {
+        return jobs;
     }
 }
