@@ -20,12 +20,12 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 
-public class JobSchedulerTest {
+public class FormMigratorJobTest {
     private Repository repository;
     private MigratorConfiguration configuration;
     private FormService formService;
     private HttpClient httpClient;
-    private JobScheduler jobScheduler;
+    private FormMigratorJob jobScheduler;
 
     @Before
     public void setup() {
@@ -34,7 +34,7 @@ public class JobSchedulerTest {
         formService = mock(FormService.class);
         httpClient = mock(HttpClient.class);
 
-        jobScheduler = new JobScheduler(repository, formService, configuration, httpClient);
+        jobScheduler = new FormMigratorJob(repository, formService, configuration, httpClient);
     }
 
     @Test
@@ -48,7 +48,7 @@ public class JobSchedulerTest {
         when(configuration.getPollingUrlPassword()).thenReturn("password");
         when(formService.save(any())).thenReturn(newArrayList());
 
-        jobScheduler.doJob();
+        jobScheduler.process();
 
         verify(httpClient).call(new URI("www.localhost.com/form?timestamp=420"), "admin", "password");
     }
@@ -63,7 +63,7 @@ public class JobSchedulerTest {
         when(configuration.getPollingUrlPassword()).thenReturn("password");
         when(formService.save(any())).thenReturn(newArrayList());
 
-        jobScheduler.doJob();
+        jobScheduler.process();
 
         verify(httpClient).call(new URI("www.localhost.com/form?timestamp=0"), "admin", "password");
     }
@@ -80,7 +80,7 @@ public class JobSchedulerTest {
         when(httpClient.call(any(), anyString(), anyString())).thenReturn(processedForms);
         when(formService.save(any())).thenReturn(processedForms);
 
-        jobScheduler.doJob();
+        jobScheduler.process();
 
         verify(repository).create(new Audit(420L, 3L));
     }
@@ -93,7 +93,7 @@ public class JobSchedulerTest {
         when(httpClient.call(any(), anyString(), anyString())).thenReturn(processedForms);
         when(formService.save(any())).thenReturn(processedForms);
 
-        jobScheduler.doJob();
+        jobScheduler.process();
 
         verify(repository, never()).create(any(Audit.class));
     }
