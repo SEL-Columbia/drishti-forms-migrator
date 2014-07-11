@@ -2204,7 +2204,11 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="last_polled_timestamp" type="bigint"/>
-            <column name="no_of_form_entries" type="bigint"/>
+            <column name="total_no_of_form_entries" type="bigint"/>
+            <column name="successfully_processed_form_entries" type="bigint"/>
+            <column name="created_timestamp" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

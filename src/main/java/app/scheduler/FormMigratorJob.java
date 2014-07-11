@@ -41,7 +41,7 @@ public class FormMigratorJob implements Job {
         logger.info("Processing " + responseData.size() + " form entries");
 
         List<Map<String, Object>> processedForms = formService.save(responseData);
-        createAuditFor(processedForms, responseData.size());
+        createAuditFor(processedForms, responseData);
     }
 
     private static URI getBaseURI(String uri, Audit lastPolledAuditEntry) {
@@ -49,15 +49,15 @@ public class FormMigratorJob implements Job {
         return UriBuilder.fromUri(uri).replaceQueryParam(TIMESTAMP, lastPolledAuditEntry.getLastPolledTimestamp()).build();
     }
 
-    private void createAuditFor(List<Map<String, Object>> processedForms, long actualFormCount) {
-        if(actualFormCount == 0)
+    private void createAuditFor(List<Map<String, Object>> processedForms, List<Map<String, Object>> allForms) {
+        if(allForms.size() == 0)
             return;
 
-        Map<String, Object> maxVersionedForm = processedForms.stream().max((form1, form2) ->
+        Map<String, Object> maxVersionedForm = allForms.stream().max((form1, form2) ->
                 getParsedVersion(form1) >= getParsedVersion(form2) ? 1 : -1
         ).get();
 
-        repository.create(new Audit(getParsedVersion(maxVersionedForm), actualFormCount));
+        repository.create(new Audit(getParsedVersion(maxVersionedForm), allForms.size(), processedForms.size()));
     }
 
     private Long getParsedVersion(Map<String, Object> form1) {

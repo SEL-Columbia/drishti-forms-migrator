@@ -39,7 +39,7 @@ public class FormMigratorJobTest {
 
     @Test
     public void shouldReplaceTheLastTimestampFromTheLastAuditBeforePolling() throws URISyntaxException {
-        Audit lastPolledAudit = new Audit(420L, 100L);
+        Audit lastPolledAudit = new Audit(420L, 100L, 100L);
         String pollingUrl = "www.localhost.com/form?timestamp=0";
 
         when(repository.getLastAudit()).thenReturn(lastPolledAudit);
@@ -73,16 +73,16 @@ public class FormMigratorJobTest {
         HashMap<String, Object> form1 = new HashMap<String, Object>() {{ put(SERVER_VERSION, "120"); }};
         HashMap<String, Object> form2 = new HashMap<String, Object>() {{ put(SERVER_VERSION, "420"); }};
         HashMap<String, Object> form3 = new HashMap<String, Object>() {{ put(SERVER_VERSION, "220"); }};
-
-        ArrayList<Map<String, Object>> processedForms = newArrayList(form1, form2, form3);
+        ArrayList<Map<String, Object>> allForms = newArrayList(form1, form2, form3);
+        ArrayList<Map<String, Object>> processForms = newArrayList(form1, form2);
 
         when(configuration.getPollingUrl()).thenReturn("www.localhost.com/form");
-        when(httpClient.call(any(), anyString(), anyString())).thenReturn(processedForms);
-        when(formService.save(any())).thenReturn(processedForms);
+        when(httpClient.call(any(), anyString(), anyString())).thenReturn(allForms);
+        when(formService.save(any())).thenReturn(processForms);
 
         jobScheduler.process();
 
-        verify(repository).create(new Audit(420L, 3L));
+        verify(repository).create(new Audit(420L, allForms.size(), processForms.size()));
     }
 
     @Test
