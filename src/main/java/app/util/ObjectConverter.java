@@ -1,5 +1,6 @@
 package app.util;
 
+import app.exception.FormMigrationException;
 import app.model.BaseEntity;
 import app.model.forms.*;
 import app.model.subForms.ChildPncVisit;
@@ -7,8 +8,6 @@ import app.model.subForms.ChildRegistration;
 import app.model.subForms.PncChildRegistration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Type;
 import java.util.Date;
@@ -21,7 +20,6 @@ import static app.Constants.NAME;
 public class ObjectConverter {
     private static HashMap<String, Type> formNameMap;
     private static HashMap<String, Type> subFormNameMap;
-    private Logger logger = LoggerFactory.getLogger(ObjectConverter.class);
 
     static {
         formNameMap = new HashMap<>();
@@ -70,16 +68,13 @@ public class ObjectConverter {
                 (Class<Object>) subFormNameMap.get(hashMap.get(NAME));
 
         if (classType == null)
-            return null;
+            throw new FormMigrationException("Unknown form name");
 
-        BaseEntity baseEntity = null;
         try {
-            baseEntity = (BaseEntity) getObjectMapper().convertValue(hashMap, classType);
+            return (BaseEntity) getObjectMapper().convertValue(hashMap, classType);
         } catch (IllegalArgumentException e) {
-            logger.error("Could not parse json for :" + hashMap);
-            logger.error(e.getMessage());
+            throw new FormMigrationException("Form entry has invalid data type values", e);
         }
-        return baseEntity;
     }
 
     private ObjectMapper getObjectMapper() {

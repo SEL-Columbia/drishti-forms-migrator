@@ -1,5 +1,6 @@
 package app.util;
 
+import app.exception.FormMigrationException;
 import app.model.forms.AncVisit;
 import app.model.forms.EcRegistration;
 import app.model.subForms.PncChildRegistration;
@@ -13,7 +14,7 @@ import static app.Constants.NAME;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNull;
 
-public class ObjectConverterTest{
+public class ObjectConverterTest {
 
     @Test
     public void shouldCreateObjectFromTheCorrespondingMap() throws Exception {
@@ -78,7 +79,7 @@ public class ObjectConverterTest{
         assertEquals(hashMap.get("parentId"), entityForm.getPncRegistrationOaId());
     }
 
-    @Test
+    @Test(expected = FormMigrationException.class)
     public void shouldReturnNullIfThereIsNoEntityWithGivenFormName() throws Exception {
         HashMap hashMap = new HashMap();
         hashMap.put(FORM_NAME, "some_random");
@@ -86,10 +87,10 @@ public class ObjectConverterTest{
         hashMap.put("gender", "male");
         hashMap.put("bloodGroup", "AB+");
 
-        assertNull(new ObjectConverter().create(hashMap));
+        new ObjectConverter().create(hashMap);
     }
 
-    @Test
+    @Test(expected = FormMigrationException.class)
     public void shouldReturnNullIfThereIsNoEntityWithGivenName() throws Exception {
         HashMap hashMap = new HashMap();
         hashMap.put(NAME, "some_random");

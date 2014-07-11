@@ -20,7 +20,7 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class FormProcessorServiceTest {
+public class FormServiceTest {
     @Mock
     private Repository repository;
     @Mock
