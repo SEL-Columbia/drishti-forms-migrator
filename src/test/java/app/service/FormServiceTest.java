@@ -13,7 +13,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,13 +43,12 @@ public class FormServiceTest {
 
     @Test
     public void shouldCallCreateOfRepositoryAfterTransformation(){
-        ArrayList<Map<String, Object>> allFormData = Lists.<Map<String, Object>>newArrayList(formData);
         PncVisit responseFormObj = new PncVisit();
 
-        when(mapTransformer.transform(allFormData)).thenReturn(allFormData.stream());
+        when(mapTransformer.transform(formData)).thenReturn(formData);
         when(objectConverter.create(any(Map.class))).thenReturn(responseFormObj);
 
-        formService.save(allFormData);
+        formService.save(Lists.<Map<String, Object>>newArrayList(formData));
 
         verify(objectConverter, times(1)).create(any(Map.class));
         verify(repository).create(responseFormObj);
@@ -61,16 +59,15 @@ public class FormServiceTest {
         HashMap<String, Object> subForm1 = new HashMap<String, Object>();
         subForm1.put("name", "child_pnc");
         formData.put(SUB_FORMS, Lists.<Map<String, Object>>newArrayList(subForm1));
-        ArrayList<Map<String, Object>> allFormData = Lists.<Map<String, Object>>newArrayList(formData);
 
         PncVisit pncVisit = new PncVisit();
         ChildPncVisit childPncVisit = new ChildPncVisit();
 
-        when(mapTransformer.transform(allFormData)).thenReturn(allFormData.stream());
+        when(mapTransformer.transform(formData)).thenReturn(formData);
         when(objectConverter.create(any(Map.class))).thenReturn(pncVisit).thenReturn(childPncVisit);
         when(repository.create(any(BaseEntity.class))).thenReturn(pncVisit);
 
-        formService.save(allFormData);
+        formService.save(Lists.<Map<String, Object>>newArrayList(formData));
 
         verify(repository).create(pncVisit);
         verify(repository).create(childPncVisit);
@@ -81,12 +78,11 @@ public class FormServiceTest {
         String entity_id = "entity_id";
         String errorMessage = "Some message";
         formData.put(ENTITY_ID, entity_id);
-        ArrayList<Map<String, Object>> allFormData = Lists.<Map<String, Object>>newArrayList(formData);
 
-        when(mapTransformer.transform(allFormData)).thenReturn(allFormData.stream());
+        when(mapTransformer.transform(formData)).thenReturn(formData);
         when(objectConverter.create(any(Map.class))).thenThrow(new FormMigrationException(errorMessage));
 
-        formService.save(allFormData);
+        formService.save(Lists.<Map<String, Object>>newArrayList(formData));
 
         verify(repository).create(new ErrorAudit(entity_id, errorMessage, ""));
     }

@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 
 import static app.Constants.*;
 import static java.lang.String.valueOf;
@@ -29,30 +28,38 @@ public class FormService {
         this.objectConverter = objectConverter;
     }
 
-    public List<Map<String, Object>> save(List<Map<String, Object>> responseData) {
-        if (responseData.size() == 0)
-            return responseData;
+    public List<Map<String, Object>> save(List<Map<String, Object>> formEntries) {
+        if (formEntries.size() == 0)
+            return formEntries;
 
-        return save(mapTransformer.transform(responseData));
-    }
-
-    private List<Map<String, Object>> save(Stream<Map<String, Object>> mappedData) {
         List<Map<String, Object>> processedForms = Lists.newArrayList();
-
-        mappedData.forEach(map -> {
-            try {
-                processedForms.add(process(map));
-            } catch (FormMigrationException ex) {
-                String detailedMessage = ex.getCause() == null ? "" : ex.getCause().getMessage();
-                logger.error(ex.getMessage() + "\n form entry: " + map, ex);
-                repository.create(new ErrorAudit(valueOf(map.get(ENTITY_ID)), ex.getMessage(), detailedMessage));
-            }
+        formEntries.forEach(formEntry -> {
+            Map<String, Object> processedForm = processForm(formEntry);
+            if (processedForm != null)
+                processedForms.add(processedForm);
         });
         return processedForms;
     }
 
+    private Map<String, Object> processForm(Map<String, Object> formEntry) {
+        try {
+            return process(formEntry);
+        } catch (FormMigrationException ex) {
+            String detailedMessage = ex.getCause() == null ? "" : ex.getCause().getMessage();
+            logger.error(ex.getMessage() + "\n form entry: " + formEntry, ex);
+
+            repository.create(new ErrorAudit(valueOf(formEntry.get(ENTITY_ID)), ex.getMessage(), detailedMessage));
+        } catch (Exception ex) {
+            logger.error(ex.getMessage());
+        }
+        return null;
+    }
+
     private Map<String, Object> process(Map<String, Object> map) {
-        BaseEntity savedEntity = repository.create(objectConverter.create(map));
+        Map<String, Object> transformedMap = mapTransformer.transform(map);
+        BaseEntity entityForm = objectConverter.create(transformedMap);
+        BaseEntity savedEntity = repository.create(entityForm);
+
         if (map.containsKey(SUB_FORMS) && map.get(SUB_FORMS) != null) {
             ((List<Map<String, Object>>) map.get(SUB_FORMS)).forEach(subForm -> {
                 subForm.put(PARENT_ID, savedEntity.getId());

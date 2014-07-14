@@ -1,8 +1,7 @@
 package app.util;
 
+import app.exception.FormMigrationException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,19 +14,14 @@ import java.util.stream.Stream;
 import static app.Constants.*;
 import static com.google.common.base.Strings.emptyToNull;
 import static com.google.common.collect.Lists.newArrayList;
-import static java.lang.String.*;
+import static java.lang.String.valueOf;
 
 public class MapTransformer {
 
     private final ArrayList<String> otherFields = newArrayList(ANM_ID, INSTANCE_ID, ENTITY_ID, FORM_NAME, CLIENT_VERSION, SERVER_VERSION, FORM_DATA_DEFINITION_VERSION);
-    private Logger logger = LoggerFactory.getLogger(MapTransformer.class);
 
-    public Stream<Map<String, Object>> transform(List<Map<String, Object>> formData) {
-        return formData.stream().map(formMap -> transform(formMap));
-    }
-
-    private Map<String, Object> transform(Map<String, Object> formMap) {
-        HashMap<String, Object> resultMap = new HashMap<String, Object>();
+    public Map<String, Object> transform(Map<String, Object> formMap) {
+        HashMap<String, Object> resultMap = new HashMap<>();
         Map<String, Object> formInfo = getFormInfo(formMap);
 
         otherFields.forEach(fieldName -> resultMap.put(fieldName, formMap.get(fieldName)));
@@ -57,12 +51,11 @@ public class MapTransformer {
     }
 
     private Map<String, Object> getFormInfo(Map<String, Object> formMap) {
-        Map<String, Object> formDetails = new HashMap<>();
         try {
-            formDetails = new ObjectMapper().readValue((String) formMap.get(FORM_INSTANCE), Map.class);
-        } catch (IOException e) {
-            logger.error("Could not parse the json form " + e.getMessage());
+            Map formInstance = new ObjectMapper().readValue((String) formMap.get(FORM_INSTANCE), Map.class);
+            return (Map<String, Object>) formInstance.get(FORM);
+        } catch (IOException ex) {
+            throw new FormMigrationException("Could not parse form instance to json", ex);
         }
-        return (Map<String, Object>) formDetails.get(FORM);
     }
 }

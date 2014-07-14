@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 import static app.Constants.*;
-import static com.google.common.collect.Lists.newArrayList;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
@@ -32,7 +31,7 @@ public class MapTransformerTest {
 
     @Test
     public void shouldTransformTheGivenMap() throws JsonProcessingException {
-        Map<String, Object> transformedMap = mapTransformer.transform(newArrayList(formData)).findFirst().get();
+        Map<String, Object> transformedMap = mapTransformer.transform(formData);
 
         assertEquals("demo1", transformedMap.get("anmId"));
         assertEquals("pnc_registration_oa", transformedMap.get(FORM_NAME));
@@ -45,7 +44,7 @@ public class MapTransformerTest {
 
     @Test
     public void shouldTransformTheSubFormsInAGivenMap() throws JsonProcessingException {
-        Map<String, Object> transformedMap = mapTransformer.transform(newArrayList(formData)).findFirst().get();
+        Map<String, Object> transformedMap = mapTransformer.transform(formData);
 
         assertEquals("demo1", transformedMap.get("anmId"));
 
