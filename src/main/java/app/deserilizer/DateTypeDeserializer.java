@@ -1,4 +1,4 @@
-package app.util;
+package app.deserilizer;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -11,7 +11,7 @@ import static com.google.common.base.Strings.isNullOrEmpty;
 
 public class DateTypeDeserializer extends StdDeserializer<Date> {
 
-    protected DateTypeDeserializer(Class<?> vc)
+    public DateTypeDeserializer(Class<?> vc)
     {
         super(vc);
     }

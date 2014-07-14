@@ -57,7 +57,7 @@ public class MapTransformer {
     }
 
     private Map<String, Object> getFormInfo(Map<String, Object> formMap) {
-        Map<String, Object> formDetails = new HashMap<String, Object>();
+        Map<String, Object> formDetails = new HashMap<>();
         try {
             formDetails = new ObjectMapper().readValue((String) formMap.get(FORM_INSTANCE), Map.class);
         } catch (IOException e) {

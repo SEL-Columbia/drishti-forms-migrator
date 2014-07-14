@@ -1,5 +1,8 @@
 package app.util;
 
+import app.deserilizer.DateTypeDeserializer;
+import app.deserilizer.FloatTypeDeserializer;
+import app.deserilizer.IntTypeDeserializer;
 import app.exception.FormMigrationException;
 import app.model.BaseEntity;
 import app.model.forms.*;
@@ -62,19 +65,20 @@ public class ObjectConverter {
     }
 
     public BaseEntity create(Map hashMap) {
-        boolean isBaseForm = hashMap.containsKey(FORM_NAME);
-        Class<Object> classType = isBaseForm ?
-                (Class<Object>) formNameMap.get(hashMap.get(FORM_NAME)) :
-                (Class<Object>) subFormNameMap.get(hashMap.get(NAME));
+        try {
+            return (BaseEntity) getObjectMapper().convertValue(hashMap, getClassType(hashMap));
+        } catch (IllegalArgumentException e) {
+            throw new FormMigrationException("Form entry has invalid data type values", e);
+        }
+    }
+
+    private Class<Object> getClassType(Map hashMap) {
+        Object classType = hashMap.containsKey(FORM_NAME) ? formNameMap.get(hashMap.get(FORM_NAME)) : subFormNameMap.get(hashMap.get(NAME));
 
         if (classType == null)
             throw new FormMigrationException("Unknown form name");
 
-        try {
-            return (BaseEntity) getObjectMapper().convertValue(hashMap, classType);
-        } catch (IllegalArgumentException e) {
-            throw new FormMigrationException("Form entry has invalid data type values", e);
-        }
+        return (Class<Object>) classType;
     }
 
     private ObjectMapper getObjectMapper() {

@@ -32,21 +32,22 @@ public class FormMigratorJob implements Job {
     }
 
     public void process() {
-        URI pollingUri = getBaseURI(configuration.getPollingUrl(), repository.getLastAudit());
-
+        URI pollingUri = getBaseURI();
         logger.info("Fetching form entries from: " + pollingUri.toString());
 
         List<Map<String, Object>> responseData = httpClient.call(pollingUri, configuration.getPollingUrlUsername(), configuration.getPollingUrlPassword());
 
         logger.info("Processing " + responseData.size() + " form entries");
-
-        List<Map<String, Object>> processedForms = formService.save(responseData);
-        createAuditFor(processedForms, responseData);
+        createAuditFor(formService.save(responseData), responseData);
     }
 
-    private static URI getBaseURI(String uri, Audit lastPolledAuditEntry) {
+    private URI getBaseURI() {
+        Audit lastPolledAuditEntry = repository.getLastAudit();
         lastPolledAuditEntry = lastPolledAuditEntry == null ? Audit.DEFAULT : lastPolledAuditEntry;
-        return UriBuilder.fromUri(uri).replaceQueryParam(TIMESTAMP, lastPolledAuditEntry.getLastPolledTimestamp()).build();
+
+        return UriBuilder.fromUri(configuration.getPollingUrl())
+                .replaceQueryParam(TIMESTAMP, lastPolledAuditEntry.getLastPolledTimestamp())
+                .build();
     }
 
     private void createAuditFor(List<Map<String, Object>> processedForms, List<Map<String, Object>> allForms) {
