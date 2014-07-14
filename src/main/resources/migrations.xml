@@ -2211,4 +2211,18 @@
             </column>
         </createTable>
     </changeSet>
+
+    <changeSet id="32" author="maha">
+        <createTable tableName="error_audit">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="entity_id" type="varchar(255)"/>
+            <column name="failure_reason" type="varchar(255)"/>
+            <column name="detailed_reason" type="varchar(255)"/>
+            <column name="created_timestamp" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>

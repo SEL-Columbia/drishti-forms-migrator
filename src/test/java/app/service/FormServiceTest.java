@@ -1,6 +1,8 @@
 package app.service;
 
+import app.exception.FormMigrationException;
 import app.model.BaseEntity;
+import app.model.ErrorAudit;
 import app.model.forms.PncVisit;
 import app.model.subForms.ChildPncVisit;
 import app.repository.Repository;
@@ -72,5 +74,20 @@ public class FormServiceTest {
 
         verify(repository).create(pncVisit);
         verify(repository).create(childPncVisit);
+    }
+
+    @Test
+    public void shouldCreateErrorAuditOnException(){
+        String entity_id = "entity_id";
+        String errorMessage = "Some message";
+        formData.put(ENTITY_ID, entity_id);
+        ArrayList<Map<String, Object>> allFormData = Lists.<Map<String, Object>>newArrayList(formData);
+
+        when(mapTransformer.transform(allFormData)).thenReturn(allFormData.stream());
+        when(objectConverter.create(any(Map.class))).thenThrow(new FormMigrationException(errorMessage));
+
+        formService.save(allFormData);
+
+        verify(repository).create(new ErrorAudit(entity_id, errorMessage, ""));
     }
 }

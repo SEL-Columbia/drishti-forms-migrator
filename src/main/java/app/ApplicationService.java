@@ -1,6 +1,7 @@
 package app;
 
 import app.model.Audit;
+import app.model.ErrorAudit;
 import app.model.forms.*;
 import app.model.subForms.ChildPncVisit;
 import app.model.subForms.ChildRegistration;
@@ -34,7 +35,7 @@ public class ApplicationService extends Service<MigratorConfiguration> {
                     PncClose.class, PncRegistrationOa.class, PncVisit.class, PostpartumFamilyPlanning.class,
                     RecordEcps.class, RenewFpProduct.class, Tt.class, VitaminA.class,
                     PncChildRegistration.class, ChildRegistration.class, ChildPncVisit.class,
-                    Audit.class) {
+                    Audit.class, ErrorAudit.class) {
                 @Override
                 public DatabaseConfiguration getDatabaseConfiguration(MigratorConfiguration configuration) {
                     return configuration.getDatabase();

@@ -76,7 +76,7 @@ public class ObjectConverter {
         Object classType = hashMap.containsKey(FORM_NAME) ? formNameMap.get(hashMap.get(FORM_NAME)) : subFormNameMap.get(hashMap.get(NAME));
 
         if (classType == null)
-            throw new FormMigrationException("Unknown form name");
+            throw new FormMigrationException("Unknown form name: " + hashMap.get(FORM_NAME));
 
         return (Class<Object>) classType;
     }

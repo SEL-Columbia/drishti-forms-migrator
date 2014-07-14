@@ -2,6 +2,7 @@ package app.service;
 
 import app.exception.FormMigrationException;
 import app.model.BaseEntity;
+import app.model.ErrorAudit;
 import app.repository.Repository;
 import app.util.MapTransformer;
 import app.util.ObjectConverter;
@@ -13,8 +14,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static app.Constants.PARENT_ID;
-import static app.Constants.SUB_FORMS;
+import static app.Constants.*;
+import static java.lang.String.valueOf;
 
 public class FormService {
     private Repository repository;
@@ -42,7 +43,9 @@ public class FormService {
             try {
                 processedForms.add(process(map));
             } catch (FormMigrationException ex) {
-                logger.error(ex.getMessage() + '\n' + map, ex);
+                String detailedMessage = ex.getCause() == null ? "" : ex.getCause().getMessage();
+                logger.error(ex.getMessage() + "\n form entry: " + map, ex);
+                repository.create(new ErrorAudit(valueOf(map.get(ENTITY_ID)), ex.getMessage(), detailedMessage));
             }
         });
         return processedForms;

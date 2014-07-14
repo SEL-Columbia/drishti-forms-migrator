@@ -38,7 +38,10 @@ public class FormMigratorJob implements Job {
         List<Map<String, Object>> responseData = httpClient.call(pollingUri, configuration.getPollingUrlUsername(), configuration.getPollingUrlPassword());
 
         logger.info("Processing " + responseData.size() + " form entries");
-        createAuditFor(formService.save(responseData), responseData);
+        List<Map<String, Object>> processedForms = formService.save(responseData);
+        logger.info("Successfully processed " + processedForms.size() + " of " + responseData.size() + " form entries");
+
+        createAuditFor(processedForms, responseData);
     }
 
     private URI getBaseURI() {
