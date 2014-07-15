@@ -1,6 +1,6 @@
 package app.model.forms;
 
-import app.model.FromEntity;
+import app.model.FormEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,7 +14,7 @@ import java.util.Date;
 @Data
 @Table(name = "vitamin_a")
 @EqualsAndHashCode(callSuper = true)
-public class VitaminA extends FromEntity {
+public class VitaminA extends FormEntity {
     @Column(name = "child_id")
     @JsonProperty("id")
     private String childId;

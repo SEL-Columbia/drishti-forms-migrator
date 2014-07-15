@@ -13,7 +13,7 @@ import java.util.Date;
 @MappedSuperclass
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class FromEntity extends BaseEntity {
+public class FormEntity extends BaseEntity {
     @Column(name = "anm_id")
     @JsonProperty("anmId")
     private String anmId;
