@@ -60,8 +60,8 @@ public class FormService {
         BaseEntity entityForm = objectConverter.create(transformedMap);
         BaseEntity savedEntity = repository.create(entityForm);
 
-        if (map.containsKey(SUB_FORMS) && map.get(SUB_FORMS) != null) {
-            ((List<Map<String, Object>>) map.get(SUB_FORMS)).forEach(subForm -> {
+        if (transformedMap.containsKey(SUB_FORMS) && transformedMap.get(SUB_FORMS) != null) {
+            ((List<Map<String, Object>>) transformedMap.get(SUB_FORMS)).forEach(subForm -> {
                 subForm.put(PARENT_ID, savedEntity.getId());
                 repository.create(objectConverter.create(subForm));
             });

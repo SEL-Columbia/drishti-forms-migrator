@@ -56,14 +56,18 @@ public class FormServiceTest {
 
     @Test
     public void shouldCallCreateOfRepositoryForSubFormsAfterTransformation(){
-        HashMap<String, Object> subForm1 = new HashMap<String, Object>();
-        subForm1.put("name", "child_pnc");
-        formData.put(SUB_FORMS, Lists.<Map<String, Object>>newArrayList(subForm1));
+        HashMap<String, Object> subForm1 = new HashMap<String, Object>() {{
+            put(NAME, "child_pnc");
+        }};
+        HashMap<String, Object> transformedSubForm = new HashMap<String, Object>() {{
+            put(NAME , "child_pnc");
+            put(SUB_FORMS, Lists.<Map<String, Object>>newArrayList(subForm1));
+        }};
 
         PncVisit pncVisit = new PncVisit();
         ChildPncVisit childPncVisit = new ChildPncVisit();
 
-        when(mapTransformer.transform(formData)).thenReturn(formData);
+        when(mapTransformer.transform(formData)).thenReturn(transformedSubForm);
         when(objectConverter.create(any(Map.class))).thenReturn(pncVisit).thenReturn(childPncVisit);
         when(repository.create(any(BaseEntity.class))).thenReturn(pncVisit);
 
