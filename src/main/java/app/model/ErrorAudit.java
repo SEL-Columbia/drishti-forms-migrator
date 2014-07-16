@@ -16,8 +16,8 @@ import javax.persistence.Transient;
 @Table(name = "error_audit")
 @EqualsAndHashCode(callSuper = true)
 public class ErrorAudit extends BaseEntity {
-    @Column(name = "entity_id")
-    private String entityId;
+    @Column(name = "instance_id")
+    private String instanceId;
 
     @Column(name = "failure_reason")
     private String failureReason;
@@ -28,8 +28,8 @@ public class ErrorAudit extends BaseEntity {
     @Transient
     private DateTime createdDate;
 
-    public ErrorAudit(String entityId, String failureReason, String detailedReason) {
-        this.entityId = entityId;
+    public ErrorAudit(String instanceId, String failureReason, String detailedReason) {
+        this.instanceId = instanceId;
         this.failureReason = failureReason;
         this.detailedReason = detailedReason;
     }

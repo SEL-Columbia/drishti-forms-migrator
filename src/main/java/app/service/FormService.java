@@ -53,7 +53,7 @@ public class FormService {
             String detailedMessage = ex.getCause() == null ? "" : ex.getCause().getMessage();
             logger.error(ex.getMessage() + "\n form entry: " + formEntry, ex);
 
-            ErrorAudit errorAudit = new ErrorAudit(valueOf(formEntry.get(ENTITY_ID)), ex.getMessage(), detailedMessage);
+            ErrorAudit errorAudit = new ErrorAudit(valueOf(formEntry.get(INSTANCE_ID)), ex.getMessage(), detailedMessage);
             transactionManager.doInTransaction(() -> repository.create(errorAudit));
         } catch (Exception ex) {
             logger.error(ex.getMessage());

@@ -91,7 +91,7 @@ public class FormServiceTest {
     public void shouldCreateErrorAuditOnException(){
         String entity_id = "entity_id";
         String errorMessage = "Some message";
-        formData.put(ENTITY_ID, entity_id);
+        formData.put(INSTANCE_ID, entity_id);
 
         when(mapTransformer.transform(formData)).thenReturn(formData);
         when(objectConverter.create(any(Map.class))).thenThrow(new FormMigrationException(errorMessage));
