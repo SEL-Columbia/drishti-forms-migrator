@@ -1,9 +1,12 @@
 package app.service;
 
 import app.exception.FormMigrationException;
+import app.model.Audit;
 import app.model.BaseEntity;
 import app.model.ErrorAudit;
 import app.repository.Repository;
+import app.repository.TransactionManager;
+import app.scheduler.FormMigratorJob;
 import app.util.MapTransformer;
 import app.util.ObjectConverter;
 import com.google.common.collect.Lists;
@@ -20,12 +23,14 @@ public class FormService {
     private Repository repository;
     private MapTransformer mapTransformer;
     private ObjectConverter objectConverter;
+    private TransactionManager transactionManager;
     private Logger logger = LoggerFactory.getLogger(FormService.class);
 
-    public FormService(Repository repository, MapTransformer mapTransformer, ObjectConverter objectConverter) {
+    public FormService(Repository repository, MapTransformer mapTransformer, ObjectConverter objectConverter, TransactionManager transactionManager) {
         this.repository = repository;
         this.mapTransformer = mapTransformer;
         this.objectConverter = objectConverter;
+        this.transactionManager = transactionManager;
     }
 
     public List<Map<String, Object>> save(List<Map<String, Object>> formEntries) {
@@ -43,12 +48,13 @@ public class FormService {
 
     private Map<String, Object> processForm(Map<String, Object> formEntry) {
         try {
-            return process(formEntry);
+            return (Map<String, Object>) transactionManager.doInTransaction(() -> process(formEntry));
         } catch (FormMigrationException ex) {
             String detailedMessage = ex.getCause() == null ? "" : ex.getCause().getMessage();
             logger.error(ex.getMessage() + "\n form entry: " + formEntry, ex);
 
-            repository.create(new ErrorAudit(valueOf(formEntry.get(ENTITY_ID)), ex.getMessage(), detailedMessage));
+            ErrorAudit errorAudit = new ErrorAudit(valueOf(formEntry.get(ENTITY_ID)), ex.getMessage(), detailedMessage);
+            transactionManager.doInTransaction(() -> repository.create(errorAudit));
         } catch (Exception ex) {
             logger.error(ex.getMessage());
         }

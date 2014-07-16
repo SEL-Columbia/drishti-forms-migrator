@@ -20,30 +20,23 @@ public class Repository extends AbstractDAO<BaseEntity> {
     }
 
     public BaseEntity create(BaseEntity entityForm) {
-        Session session = sessionFactory.openSession();
         try {
-            ManagedSessionContext.bind(session);
             return persist(entityForm);
         } catch (Exception ex) {
             throw new FormMigrationException("Could not save the " + entityForm.getClass().toString(), ex);
-        } finally {
-            session.close();
         }
     }
 
     public Audit getLastAudit() {
         DetachedCriteria detachedCriteria = DetachedCriteria.forClass(Audit.class).setProjection(Projections.max("lastPolledTimestamp"));
 
-        Session session = sessionFactory.openSession();
+        Session session = sessionFactory.getCurrentSession();
         try {
-            ManagedSessionContext.bind(session);
             return (Audit) session.createCriteria(Audit.class)
                     .add(Property.forName("lastPolledTimestamp").eq(detachedCriteria))
                     .uniqueResult();
         } catch (Exception ex) {
             throw new FormMigrationException("Could not fetch last audit", ex);
-        } finally {
-            session.close();
         }
     }
 }

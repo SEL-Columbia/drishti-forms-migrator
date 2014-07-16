@@ -1,8 +1,10 @@
 package app;
 
 import app.repository.Repository;
+import app.repository.TransactionManager;
 import app.scheduler.FormMigratorJob;
 import app.scheduler.Job;
+import app.service.AuditService;
 import app.service.FormService;
 import app.util.HttpClient;
 import app.util.MapTransformer;
@@ -16,6 +18,8 @@ public class Context {
     private SessionFactory sessionFactory;
     private FormMigratorJob formMigratorJob;
     private MigratorConfiguration configuration;
+    private TransactionManager transactionManager;
+    private AuditService auditService;
 
     protected Context() {}
 
@@ -35,7 +39,7 @@ public class Context {
 
     public Job job() {
         if (formMigratorJob == null) {
-            formMigratorJob = new FormMigratorJob(repository(), formService(), configuration, new HttpClient());
+            formMigratorJob = new FormMigratorJob(formService(), auditService(), configuration, new HttpClient());
         }
         return formMigratorJob;
     }
@@ -50,14 +54,28 @@ public class Context {
         return this;
     }
 
+    public TransactionManager transactionManager() {
+        if(transactionManager == null) {
+            transactionManager = new TransactionManager(sessionFactory);
+        }
+        return transactionManager;
+    }
+
     public MigratorConfiguration configuration() {
         return configuration;
     }
 
     public FormService formService() {
         if(formService == null) {
-            formService = new FormService(repository(), new MapTransformer(), new ObjectConverter());
+            formService = new FormService(repository(), new MapTransformer(), new ObjectConverter(), transactionManager());
         }
         return formService;
+    }
+
+    public AuditService auditService() {
+        if(auditService == null) {
+            auditService = new AuditService(repository(), transactionManager());
+        }
+        return auditService;
     }
 }

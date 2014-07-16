@@ -3,6 +3,7 @@ package app.scheduler;
 import app.MigratorConfiguration;
 import app.model.Audit;
 import app.repository.Repository;
+import app.service.AuditService;
 import app.service.FormService;
 import app.util.HttpClient;
 import org.junit.Before;
@@ -21,7 +22,7 @@ import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 
 public class FormMigratorJobTest {
-    private Repository repository;
+    private AuditService auditService;
     private MigratorConfiguration configuration;
     private FormService formService;
     private HttpClient httpClient;
@@ -29,12 +30,12 @@ public class FormMigratorJobTest {
 
     @Before
     public void setup() {
-        repository = mock(Repository.class);
+        auditService = mock(AuditService.class);
         configuration = mock(MigratorConfiguration.class);
         formService = mock(FormService.class);
         httpClient = mock(HttpClient.class);
 
-        jobScheduler = new FormMigratorJob(repository, formService, configuration, httpClient);
+        jobScheduler = new FormMigratorJob(formService, auditService, configuration, httpClient);
     }
 
     @Test
@@ -42,7 +43,7 @@ public class FormMigratorJobTest {
         Audit lastPolledAudit = new Audit(420L, 100L, 100L);
         String pollingUrl = "www.localhost.com/form?timestamp=0";
 
-        when(repository.getLastAudit()).thenReturn(lastPolledAudit);
+        when(auditService.getLastAudit()).thenReturn(lastPolledAudit);
         when(configuration.getPollingUrl()).thenReturn(pollingUrl);
         when(configuration.getPollingUrlUsername()).thenReturn("admin");
         when(configuration.getPollingUrlPassword()).thenReturn("password");
@@ -57,7 +58,7 @@ public class FormMigratorJobTest {
     public void shouldAddTheDefaultTimestampValueOfZeroWhenTheLastAuditIsNull() throws URISyntaxException {
         String pollingUrl = "www.localhost.com/form";
 
-        when(repository.getLastAudit()).thenReturn(null);
+        when(auditService.getLastAudit()).thenReturn(null);
         when(configuration.getPollingUrl()).thenReturn(pollingUrl);
         when(configuration.getPollingUrlUsername()).thenReturn("admin");
         when(configuration.getPollingUrlPassword()).thenReturn("password");
@@ -69,12 +70,11 @@ public class FormMigratorJobTest {
     }
 
     @Test
-    public void shouldCreateAuditWithTheMaxVersionedForm() {
+    public void shouldCallAuditServiceAfterFormProcessing() {
         HashMap<String, Object> form1 = new HashMap<String, Object>() {{ put(SERVER_VERSION, "120"); }};
         HashMap<String, Object> form2 = new HashMap<String, Object>() {{ put(SERVER_VERSION, "420"); }};
-        HashMap<String, Object> form3 = new HashMap<String, Object>() {{ put(SERVER_VERSION, "220"); }};
-        ArrayList<Map<String, Object>> allForms = newArrayList(form1, form2, form3);
-        ArrayList<Map<String, Object>> processForms = newArrayList(form1, form2);
+        ArrayList<Map<String, Object>> allForms = newArrayList(form1, form2);
+        ArrayList<Map<String, Object>> processForms = newArrayList(form2);
 
         when(configuration.getPollingUrl()).thenReturn("www.localhost.com/form");
         when(httpClient.call(any(), anyString(), anyString())).thenReturn(allForms);
@@ -82,19 +82,6 @@ public class FormMigratorJobTest {
 
         jobScheduler.process();
 
-        verify(repository).create(new Audit(420L, allForms.size(), processForms.size()));
-    }
-
-    @Test
-    public void shouldNotCreateAuditWhenTheFormsAreEmpty() {
-        ArrayList<Map<String, Object>> processedForms = newArrayList();
-
-        when(configuration.getPollingUrl()).thenReturn("www.localhost.com/form");
-        when(httpClient.call(any(), anyString(), anyString())).thenReturn(processedForms);
-        when(formService.save(any())).thenReturn(processedForms);
-
-        jobScheduler.process();
-
-        verify(repository, never()).create(any(Audit.class));
+        verify(auditService).createAuditFor(processForms, allForms);
     }
 }

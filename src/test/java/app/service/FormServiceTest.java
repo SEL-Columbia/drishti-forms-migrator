@@ -1,14 +1,18 @@
 package app.service;
 
+import app.MockTransactionManager;
 import app.exception.FormMigrationException;
 import app.model.BaseEntity;
 import app.model.ErrorAudit;
 import app.model.forms.PncVisit;
 import app.model.subForms.ChildPncVisit;
 import app.repository.Repository;
+import app.repository.TransactionManager;
 import app.util.MapTransformer;
 import app.util.ObjectConverter;
 import com.google.common.collect.Lists;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -28,14 +32,20 @@ public class FormServiceTest {
     private MapTransformer mapTransformer;
     @Mock
     private ObjectConverter objectConverter;
+    @Mock
+    private TransactionManager transactionManager;
 
     private FormService formService;
     private HashMap<String, Object> formData;
 
     @Before
     public void setUp() throws Exception {
+        SessionFactory mock = mock(SessionFactory.class);
+        Session session = mock(Session.class);
+        when(mock.openSession()).thenReturn(session);
+
         initMocks(this);
-        formService = new FormService(repository, mapTransformer, objectConverter);
+        formService = new FormService(repository, mapTransformer, objectConverter, new MockTransactionManager());
         formData = new HashMap<>();
         formData.put(FORM_NAME, "pnc_visit");
         formData.put(SERVER_VERSION, "1");
@@ -89,5 +99,12 @@ public class FormServiceTest {
         formService.save(Lists.<Map<String, Object>>newArrayList(formData));
 
         verify(repository).create(new ErrorAudit(entity_id, errorMessage, ""));
+    }
+
+    @Test
+    public void shouldCreateErrorAuditOnException2(){
+        when(mapTransformer.transform(formData)).thenThrow(new FormMigrationException("form class"));
+
+        formService.save(Lists.<Map<String, Object>>newArrayList(formData));
     }
 }

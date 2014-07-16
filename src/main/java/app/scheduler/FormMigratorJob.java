@@ -3,11 +3,13 @@ package app.scheduler;
 import app.MigratorConfiguration;
 import app.model.Audit;
 import app.repository.Repository;
+import app.service.AuditService;
 import app.service.FormService;
 import app.util.HttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.sound.sampled.AudioSystem;
 import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
 import java.util.List;
@@ -18,17 +20,17 @@ import static app.Constants.TIMESTAMP;
 import static java.lang.Long.valueOf;
 
 public class FormMigratorJob implements Job {
-    private final Repository repository;
+    private final AuditService auditService;
     private final FormService formService;
     private final MigratorConfiguration configuration;
     private final Logger logger = LoggerFactory.getLogger(FormMigratorJob.class);
     private HttpClient httpClient;
 
-    public FormMigratorJob(Repository repository, FormService formService, MigratorConfiguration configuration, HttpClient httpClient) {
-        this.repository = repository;
+    public FormMigratorJob(FormService formService, AuditService auditService, MigratorConfiguration configuration, HttpClient httpClient) {
         this.formService = formService;
         this.configuration = configuration;
         this.httpClient = httpClient;
+        this.auditService = auditService;
     }
 
     public void process() {
@@ -41,30 +43,15 @@ public class FormMigratorJob implements Job {
         List<Map<String, Object>> processedForms = formService.save(responseData);
         logger.info("Successfully processed " + processedForms.size() + " of " + responseData.size() + " form entries");
 
-        createAuditFor(processedForms, responseData);
+        auditService.createAuditFor(processedForms, responseData);
     }
 
     private URI getBaseURI() {
-        Audit lastPolledAuditEntry = repository.getLastAudit();
+        Audit lastPolledAuditEntry = auditService.getLastAudit();
         lastPolledAuditEntry = lastPolledAuditEntry == null ? Audit.DEFAULT : lastPolledAuditEntry;
 
         return UriBuilder.fromUri(configuration.getPollingUrl())
                 .replaceQueryParam(TIMESTAMP, lastPolledAuditEntry.getLastPolledTimestamp())
                 .build();
-    }
-
-    private void createAuditFor(List<Map<String, Object>> processedForms, List<Map<String, Object>> allForms) {
-        if(allForms.size() == 0)
-            return;
-
-        Map<String, Object> maxVersionedForm = allForms.stream().max((form1, form2) ->
-                getParsedVersion(form1) >= getParsedVersion(form2) ? 1 : -1
-        ).get();
-
-        repository.create(new Audit(getParsedVersion(maxVersionedForm), allForms.size(), processedForms.size()));
-    }
-
-    private Long getParsedVersion(Map<String, Object> form1) {
-        return valueOf((String) form1.get(SERVER_VERSION));
     }
 }
