@@ -65,20 +65,27 @@ public class ObjectConverter {
     }
 
     public BaseEntity create(Map hashMap) {
+        return deserialize(hashMap, getClassType(formNameMap, hashMap.get(FORM_NAME), "form"));
+    }
+
+    public BaseEntity createSubForm(Map hashMap) {
+        return deserialize(hashMap, getClassType(subFormNameMap, hashMap.get(NAME), "sub form"));
+    }
+
+    private BaseEntity deserialize(Map hashMap, Class<Object> classType) {
         try {
-            return (BaseEntity) getObjectMapper().convertValue(hashMap, getClassType(hashMap));
+            return (BaseEntity) getObjectMapper().convertValue(hashMap, classType);
         } catch (IllegalArgumentException e) {
             throw new FormMigrationException("Form entry has invalid data type values", e);
         }
     }
 
-    private Class<Object> getClassType(Map hashMap) {
-        Object classType = hashMap.containsKey(FORM_NAME) ? formNameMap.get(hashMap.get(FORM_NAME)) : subFormNameMap.get(hashMap.get(NAME));
-
+    private Class<Object> getClassType(Map source, Object key, String formType) {
+        Class<Object> classType = (Class<Object>) source.get(key);
         if (classType == null)
-            throw new FormMigrationException("Unknown form name: " + hashMap.get(FORM_NAME));
+            throw new FormMigrationException("Unknown "+ formType  +" name: " + key);
 
-        return (Class<Object>) classType;
+        return classType;
     }
 
     private ObjectMapper getObjectMapper() {

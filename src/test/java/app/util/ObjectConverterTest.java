@@ -64,13 +64,13 @@ public class ObjectConverterTest {
     @Test
     public void shouldCreateSubFormObjectFromTheCorrespondingMap() throws Exception {
         HashMap hashMap = new HashMap();
-        hashMap.put("name", "child_registration_oa");
+        hashMap.put(NAME, "child_registration_oa");
         hashMap.put("id", "child_id_404");
         hashMap.put("gender", "male");
         hashMap.put("bloodGroup", "AB+");
         hashMap.put("parentId", 404L);
 
-        PncChildRegistration entityForm = (PncChildRegistration) new ObjectConverter().create(hashMap);
+        PncChildRegistration entityForm = (PncChildRegistration) new ObjectConverter().createSubForm(hashMap);
 
         assertEquals(hashMap.get("name"), entityForm.getSubFormName());
         assertEquals(hashMap.get("id"), entityForm.getChildId());
@@ -83,6 +83,17 @@ public class ObjectConverterTest {
     public void shouldReturnNullIfThereIsNoEntityWithGivenFormName() throws Exception {
         HashMap hashMap = new HashMap();
         hashMap.put(FORM_NAME, "some_random");
+        hashMap.put("id", "child_id_404");
+        hashMap.put("gender", "male");
+        hashMap.put("bloodGroup", "AB+");
+
+        new ObjectConverter().create(hashMap);
+    }
+
+    @Test(expected = FormMigrationException.class)
+    public void shouldReturnNullIfThereIsNoEntityWithGivenSubFormName() throws Exception {
+        HashMap hashMap = new HashMap();
+        hashMap.put(NAME, "some_random");
         hashMap.put("id", "child_id_404");
         hashMap.put("gender", "male");
         hashMap.put("bloodGroup", "AB+");

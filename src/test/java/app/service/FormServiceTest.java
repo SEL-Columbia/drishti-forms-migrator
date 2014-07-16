@@ -78,7 +78,8 @@ public class FormServiceTest {
         ChildPncVisit childPncVisit = new ChildPncVisit();
 
         when(mapTransformer.transform(formData)).thenReturn(transformedSubForm);
-        when(objectConverter.create(any(Map.class))).thenReturn(pncVisit).thenReturn(childPncVisit);
+        when(objectConverter.create(any(Map.class))).thenReturn(pncVisit);
+        when(objectConverter.createSubForm(any(Map.class))).thenReturn(childPncVisit);
         when(repository.create(any(BaseEntity.class))).thenReturn(pncVisit);
 
         formService.save(Lists.<Map<String, Object>>newArrayList(formData));
