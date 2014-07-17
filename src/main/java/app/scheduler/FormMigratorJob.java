@@ -6,18 +6,24 @@ import app.repository.Repository;
 import app.service.AuditService;
 import app.service.FormService;
 import app.util.HttpClient;
+import com.google.common.base.Stopwatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.sound.sampled.AudioSystem;
 import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.concurrent.TimeUnit;
 
 import static app.Constants.SERVER_VERSION;
 import static app.Constants.TIMESTAMP;
 import static java.lang.Long.valueOf;
+import static java.lang.String.*;
+import static java.util.concurrent.TimeUnit.*;
 
 public class FormMigratorJob implements Job {
     private final AuditService auditService;
@@ -34,6 +40,7 @@ public class FormMigratorJob implements Job {
     }
 
     public void process() {
+        Stopwatch stopwatch = new Stopwatch().start();
         URI pollingUri = getBaseURI();
         logger.info("Fetching form entries from: " + pollingUri.toString());
 
@@ -41,9 +48,9 @@ public class FormMigratorJob implements Job {
 
         logger.info("Processing " + responseData.size() + " form entries");
         List<Map<String, Object>> processedForms = formService.save(responseData);
-        logger.info("Successfully processed " + processedForms.size() + " of " + responseData.size() + " form entries");
 
         auditService.createAuditFor(processedForms, responseData);
+        logger.info(format("Successfully processed %d of %d form entries. (%dms)", processedForms.size(), responseData.size(), stopwatch.stop().elapsed(MILLISECONDS)));
     }
 
     private URI getBaseURI() {

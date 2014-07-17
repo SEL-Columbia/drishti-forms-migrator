@@ -15,6 +15,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import static app.Constants.*;
 import static java.lang.String.valueOf;
@@ -37,13 +39,7 @@ public class FormService {
         if (formEntries.size() == 0)
             return formEntries;
 
-        List<Map<String, Object>> processedForms = Lists.newArrayList();
-        formEntries.forEach(formEntry -> {
-            Map<String, Object> processedForm = processForm(formEntry);
-            if (processedForm != null)
-                processedForms.add(processedForm);
-        });
-        return processedForms;
+        return formEntries.stream().map(this::processForm).filter(x -> x != null).collect(Collectors.toList());
     }
 
     private Map<String, Object> processForm(Map<String, Object> formEntry) {
