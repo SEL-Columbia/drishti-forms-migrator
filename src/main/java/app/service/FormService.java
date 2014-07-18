@@ -1,56 +1,55 @@
 package app.service;
 
 import app.exception.FormMigrationException;
-import app.model.Audit;
 import app.model.BaseEntity;
 import app.model.ErrorAudit;
 import app.repository.Repository;
 import app.repository.TransactionManager;
-import app.scheduler.FormMigratorJob;
 import app.util.MapTransformer;
 import app.util.ObjectConverter;
-import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
+import java.util.Objects;
 
 import static app.Constants.*;
+import static com.google.common.base.Strings.nullToEmpty;
 import static java.lang.String.valueOf;
+import static java.util.stream.Collectors.toList;
 
 public class FormService {
     private Repository repository;
     private MapTransformer mapTransformer;
     private ObjectConverter objectConverter;
     private TransactionManager transactionManager;
+    private AuditService auditService;
     private Logger logger = LoggerFactory.getLogger(FormService.class);
 
-    public FormService(Repository repository, MapTransformer mapTransformer, ObjectConverter objectConverter, TransactionManager transactionManager) {
+    public FormService(Repository repository, MapTransformer mapTransformer, ObjectConverter objectConverter, TransactionManager transactionManager, AuditService auditService) {
         this.repository = repository;
         this.mapTransformer = mapTransformer;
         this.objectConverter = objectConverter;
         this.transactionManager = transactionManager;
+        this.auditService = auditService;
     }
 
     public List<Map<String, Object>> save(List<Map<String, Object>> formEntries) {
         if (formEntries.size() == 0)
             return formEntries;
 
-        return formEntries.stream().map(this::processForm).filter(x -> x != null).collect(Collectors.toList());
+        return formEntries.stream().map(this::processForm).filter(Objects::nonNull).collect(toList());
     }
 
     private Map<String, Object> processForm(Map<String, Object> formEntry) {
         try {
             return (Map<String, Object>) transactionManager.doInTransaction(() -> process(formEntry));
         } catch (FormMigrationException ex) {
-            String detailedMessage = ex.getCause() == null ? "" : ex.getCause().getMessage();
+            String detailedMessage = ex.getCause() == null ? "" : nullToEmpty(ex.getCause().getMessage());
             logger.error(ex.getMessage() + "\n form entry: " + formEntry, ex);
 
-            ErrorAudit errorAudit = new ErrorAudit(valueOf(formEntry.get(INSTANCE_ID)), ex.getMessage(), detailedMessage);
-            transactionManager.doInTransaction(() -> repository.create(errorAudit));
+            auditService.createErrorAudit(new ErrorAudit(valueOf(formEntry.get(INSTANCE_ID)), ex.getMessage(), detailedMessage));
         } catch (Exception ex) {
             logger.error(ex.getMessage());
         }

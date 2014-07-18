@@ -3,11 +3,13 @@ package app.service;
 import app.MigratorConfiguration;
 import app.MockTransactionManager;
 import app.model.Audit;
+import app.model.ErrorAudit;
 import app.repository.JTransaction;
 import app.repository.Repository;
 import app.repository.TransactionManager;
 import app.scheduler.FormMigratorJob;
 import app.util.HttpClient;
+import junit.framework.Assert;
 import junit.framework.TestCase;
 import org.hibernate.SessionFactory;
 import org.junit.Before;
@@ -19,6 +21,7 @@ import java.util.Map;
 
 import static app.Constants.SERVER_VERSION;
 import static com.google.common.collect.Lists.newArrayList;
+import static junit.framework.Assert.*;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
@@ -54,4 +57,28 @@ public class AuditServiceTest {
 
         verify(repository, never()).create(any(Audit.class));
     }
+
+    @Test
+    public void shouldReturnLastAudit() {
+        Audit audit = new Audit(123L, 100L, 100L);
+        when(repository.getLastAudit()).thenReturn(audit);
+
+        assertEquals(audit, auditService.getLastAudit());
+    }
+
+    @Test
+    public void shouldReturnDefaultLastAuditIfItIsNull() {
+        when(repository.getLastAudit()).thenReturn(null);
+
+        assertEquals(Audit.DEFAULT, auditService.getLastAudit());
+    }
+
+    @Test
+    public void shouldCreateErrorAudit() {
+        ErrorAudit errorAudit = new ErrorAudit();
+
+        auditService.createErrorAudit(errorAudit);
+        verify(repository).create(errorAudit);
+    }
+
 }

@@ -2,7 +2,6 @@ package app.scheduler;
 
 import app.MigratorConfiguration;
 import app.model.Audit;
-import app.repository.Repository;
 import app.service.AuditService;
 import app.service.FormService;
 import app.util.HttpClient;
@@ -58,7 +57,7 @@ public class FormMigratorJobTest {
     public void shouldAddTheDefaultTimestampValueOfZeroWhenTheLastAuditIsNull() throws URISyntaxException {
         String pollingUrl = "www.localhost.com/form";
 
-        when(auditService.getLastAudit()).thenReturn(null);
+        when(auditService.getLastAudit()).thenReturn(Audit.DEFAULT);
         when(configuration.getPollingUrl()).thenReturn(pollingUrl);
         when(configuration.getPollingUrlUsername()).thenReturn("admin");
         when(configuration.getPollingUrlPassword()).thenReturn("password");
@@ -71,11 +70,16 @@ public class FormMigratorJobTest {
 
     @Test
     public void shouldCallAuditServiceAfterFormProcessing() {
-        HashMap<String, Object> form1 = new HashMap<String, Object>() {{ put(SERVER_VERSION, "120"); }};
-        HashMap<String, Object> form2 = new HashMap<String, Object>() {{ put(SERVER_VERSION, "420"); }};
+        HashMap<String, Object> form1 = new HashMap<String, Object>() {{
+            put(SERVER_VERSION, "120");
+        }};
+        HashMap<String, Object> form2 = new HashMap<String, Object>() {{
+            put(SERVER_VERSION, "420");
+        }};
         ArrayList<Map<String, Object>> allForms = newArrayList(form1, form2);
         ArrayList<Map<String, Object>> processForms = newArrayList(form2);
 
+        when(auditService.getLastAudit()).thenReturn(Audit.DEFAULT);
         when(configuration.getPollingUrl()).thenReturn("www.localhost.com/form");
         when(httpClient.call(any(), anyString(), anyString())).thenReturn(allForms);
         when(formService.save(any())).thenReturn(processForms);

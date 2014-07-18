@@ -34,6 +34,8 @@ public class FormServiceTest {
     private ObjectConverter objectConverter;
     @Mock
     private TransactionManager transactionManager;
+    @Mock
+    private AuditService auditService;
 
     private FormService formService;
     private HashMap<String, Object> formData;
@@ -45,7 +47,7 @@ public class FormServiceTest {
         when(mock.openSession()).thenReturn(session);
 
         initMocks(this);
-        formService = new FormService(repository, mapTransformer, objectConverter, new MockTransactionManager());
+        formService = new FormService(repository, mapTransformer, objectConverter, new MockTransactionManager(), auditService);
         formData = new HashMap<>();
         formData.put(FORM_NAME, "pnc_visit");
         formData.put(SERVER_VERSION, "1");
@@ -99,7 +101,7 @@ public class FormServiceTest {
 
         formService.save(Lists.<Map<String, Object>>newArrayList(formData));
 
-        verify(repository).create(new ErrorAudit(entity_id, errorMessage, ""));
+        verify(auditService).createErrorAudit(new ErrorAudit(entity_id, errorMessage, ""));
     }
 
     @Test

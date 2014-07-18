@@ -67,7 +67,7 @@ public class Context {
 
     public FormService formService() {
         if(formService == null) {
-            formService = new FormService(repository(), new MapTransformer(), new ObjectConverter(), transactionManager());
+            formService = new FormService(repository(), new MapTransformer(), new ObjectConverter(), transactionManager(), auditService());
         }
         return formService;
     }

@@ -24,8 +24,7 @@ public class HttpClient {
             return (List<Map<String, Object>>) service.accept(MediaType.APPLICATION_JSON).get(List.class);
         } catch (Exception e) {
             logger.error("Could not make http call : " + e.getMessage());
+            throw e;
         }
-
-        return Lists.newArrayList();
     }
 }
