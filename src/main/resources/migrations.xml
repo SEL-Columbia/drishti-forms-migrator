@@ -2225,4 +2225,87 @@
             </column>
         </createTable>
     </changeSet>
+
+    <changeSet id="33" author="maha: creating anc_investigations table">
+        <createTable tableName="anc_investigations">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="date"/>
+
+            <column name="server_version" type="date"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
+            <column name="mother_id" type="varchar(255)"/>
+
+            <column name="test_date" type="date"/>
+
+            <column name="test_results_to_enter" type="varchar(255)"/>
+
+            <column name="woman_blood_group" type="varchar(255)"/>
+
+            <column name="rh_incompatible_couple" type="varchar(255)"/>
+
+            <column name="tests_result_positive" type="varchar(255)"/>
+
+            <column name="bile_salts" type="varchar(255)"/>
+
+            <column name="bile_pigments" type="varchar(255)"/>
+
+            <column name="submission_date" type="date"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="34" author="maha: creating fp_referral_followup table">
+        <createTable tableName="fp_referral_followup">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="anm_id" type="varchar(255)"/>
+
+            <column name="instance_id" type="varchar(255)"/>
+
+            <column name="entity_id" type="varchar(255)"/>
+
+            <column name="form_name" type="varchar(255)"/>
+
+            <column name="client_version" type="date"/>
+
+            <column name="server_version" type="date"/>
+
+            <column name="form_data_definition_version" type="varchar(255)"/>
+
+            <column name="eligible_couple_id" type="varchar(255)"/>
+
+            <column name="referral_followup_date" type="date"/>
+
+            <column name="couple_went_for_referral" type="varchar(255)"/>
+
+            <column name="referral_result" type="varchar(255)"/>
+
+            <column name="reason_for_couple_not_going_for_referral" type="varchar(255)"/>
+
+            <column name="new_treatment_plan" type="varchar(255)"/>
+
+            <column name="referral_place" type="varchar(255)"/>
+
+            <column name="needs_referral_followup" type="varchar(255)"/>
+
+            <column name="needs_followup" type="varchar(255)"/>
+
+            <column name="submission_date" type="date"/>
+
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>

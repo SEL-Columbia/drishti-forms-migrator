@@ -35,6 +35,7 @@ public class ApplicationService extends Service<MigratorConfiguration> {
                     PncClose.class, PncRegistrationOa.class, PncVisit.class, PostpartumFamilyPlanning.class,
                     RecordEcps.class, RenewFpProduct.class, Tt.class, VitaminA.class,
                     PncChildRegistration.class, ChildRegistration.class, ChildPncVisit.class,
+                    FpReferralFollowup.class, AncInvestigations.class,
                     Audit.class, ErrorAudit.class) {
                 @Override
                 public DatabaseConfiguration getDatabaseConfiguration(MigratorConfiguration configuration) {
