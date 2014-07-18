@@ -17,4 +17,5 @@ public class Constants {
     public static final String INSTANCES = "instances";
     public static final String PARENT_ID = "parentId";
     public static final String TIMESTAMP = "timestamp";
+    public static final int MAX_MSG_LENGTH = 255;
 }

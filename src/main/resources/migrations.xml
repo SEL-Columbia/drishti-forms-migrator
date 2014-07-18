@@ -6,7 +6,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
 
-    <changeSet id="1" author="maha">
+    <changeSet id="1" author="maha: creating anc_close table">
         <createTable tableName="anc_close">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -74,7 +74,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="2" author="maha">
+    <changeSet id="2" author="maha: creating anc_registration table">
         <createTable tableName="anc_registration">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -172,7 +172,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="3" author="maha">
+    <changeSet id="3" author="maha: creating anc_registration_oa table">
         <createTable tableName="anc_registration_oa">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -300,7 +300,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="4" author="maha">
+    <changeSet id="4" author="maha: creating anc_visit table">
         <createTable tableName="anc_visit">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -390,7 +390,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="5" author="maha">
+    <changeSet id="5" author="maha: creating child_close table">
         <createTable tableName="child_close">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -432,7 +432,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="6" author="maha">
+    <changeSet id="6" author="maha: creating child_illness table">
         <createTable tableName="child_illness">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -482,7 +482,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="7" author="maha">
+    <changeSet id="7" author="maha: creating child_immunizations table">
         <createTable tableName="child_immunizations">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -520,7 +520,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="8" author="maha">
+    <changeSet id="8" author="maha: creating child_registration_ec table">
         <createTable tableName="child_registration_ec">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -662,7 +662,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="9" author="maha">
+    <changeSet id="9" author="maha: creating child_registration_oa table">
         <createTable tableName="child_registration_oa">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -810,7 +810,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="10" author="maha">
+    <changeSet id="10" author="maha: creating delivery_outcome table">
         <createTable tableName="delivery_outcome">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -926,7 +926,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="11" author="maha">
+    <changeSet id="11" author="maha: creating delivery_plan table">
         <createTable tableName="delivery_plan">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1052,7 +1052,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="12" author="maha">
+    <changeSet id="12" author="maha: creating ec_close table">
         <createTable tableName="ec_close">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1096,7 +1096,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="13" author="maha">
+    <changeSet id="13" author="maha: creating ec_edit table">
         <createTable tableName="ec_edit">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1192,7 +1192,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="14" author="maha">
+    <changeSet id="14" author="maha: creating ec_registration table">
         <createTable tableName="ec_registration">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1332,7 +1332,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="15" author="maha">
+    <changeSet id="15" author="maha: creating fp_change table">
         <createTable tableName="fp_change">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1392,7 +1392,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="16" author="maha">
+    <changeSet id="16" author="maha: creating fp_complications table">
         <createTable tableName="fp_complications">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1452,7 +1452,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="17" author="maha">
+    <changeSet id="17" author="maha: creating fp_followup table">
         <createTable tableName="fp_followup">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1510,7 +1510,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="18" author="maha">
+    <changeSet id="18" author="maha: creating hb_test table">
         <createTable tableName="hb_test">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1556,7 +1556,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="19" author="maha">
+    <changeSet id="19" author="maha: creating ifa table">
         <createTable tableName="ifa">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1588,7 +1588,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="20" author="maha">
+    <changeSet id="20" author="maha: creating pnc_close table">
         <createTable tableName="pnc_close">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1626,7 +1626,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="21" author="maha">
+    <changeSet id="21" author="maha: creating pnc_registration_oa table">
         <createTable tableName="pnc_registration_oa">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1722,7 +1722,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="22" author="maha">
+    <changeSet id="22" author="maha: creating pnc_visit table">
         <createTable tableName="pnc_visit">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1820,7 +1820,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="23" author="maha">
+    <changeSet id="23" author="maha: creating postpartum_family_planning table">
         <createTable tableName="postpartum_family_planning">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1926,7 +1926,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="24" author="maha">
+    <changeSet id="24" author="maha: creating record_ecps table">
         <createTable tableName="record_ecps">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -1956,7 +1956,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="25" author="maha">
+    <changeSet id="25" author="maha: creating renew_fp_product table">
         <createTable tableName="renew_fp_product">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -2002,7 +2002,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="26" author="maha">
+    <changeSet id="26" author="maha: creating tt table">
         <createTable tableName="tt">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -2034,7 +2034,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="27" author="maha">
+    <changeSet id="27" author="maha: creating vitamin_a table">
         <createTable tableName="vitamin_a">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -2068,7 +2068,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="28" author="maha">
+    <changeSet id="28" author="maha: creating pnc_registration_oa_child table">
         <createTable tableName="pnc_registration_oa_child">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -2102,7 +2102,7 @@
 
     </changeSet>
 
-    <changeSet id="29" author="maha">
+    <changeSet id="29" author="maha: creating delivery_out_come_child_registration table">
         <createTable tableName="delivery_out_come_child_registration">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -2146,7 +2146,7 @@
 
     </changeSet>
 
-    <changeSet id="30" author="maha">
+    <changeSet id="30" author="maha: creating pnc_child_visit table">
         <createTable tableName="pnc_child_visit">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -2198,7 +2198,7 @@
 
     </changeSet>
 
-    <changeSet id="31" author="maha">
+    <changeSet id="31" author="maha: creating migration_audit table">
         <createTable tableName="migration_audit">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -2212,7 +2212,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="32" author="maha">
+    <changeSet id="32" author="maha: creating error_audit table">
         <createTable tableName="error_audit">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>

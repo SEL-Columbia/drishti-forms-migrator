@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import static app.Constants.MAX_MSG_LENGTH;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -31,6 +33,13 @@ public class ErrorAudit extends BaseEntity {
     public ErrorAudit(String instanceId, String failureReason, String detailedReason) {
         this.instanceId = instanceId;
         this.failureReason = failureReason;
-        this.detailedReason = detailedReason;
+        this.detailedReason = chop(detailedReason);
+    }
+
+    private String chop(String detailedReason) {
+        if (detailedReason.length() > MAX_MSG_LENGTH) {
+            return detailedReason.substring(0, MAX_MSG_LENGTH);
+        }
+        return detailedReason;
     }
 }
