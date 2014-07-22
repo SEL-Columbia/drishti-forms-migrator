@@ -27,6 +27,7 @@ public class ObjectConverter {
     static {
         formNameMap = new HashMap<>();
         formNameMap.put("anc_close", AncClose.class);
+        formNameMap.put("anc_investigations", AncInvestigations.class);
         formNameMap.put("anc_registration", AncRegistration.class);
         formNameMap.put("anc_registration_oa", AncRegistrationOa.class);
         formNameMap.put("anc_visit", AncVisit.class);
@@ -44,6 +45,7 @@ public class ObjectConverter {
         formNameMap.put("fp_change", FpChange.class);
         formNameMap.put("fp_complications", FpComplications.class);
         formNameMap.put("fp_followup", FpFollowup.class);
+        formNameMap.put("fp_referral_followup", FpReferralFollowup.class);
         formNameMap.put("hb_test", HbTest.class);
         formNameMap.put("ifa", Ifa.class);
         formNameMap.put("pnc_close", PncClose.class);
