@@ -30,6 +30,7 @@ public class ObjectConverterTest {
         hashMap.put("anmId", "someId");
         hashMap.put("youngestChildDOB", "Sun, 04 May 2014 00:00:00 GMT");
         hashMap.put("familyPlanningMethodChangeDate", "Invalid Date");
+        hashMap.put("wifeAge", "12.");
 
         EcRegistration entityForm = (EcRegistration) new ObjectConverter().create(hashMap);
 
@@ -42,6 +43,7 @@ public class ObjectConverterTest {
         assertNull(entityForm.getHouseholdAddress());
         assertEquals("2014-05-04", new SimpleDateFormat("yyyy-MM-dd").format(entityForm.getYoungestChildDOB()));
         assertNull(entityForm.getFamilyPlanningMethodChangeDate());
+        assertEquals(12.0, entityForm.getWifeAge(), 0.0);
     }
 
     @Test

@@ -25,7 +25,7 @@ public class AncClose extends FormEntity {
 
     @Column(name = "number_of_abortions")
     @JsonProperty("numberOfAbortions")
-    private Integer numberOfAbortions;
+    private Float numberOfAbortions;
 
     @Column(name = "is_maternal_death")
     @JsonProperty("isMaternalDeath")
@@ -33,7 +33,7 @@ public class AncClose extends FormEntity {
 
     @Column(name = "number_of_spontaneous_abortions")
     @JsonProperty("numberOfSpontaneousAbortions")
-    private Integer numberOfSpontaneousAbortions;
+    private Float numberOfSpontaneousAbortions;
 
     @Column(name = "date_of_spontaneous_abortion")
     @JsonProperty("dateOfSpontaneousAbortion")
@@ -45,7 +45,7 @@ public class AncClose extends FormEntity {
 
     @Column(name = "number_of_weeks_pregnant_when_spontaneous_abortion_happened")
     @JsonProperty("numberOfWeeksPregnantWhenSpontaneousAbortionHappened")
-    private Integer numberOfWeeksPregnantWhenSpontaneousAbortionHappened;
+    private Float numberOfWeeksPregnantWhenSpontaneousAbortionHappened;
 
     @Column(name = "cause_of_spontaneous_abortion")
     @JsonProperty("causeOfSpontaneousAbortion")
@@ -65,7 +65,7 @@ public class AncClose extends FormEntity {
 
     @Column(name = "number_of_induced_abortions")
     @JsonProperty("numberOfInducedAbortions")
-    private Integer numberOfInducedAbortions;
+    private Float numberOfInducedAbortions;
 
     @Column(name = "time_of_induced_abortion")
     @JsonProperty("timeOfInducedAbortion")
@@ -81,7 +81,7 @@ public class AncClose extends FormEntity {
 
     @Column(name = "maternal_death_trimester")
     @JsonProperty("maternalDeathTrimester")
-    private Integer maternalDeathTrimester;
+    private Float maternalDeathTrimester;
 
     @Column(name = "maternal_death_cause")
     @JsonProperty("maternalDeathCause")

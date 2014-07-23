@@ -57,11 +57,11 @@ public class EcRegistration extends FormEntity {
 
     @Column(name = "wife_age")
     @JsonProperty("wifeAge")
-    private Integer wifeAge;
+    private Float wifeAge;
 
     @Column(name = "husband_age")
     @JsonProperty("husbandAge")
-    private Integer husbandAge;
+    private Float husbandAge;
 
     @Column(name = "woman_dob")
     @JsonProperty("womanDOB")
@@ -113,39 +113,39 @@ public class EcRegistration extends FormEntity {
 
     @Column(name = "number_of_pregnancies")
     @JsonProperty("numberOfPregnancies")
-    private Integer numberOfPregnancies;
+    private Float numberOfPregnancies;
 
     @Column(name = "number_of_live_births")
     @JsonProperty("numberOfLiveBirths")
-    private Integer numberOfLiveBirths;
+    private Float numberOfLiveBirths;
 
     @Column(name = "number_of_abortions")
     @JsonProperty("numberOfAbortions")
-    private Integer numberOfAbortions;
+    private Float numberOfAbortions;
 
     @Column(name = "number_of_spontaneous_abortions")
     @JsonProperty("numberOfSpontaneousAbortions")
-    private Integer numberOfSpontaneousAbortions;
+    private Float numberOfSpontaneousAbortions;
 
     @Column(name = "number_of_induced_abortions")
     @JsonProperty("numberOfInducedAbortions")
-    private Integer numberOfInducedAbortions;
+    private Float numberOfInducedAbortions;
 
     @Column(name = "number_of_still_births")
     @JsonProperty("numberOfStillBirths")
-    private Integer numberOfStillBirths;
+    private Float numberOfStillBirths;
 
     @Column(name = "number_of_living_children")
     @JsonProperty("numberOfLivingChildren")
-    private Integer numberOfLivingChildren;
+    private Float numberOfLivingChildren;
 
     @Column(name = "number_of_living_male_children")
     @JsonProperty("numberOfLivingMaleChildren")
-    private Integer numberOfLivingMaleChildren;
+    private Float numberOfLivingMaleChildren;
 
     @Column(name = "number_of_living_female_child")
     @JsonProperty("numberOfLivingFemaleChild")
-    private Integer numberOfLivingFemaleChild;
+    private Float numberOfLivingFemaleChild;
 
     @Column(name = "is_youngest_child_under_two")
     @JsonProperty("isYoungestChildUnderTwo")
@@ -153,7 +153,7 @@ public class EcRegistration extends FormEntity {
 
     @Column(name = "youngest_child_age")
     @JsonProperty("youngestChildAge")
-    private Integer youngestChildAge;
+    private Float youngestChildAge;
 
     @Column(name = "youngest_child_dob")
     @JsonProperty("youngestChildDOB")
@@ -181,15 +181,15 @@ public class EcRegistration extends FormEntity {
 
     @Column(name = "number_of_condoms_supplied")
     @JsonProperty("numberOfCondomsSupplied")
-    private Integer numberOfCondomsSupplied;
+    private Float numberOfCondomsSupplied;
 
     @Column(name = "number_of_ocp_delivered")
     @JsonProperty("numberOfOCPDelivered")
-    private Integer numberOfOCPDelivered;
+    private Float numberOfOCPDelivered;
 
     @Column(name = "number_of_centchroman_pills_delivered")
     @JsonProperty("numberOfCentchromanPillsDelivered")
-    private Integer numberOfCentchromanPillsDelivered;
+    private Float numberOfCentchromanPillsDelivered;
 
     @Column(name = "is_high_priority")
     @JsonProperty("isHighPriority")
@@ -217,7 +217,7 @@ public class EcRegistration extends FormEntity {
 
     @Column(name = "parity")
     @JsonProperty("parity")
-    private Integer parity;
+    private Float parity;
 
     @Column(name = "dmpa_injection_date")
     @JsonProperty("dmpaInjectionDate")

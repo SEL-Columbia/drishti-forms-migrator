@@ -25,7 +25,7 @@ public class ChildClose extends FormEntity {
 
     @Column(name = "number_of_living_children")
     @JsonProperty("numberOfLivingChildren")
-    private Integer numberOfLivingChildren;
+    private Float numberOfLivingChildren;
 
     @Column(name = "is_immunization_death")
     @JsonProperty("isImmunizationDeath")

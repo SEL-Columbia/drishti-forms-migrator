@@ -21,7 +21,7 @@ public class RecordEcps extends FormEntity {
 
     @Column(name = "number_of_ec_ps_given")
     @JsonProperty("numberOfECPsGiven")
-    private Integer numberOfECPsGiven;
+    private Float numberOfECPsGiven;
 
     @Column(name = "ecp_date")
     @JsonProperty("ecpDate")

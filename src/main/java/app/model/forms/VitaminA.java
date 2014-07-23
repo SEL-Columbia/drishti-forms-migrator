@@ -25,7 +25,7 @@ public class VitaminA extends FormEntity {
 
     @Column(name = "vitamin_a_dose")
     @JsonProperty("vitaminADose")
-    private Integer vitaminADose;
+    private Float vitaminADose;
 
     @Column(name = "vitamin_a_date")
     @JsonProperty("vitaminADate")

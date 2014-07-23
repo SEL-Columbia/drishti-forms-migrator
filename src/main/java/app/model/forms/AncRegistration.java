@@ -37,7 +37,7 @@ public class AncRegistration extends FormEntity {
 
     @Column(name = "number_of_pregnancies")
     @JsonProperty("numberOfPregnancies")
-    private Integer numberOfPregnancies;
+    private Float numberOfPregnancies;
 
     @Column(name = "thayi_card_number")
     @JsonProperty("thayiCardNumber")
@@ -109,7 +109,7 @@ public class AncRegistration extends FormEntity {
 
     @Column(name = "height")
     @JsonProperty("height")
-    private Integer height;
+    private Float height;
 
     @Column(name = "weight")
     @JsonProperty("weight")

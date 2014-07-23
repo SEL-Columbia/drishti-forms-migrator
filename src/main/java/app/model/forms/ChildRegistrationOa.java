@@ -93,7 +93,7 @@ public class ChildRegistrationOa extends FormEntity {
 
     @Column(name = "height")
     @JsonProperty("height")
-    private Integer height;
+    private Float height;
 
     @Column(name = "immunizations_given")
     @JsonProperty("immunizationsGiven")

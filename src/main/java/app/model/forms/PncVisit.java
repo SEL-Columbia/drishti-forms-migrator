@@ -61,7 +61,7 @@ public class PncVisit extends FormEntity {
 
     @Column(name = "pnc_visit_day")
     @JsonProperty("pncVisitDay")
-    private Integer pncVisitDay;
+    private Float pncVisitDay;
 
     @Column(name = "pnc_visit_place")
     @JsonProperty("pncVisitPlace")
@@ -109,7 +109,7 @@ public class PncVisit extends FormEntity {
 
     @Column(name = "pulse_rate")
     @JsonProperty("pulseRate")
-    private Integer pulseRate;
+    private Float pulseRate;
 
     @Column(name = "bp_systolic")
     @JsonProperty("bpSystolic")
@@ -125,7 +125,7 @@ public class PncVisit extends FormEntity {
 
     @Column(name = "number_of_ifa_tablets_given")
     @JsonProperty("numberOfIFATabletsGiven")
-    private Integer numberOfIFATabletsGiven;
+    private Float numberOfIFATabletsGiven;
 
     @Column(name = "immediate_referral")
     @JsonProperty("immediateReferral")

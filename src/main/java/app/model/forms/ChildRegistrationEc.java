@@ -101,7 +101,7 @@ public class ChildRegistrationEc extends FormEntity {
 
     @Column(name = "age")
     @JsonProperty("age")
-    private Integer age;
+    private Float age;
 
     @Column(name = "gender")
     @JsonProperty("gender")
@@ -125,7 +125,7 @@ public class ChildRegistrationEc extends FormEntity {
 
     @Column(name = "height")
     @JsonProperty("height")
-    private Integer height;
+    private Float height;
 
     @Column(name = "immunizations_given")
     @JsonProperty("immunizationsGiven")

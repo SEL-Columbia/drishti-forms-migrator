@@ -61,7 +61,7 @@ public class ChildIllness extends FormEntity {
 
     @Column(name = "number_of_ors_given")
     @JsonProperty("numberOfORSGiven")
-    private Integer numberOfORSGiven;
+    private Float numberOfORSGiven;
 
     @Column(name = "child_referral")
     @JsonProperty("childReferral")

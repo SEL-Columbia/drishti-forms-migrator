@@ -29,17 +29,17 @@
 
             <column name="close_reason" type="varchar(255)"/>
 
-            <column name="number_of_abortions" type="integer"/>
+            <column name="number_of_abortions" type="decimal"/>
 
             <column name="is_maternal_death" type="varchar(255)"/>
 
-            <column name="number_of_spontaneous_abortions" type="integer"/>
+            <column name="number_of_spontaneous_abortions" type="decimal"/>
 
             <column name="date_of_spontaneous_abortion" type="date"/>
 
             <column name="reference_date" type="date"/>
 
-            <column name="number_of_weeks_pregnant_when_spontaneous_abortion_happened" type="integer"/>
+            <column name="number_of_weeks_pregnant_when_spontaneous_abortion_happened" type="decimal"/>
 
             <column name="cause_of_spontaneous_abortion" type="varchar(255)"/>
 
@@ -49,7 +49,7 @@
 
             <column name="is_rh_negative" type="varchar(255)"/>
 
-            <column name="number_of_induced_abortions" type="integer"/>
+            <column name="number_of_induced_abortions" type="decimal"/>
 
             <column name="time_of_induced_abortion" type="varchar(255)"/>
 
@@ -57,7 +57,7 @@
 
             <column name="maternal_death_date" type="varchar(255)"/>
 
-            <column name="maternal_death_trimester" type="integer"/>
+            <column name="maternal_death_trimester" type="decimal"/>
 
             <column name="maternal_death_cause" type="varchar(255)"/>
 
@@ -103,7 +103,7 @@
 
             <column name="wife_name" type="varchar(255)"/>
 
-            <column name="number_of_pregnancies" type="integer"/>
+            <column name="number_of_pregnancies" type="decimal"/>
 
             <column name="thayi_card_number" type="varchar(255)"/>
 
@@ -139,7 +139,7 @@
 
             <column name="is_rh_incompatible_couple" type="varchar(255)"/>
 
-            <column name="height" type="integer"/>
+            <column name="height" type="decimal"/>
 
             <column name="weight" type="decimal"/>
 
@@ -207,7 +207,7 @@
 
             <column name="aadhar_number" type="varchar(255)"/>
 
-            <column name="wife_age" type="integer"/>
+            <column name="wife_age" type="decimal"/>
 
             <column name="husband_name" type="varchar(255)"/>
 
@@ -267,7 +267,7 @@
 
             <column name="is_rh_incompatible_couple" type="varchar(255)"/>
 
-            <column name="height" type="integer"/>
+            <column name="height" type="decimal"/>
 
             <column name="weight" type="decimal"/>
 
@@ -325,7 +325,7 @@
 
             <column name="wife_name" type="varchar(255)"/>
 
-            <column name="anc_visit_number" type="integer"/>
+            <column name="anc_visit_number" type="decimal"/>
 
             <column name="anc_visit_date" type="date"/>
 
@@ -341,11 +341,11 @@
 
             <column name="vitals_taken" type="varchar(255)"/>
 
-            <column name="bp_systolic" type="integer"/>
+            <column name="bp_systolic" type="decimal"/>
 
-            <column name="bp_diastolic" type="integer"/>
+            <column name="bp_diastolic" type="decimal"/>
 
-            <column name="pulse_rate" type="integer"/>
+            <column name="pulse_rate" type="decimal"/>
 
             <column name="temperature" type="decimal"/>
 
@@ -413,7 +413,7 @@
 
             <column name="close_reason" type="varchar(255)"/>
 
-            <column name="number_of_living_children" type="integer"/>
+            <column name="number_of_living_children" type="decimal"/>
 
             <column name="is_immunization_death" type="varchar(255)"/>
 
@@ -473,7 +473,7 @@
 
             <column name="report_child_disease_place" type="varchar(255)"/>
 
-            <column name="number_of_ors_given" type="integer"/>
+            <column name="number_of_ors_given" type="decimal"/>
 
             <column name="child_referral" type="varchar(255)"/>
 
@@ -581,7 +581,7 @@
 
             <column name="date_of_birth" type="date"/>
 
-            <column name="age" type="integer"/>
+            <column name="age" type="decimal"/>
 
             <column name="gender" type="varchar(255)"/>
 
@@ -593,7 +593,7 @@
 
             <column name="weight" type="decimal"/>
 
-            <column name="height" type="integer"/>
+            <column name="height" type="decimal"/>
 
             <column name="immunizations_given" type="varchar(255)"/>
 
@@ -719,7 +719,7 @@
 
             <column name="weight" type="decimal"/>
 
-            <column name="height" type="integer"/>
+            <column name="height" type="decimal"/>
 
             <column name="immunizations_given" type="varchar(255)"/>
 
@@ -855,11 +855,11 @@
 
             <column name="delivery_outcome" type="varchar(255)"/>
 
-            <column name="parity" type="integer"/>
+            <column name="parity" type="decimal"/>
 
-            <column name="number_of_live_births" type="integer"/>
+            <column name="number_of_live_births" type="decimal"/>
 
-            <column name="number_of_still_births" type="integer"/>
+            <column name="number_of_still_births" type="decimal"/>
 
             <column name="cause_of_still_birth" type="varchar(255)"/>
 
@@ -907,21 +907,21 @@
 
             <column name="type" type="varchar(255)"/>
 
-            <column name="number_of_living_children" type="integer"/>
+            <column name="number_of_living_children" type="decimal"/>
 
-            <column name="number_of_children_born" type="integer"/>
+            <column name="number_of_children_born" type="decimal"/>
 
-            <column name="number_of_female_children_born" type="integer"/>
+            <column name="number_of_female_children_born" type="decimal"/>
 
-            <column name="number_of_male_children_born" type="integer"/>
+            <column name="number_of_male_children_born" type="decimal"/>
 
-            <column name="number_of_living_female_child" type="integer"/>
+            <column name="number_of_living_female_child" type="decimal"/>
 
-            <column name="number_of_living_male_child" type="integer"/>
+            <column name="number_of_living_male_child" type="decimal"/>
 
             <column name="youngest_child_dob" type="date"/>
 
-            <column name="youngest_child_age" type="integer"/>
+            <column name="youngest_child_age" type="decimal"/>
 
         </createTable>
     </changeSet>
@@ -1135,9 +1135,9 @@
 
             <column name="aadhar_number" type="varchar(255)"/>
 
-            <column name="wife_age" type="integer"/>
+            <column name="wife_age" type="decimal"/>
 
-            <column name="husband_age" type="integer"/>
+            <column name="husband_age" type="decimal"/>
 
             <column name="woman_dob" type="date"/>
 
@@ -1153,23 +1153,23 @@
 
             <column name="husband_educational_level" type="varchar(255)"/>
 
-            <column name="number_of_pregnancies" type="integer"/>
+            <column name="number_of_pregnancies" type="decimal"/>
 
-            <column name="number_of_live_births" type="integer"/>
+            <column name="number_of_live_births" type="decimal"/>
 
-            <column name="number_of_abortions" type="integer"/>
+            <column name="number_of_abortions" type="decimal"/>
 
-            <column name="number_of_spontaneous_abortions" type="integer"/>
+            <column name="number_of_spontaneous_abortions" type="decimal"/>
 
-            <column name="number_of_induced_abortions" type="integer"/>
+            <column name="number_of_induced_abortions" type="decimal"/>
 
-            <column name="number_of_still_births" type="integer"/>
+            <column name="number_of_still_births" type="decimal"/>
 
-            <column name="number_of_living_children" type="integer"/>
+            <column name="number_of_living_children" type="decimal"/>
 
-            <column name="number_of_living_male_children" type="integer"/>
+            <column name="number_of_living_male_children" type="decimal"/>
 
-            <column name="number_of_living_female_child" type="integer"/>
+            <column name="number_of_living_female_child" type="decimal"/>
 
             <column name="current_method" type="varchar(255)"/>
 
@@ -1179,7 +1179,7 @@
 
             <column name="age_risk_priority" type="varchar(255)"/>
 
-            <column name="partity" type="integer"/>
+            <column name="partity" type="decimal"/>
 
             <column name="young_child_risk_priority" type="varchar(255)"/>
 
@@ -1231,9 +1231,9 @@
 
             <column name="aadhar_number" type="varchar(255)"/>
 
-            <column name="wife_age" type="integer"/>
+            <column name="wife_age" type="decimal"/>
 
-            <column name="husband_age" type="integer"/>
+            <column name="husband_age" type="decimal"/>
 
             <column name="woman_dob" type="date"/>
 
@@ -1259,27 +1259,27 @@
 
             <column name="educational_level" type="varchar(255)"/>
 
-            <column name="number_of_pregnancies" type="integer"/>
+            <column name="number_of_pregnancies" type="decimal"/>
 
-            <column name="number_of_live_births" type="integer"/>
+            <column name="number_of_live_births" type="decimal"/>
 
-            <column name="number_of_abortions" type="integer"/>
+            <column name="number_of_abortions" type="decimal"/>
 
-            <column name="number_of_spontaneous_abortions" type="integer"/>
+            <column name="number_of_spontaneous_abortions" type="decimal"/>
 
-            <column name="number_of_induced_abortions" type="integer"/>
+            <column name="number_of_induced_abortions" type="decimal"/>
 
-            <column name="number_of_still_births" type="integer"/>
+            <column name="number_of_still_births" type="decimal"/>
 
-            <column name="number_of_living_children" type="integer"/>
+            <column name="number_of_living_children" type="decimal"/>
 
-            <column name="number_of_living_male_children" type="integer"/>
+            <column name="number_of_living_male_children" type="decimal"/>
 
-            <column name="number_of_living_female_child" type="integer"/>
+            <column name="number_of_living_female_child" type="decimal"/>
 
             <column name="is_youngest_child_under_two" type="varchar(255)"/>
 
-            <column name="youngest_child_age" type="integer"/>
+            <column name="youngest_child_age" type="decimal"/>
 
             <column name="youngest_child_dob" type="date"/>
 
@@ -1293,11 +1293,11 @@
 
             <column name="three_months_from_sterilization_date" type="date"/>
 
-            <column name="number_of_condoms_supplied" type="integer"/>
+            <column name="number_of_condoms_supplied" type="decimal"/>
 
-            <column name="number_of_ocp_delivered" type="integer"/>
+            <column name="number_of_ocp_delivered" type="decimal"/>
 
-            <column name="number_of_centchroman_pills_delivered" type="integer"/>
+            <column name="number_of_centchroman_pills_delivered" type="decimal"/>
 
             <column name="is_high_priority" type="varchar(255)"/>
 
@@ -1311,7 +1311,7 @@
 
             <column name="registration_date" type="date"/>
 
-            <column name="parity" type="integer"/>
+            <column name="parity" type="decimal"/>
 
             <column name="dmpa_injection_date" type="date"/>
 
@@ -1371,11 +1371,11 @@
 
             <column name="male_sterilization_message" type="varchar(255)"/>
 
-            <column name="number_of_condoms_supplied" type="integer"/>
+            <column name="number_of_condoms_supplied" type="decimal"/>
 
-            <column name="number_of_ocp_delivered" type="integer"/>
+            <column name="number_of_ocp_delivered" type="decimal"/>
 
-            <column name="number_of_centchroman_pills_delivered" type="integer"/>
+            <column name="number_of_centchroman_pills_delivered" type="decimal"/>
 
             <column name="submission_date" type="date"/>
 
@@ -1579,7 +1579,7 @@
 
             <column name="ifa_tablets_place" type="varchar(255)"/>
 
-            <column name="number_of_ifa_tablets_given" type="integer"/>
+            <column name="number_of_ifa_tablets_given" type="decimal"/>
 
             <column name="ifa_tablets_date" type="date"/>
 
@@ -1661,7 +1661,7 @@
 
             <column name="wife_name" type="varchar(255)"/>
 
-            <column name="wife_age" type="integer"/>
+            <column name="wife_age" type="decimal"/>
 
             <column name="thayi_card_number" type="varchar(255)"/>
 
@@ -1763,7 +1763,7 @@
 
             <column name="pnc_visit_date" type="date"/>
 
-            <column name="pnc_visit_day" type="integer"/>
+            <column name="pnc_visit_day" type="decimal"/>
 
             <column name="pnc_visit_place" type="varchar(255)"/>
 
@@ -1787,7 +1787,7 @@
 
             <column name="has_fever" type="varchar(255)"/>
 
-            <column name="pulse_rate" type="integer"/>
+            <column name="pulse_rate" type="decimal"/>
 
             <column name="bp_systolic" type="decimal"/>
 
@@ -1795,7 +1795,7 @@
 
             <column name="hb_level" type="decimal"/>
 
-            <column name="number_of_ifa_tablets_given" type="integer"/>
+            <column name="number_of_ifa_tablets_given" type="decimal"/>
 
             <column name="immediate_referral" type="varchar(255)"/>
 
@@ -1895,11 +1895,11 @@
 
             <column name="male_sterilization_type" type="varchar(255)"/>
 
-            <column name="number_of_ocp_delivered" type="integer"/>
+            <column name="number_of_ocp_delivered" type="decimal"/>
 
-            <column name="number_of_condoms_supplied" type="integer"/>
+            <column name="number_of_condoms_supplied" type="decimal"/>
 
-            <column name="number_of_centchroman_pills_supplied" type="integer"/>
+            <column name="number_of_centchroman_pills_supplied" type="decimal"/>
 
             <column name="hep_b" type="varchar(255)"/>
 
@@ -1947,7 +1947,7 @@
 
             <column name="eligible_couple_id" type="varchar(255)"/>
 
-            <column name="number_of_ec_ps_given" type="integer"/>
+            <column name="number_of_ec_ps_given" type="decimal"/>
 
             <column name="ecp_date" type="date"/>
 
@@ -1985,11 +1985,11 @@
 
             <column name="dmpa_injection_date" type="date"/>
 
-            <column name="number_of_condoms_supplied" type="integer"/>
+            <column name="number_of_condoms_supplied" type="decimal"/>
 
-            <column name="number_of_ocp_delivered" type="integer"/>
+            <column name="number_of_ocp_delivered" type="decimal"/>
 
-            <column name="number_of_centchroman_pills_supplied" type="integer"/>
+            <column name="number_of_centchroman_pills_supplied" type="decimal"/>
 
             <column name="ocp_refill_date" type="date"/>
 
@@ -2057,7 +2057,7 @@
 
             <column name="date_of_birth" type="date"/>
 
-            <column name="vitamin_a_dose" type="integer"/>
+            <column name="vitamin_a_dose" type="decimal"/>
 
             <column name="vitamin_a_date" type="date"/>
 

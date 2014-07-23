@@ -2,7 +2,6 @@ package app.util;
 
 import app.deserilizer.DateTypeDeserializer;
 import app.deserilizer.FloatTypeDeserializer;
-import app.deserilizer.IntTypeDeserializer;
 import app.exception.FormMigrationException;
 import app.model.BaseEntity;
 import app.model.forms.*;
@@ -85,7 +84,7 @@ public class ObjectConverter {
     private Class<Object> getClassType(Map source, Object key, String formType) {
         Class<Object> classType = (Class<Object>) source.get(key);
         if (classType == null)
-            throw new FormMigrationException("Unknown "+ formType  +" name: " + key);
+            throw new FormMigrationException("Unknown " + formType + " name: " + key);
 
         return classType;
     }
@@ -93,7 +92,6 @@ public class ObjectConverter {
     private ObjectMapper getObjectMapper() {
         SimpleModule module = new SimpleModule("InvalidDateParse");
         module.addDeserializer(Date.class, new DateTypeDeserializer(Date.class));
-        module.addDeserializer(Integer.class, new IntTypeDeserializer(Integer.class));
         module.addDeserializer(Float.class, new FloatTypeDeserializer(Float.class));
 
         return new ObjectMapper().registerModule(module);

@@ -49,7 +49,7 @@ public class PncRegistrationOa extends FormEntity {
 
     @Column(name = "wife_age")
     @JsonProperty("wifeAge")
-    private Integer wifeAge;
+    private Float wifeAge;
 
     @Column(name = "thayi_card_number")
     @JsonProperty("thayiCardNumber")

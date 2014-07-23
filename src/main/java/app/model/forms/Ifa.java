@@ -25,7 +25,7 @@ public class Ifa extends FormEntity {
 
     @Column(name = "number_of_ifa_tablets_given")
     @JsonProperty("numberOfIFATabletsGiven")
-    private Integer numberOfIFATabletsGiven;
+    private Float numberOfIFATabletsGiven;
 
     @Column(name = "ifa_tablets_date")
     @JsonProperty("ifaTabletsDate")

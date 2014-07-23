@@ -57,15 +57,15 @@ public class FpChange extends FormEntity {
 
     @Column(name = "number_of_condoms_supplied")
     @JsonProperty("numberOfCondomsSupplied")
-    private Integer numberOfCondomsSupplied;
+    private Float numberOfCondomsSupplied;
 
     @Column(name = "number_of_ocp_delivered")
     @JsonProperty("numberOfOCPDelivered")
-    private Integer numberOfOCPDelivered;
+    private Float numberOfOCPDelivered;
 
     @Column(name = "number_of_centchroman_pills_delivered")
     @JsonProperty("numberOfCentchromanPillsDelivered")
-    private Integer numberOfCentchromanPillsDelivered;
+    private Float numberOfCentchromanPillsDelivered;
 
     @Column(name = "submission_date")
     @JsonProperty("submissionDate")

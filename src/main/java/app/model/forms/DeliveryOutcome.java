@@ -69,15 +69,15 @@ public class DeliveryOutcome extends FormEntity {
 
     @Column(name = "parity")
     @JsonProperty("parity")
-    private Integer parity;
+    private Float parity;
 
     @Column(name = "number_of_live_births")
     @JsonProperty("numberOfLiveBirths")
-    private Integer numberOfLiveBirths;
+    private Float numberOfLiveBirths;
 
     @Column(name = "number_of_still_births")
     @JsonProperty("numberOfStillBirths")
-    private Integer numberOfStillBirths;
+    private Float numberOfStillBirths;
 
     @Column(name = "cause_of_still_birth")
     @JsonProperty("causeOfStillBirth")
@@ -173,27 +173,27 @@ public class DeliveryOutcome extends FormEntity {
 
     @Column(name = "number_of_living_children")
     @JsonProperty("numberOfLivingChildren")
-    private Integer numberOfLivingChildren;
+    private Float numberOfLivingChildren;
 
     @Column(name = "number_of_children_born")
     @JsonProperty("numberOfChildrenBorn")
-    private Integer numberOfChildrenBorn;
+    private Float numberOfChildrenBorn;
 
     @Column(name = "number_of_female_children_born")
     @JsonProperty("numberOfFemaleChildrenBorn")
-    private Integer numberOfFemaleChildrenBorn;
+    private Float numberOfFemaleChildrenBorn;
 
     @Column(name = "number_of_male_children_born")
     @JsonProperty("numberOfMaleChildrenBorn")
-    private Integer numberOfMaleChildrenBorn;
+    private Float numberOfMaleChildrenBorn;
 
     @Column(name = "number_of_living_female_child")
     @JsonProperty("numberOfLivingFemaleChild")
-    private Integer numberOfLivingFemaleChild;
+    private Float numberOfLivingFemaleChild;
 
     @Column(name = "number_of_living_male_child")
     @JsonProperty("numberOfLivingMaleChild")
-    private Integer numberOfLivingMaleChild;
+    private Float numberOfLivingMaleChild;
 
     @Column(name = "youngest_child_dob")
     @JsonProperty("youngestChildDOB")
@@ -201,6 +201,6 @@ public class DeliveryOutcome extends FormEntity {
 
     @Column(name = "youngest_child_age")
     @JsonProperty("youngestChildAge")
-    private Integer youngestChildAge;
+    private Float youngestChildAge;
 
 }

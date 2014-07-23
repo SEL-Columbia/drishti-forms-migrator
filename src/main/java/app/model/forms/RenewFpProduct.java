@@ -37,15 +37,15 @@ public class RenewFpProduct extends FormEntity {
 
     @Column(name = "number_of_condoms_supplied")
     @JsonProperty("numberOfCondomsSupplied")
-    private Integer numberOfCondomsSupplied;
+    private Float numberOfCondomsSupplied;
 
     @Column(name = "number_of_ocp_delivered")
     @JsonProperty("numberOfOCPDelivered")
-    private Integer numberOfOCPDelivered;
+    private Float numberOfOCPDelivered;
 
     @Column(name = "number_of_centchroman_pills_supplied")
     @JsonProperty("numberOfCentchromanPillsSupplied")
-    private Integer numberOfCentchromanPillsSupplied;
+    private Float numberOfCentchromanPillsSupplied;
 
     @Column(name = "ocp_refill_date")
     @JsonProperty("ocpRefillDate")

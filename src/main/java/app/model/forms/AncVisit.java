@@ -29,7 +29,7 @@ public class AncVisit extends FormEntity {
 
     @Column(name = "anc_visit_number")
     @JsonProperty("ancVisitNumber")
-    private Integer ancVisitNumber;
+    private Float ancVisitNumber;
 
     @Column(name = "anc_visit_date")
     @JsonProperty("ancVisitDate")
@@ -61,15 +61,15 @@ public class AncVisit extends FormEntity {
 
     @Column(name = "bp_systolic")
     @JsonProperty("bpSystolic")
-    private Integer bpSystolic;
+    private Float bpSystolic;
 
     @Column(name = "bp_diastolic")
     @JsonProperty("bpDiastolic")
-    private Integer bpDiastolic;
+    private Float bpDiastolic;
 
     @Column(name = "pulse_rate")
     @JsonProperty("pulseRate")
-    private Integer pulseRate;
+    private Float pulseRate;
 
     @Column(name = "temperature")
     @JsonProperty("temperature")

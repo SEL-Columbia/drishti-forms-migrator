@@ -57,11 +57,11 @@ public class EcEdit extends FormEntity {
 
     @Column(name = "wife_age")
     @JsonProperty("wifeAge")
-    private Integer wifeAge;
+    private Float wifeAge;
 
     @Column(name = "husband_age")
     @JsonProperty("husbandAge")
-    private Integer husbandAge;
+    private Float husbandAge;
 
     @Column(name = "woman_dob")
     @JsonProperty("womanDOB")
@@ -93,39 +93,39 @@ public class EcEdit extends FormEntity {
 
     @Column(name = "number_of_pregnancies")
     @JsonProperty("numberOfPregnancies")
-    private Integer numberOfPregnancies;
+    private Float numberOfPregnancies;
 
     @Column(name = "number_of_live_births")
     @JsonProperty("numberOfLiveBirths")
-    private Integer numberOfLiveBirths;
+    private Float numberOfLiveBirths;
 
     @Column(name = "number_of_abortions")
     @JsonProperty("numberOfAbortions")
-    private Integer numberOfAbortions;
+    private Float numberOfAbortions;
 
     @Column(name = "number_of_spontaneous_abortions")
     @JsonProperty("numberOfSpontaneousAbortions")
-    private Integer numberOfSpontaneousAbortions;
+    private Float numberOfSpontaneousAbortions;
 
     @Column(name = "number_of_induced_abortions")
     @JsonProperty("numberOfInducedAbortions")
-    private Integer numberOfInducedAbortions;
+    private Float numberOfInducedAbortions;
 
     @Column(name = "number_of_still_births")
     @JsonProperty("numberOfStillBirths")
-    private Integer numberOfStillBirths;
+    private Float numberOfStillBirths;
 
     @Column(name = "number_of_living_children")
     @JsonProperty("numberOfLivingChildren")
-    private Integer numberOfLivingChildren;
+    private Float numberOfLivingChildren;
 
     @Column(name = "number_of_living_male_children")
     @JsonProperty("numberOfLivingMaleChildren")
-    private Integer numberOfLivingMaleChildren;
+    private Float numberOfLivingMaleChildren;
 
     @Column(name = "number_of_living_female_child")
     @JsonProperty("numberOfLivingFemaleChild")
-    private Integer numberOfLivingFemaleChild;
+    private Float numberOfLivingFemaleChild;
 
     @Column(name = "current_method")
     @JsonProperty("currentMethod")
@@ -145,7 +145,7 @@ public class EcEdit extends FormEntity {
 
     @Column(name = "partity")
     @JsonProperty("partity")
-    private Integer partity;
+    private Float partity;
 
     @Column(name = "young_child_risk_priority")
     @JsonProperty("youngChildRiskPriority")
