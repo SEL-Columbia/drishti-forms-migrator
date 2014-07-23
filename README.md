@@ -1,6 +1,6 @@
 ##Drishti Content Migrator Service
 
-[![Build Status](https://travis-ci.org/eneyed/drishti.svg?branch=master)](https://travis-ci.org/eneyed/drishti)
+[![Build Status](https://travis-ci.org/SEL-Columbia/drishti.svg?branch=master)](https://travis-ci.org/SEL-Columbia/drishti)
 
 This is a service that has a scheduled batch job that runs and converts the data from the no sql db to relational db
 

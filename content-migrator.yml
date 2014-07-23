@@ -1,4 +1,4 @@
-pollingUrl: https://smartregistries.org/form-submissions?anm-id=demo1&timestamp=0&batch-size=100
+pollingUrl: http://qa.smartregistries.org/form-submissions?anm-id=demo1&timestamp=0&batch-size=100
 pollingUrlUsername: demo1
 pollingUrlPassword: 1
 
@@ -18,7 +18,7 @@ database:
   closeConnectionIfIdleFor: 1 minute
 
 jobs:
-  scanUrl: app
+  scanUrl: app.scheduler
   defaultEveryScanInterval: 3min
 
 logging:
