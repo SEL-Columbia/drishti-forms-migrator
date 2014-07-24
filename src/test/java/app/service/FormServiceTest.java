@@ -95,13 +95,14 @@ public class FormServiceTest {
         String entity_id = "entity_id";
         String errorMessage = "Some message";
         formData.put(INSTANCE_ID, entity_id);
+        formData.put(FORM_NAME, "ec_reg");
 
         when(mapTransformer.transform(formData)).thenReturn(formData);
         when(objectConverter.create(any(Map.class))).thenThrow(new FormMigrationException(errorMessage));
 
         formService.save(Lists.<Map<String, Object>>newArrayList(formData));
 
-        verify(auditService).createErrorAudit(new ErrorAudit(entity_id, errorMessage, ""));
+        verify(auditService).createErrorAudit(new ErrorAudit(entity_id, "ec_reg", errorMessage, ""));
     }
 
     @Test

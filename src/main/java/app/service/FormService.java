@@ -49,7 +49,7 @@ public class FormService {
             String detailedMessage = ex.getCause() == null ? "" : nullToEmpty(ex.getCause().getMessage());
             logger.error(ex.getMessage() + "\n form entry: " + formEntry, ex);
 
-            auditService.createErrorAudit(new ErrorAudit(valueOf(formEntry.get(INSTANCE_ID)), ex.getMessage(), detailedMessage));
+            auditService.createErrorAudit(new ErrorAudit(valueOf(formEntry.get(INSTANCE_ID)), valueOf(formEntry.get(FORM_NAME)), ex.getMessage(), detailedMessage));
         } catch (Exception ex) {
             logger.error(ex.getMessage());
         }

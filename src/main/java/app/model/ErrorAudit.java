@@ -21,6 +21,9 @@ public class ErrorAudit extends BaseEntity {
     @Column(name = "instance_id")
     private String instanceId;
 
+    @Column(name = "form_name")
+    private String formName;
+
     @Column(name = "failure_reason")
     private String failureReason;
 
@@ -30,8 +33,9 @@ public class ErrorAudit extends BaseEntity {
     @Transient
     private DateTime createdDate;
 
-    public ErrorAudit(String instanceId, String failureReason, String detailedReason) {
+    public ErrorAudit(String instanceId, String formName, String failureReason, String detailedReason) {
         this.instanceId = instanceId;
+        this.formName = formName;
         this.failureReason = failureReason;
         this.detailedReason = chop(detailedReason);
     }

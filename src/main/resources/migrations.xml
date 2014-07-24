@@ -2218,6 +2218,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="instance_id" type="varchar(255)"/>
+            <column name="form_name" type="varchar(255)"/>
             <column name="failure_reason" type="varchar(255)"/>
             <column name="detailed_reason" type="varchar(255)"/>
             <column name="created_timestamp" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
