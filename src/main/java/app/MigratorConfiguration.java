@@ -1,14 +1,14 @@
 package app;
 
-import com.yammer.dropwizard.config.Configuration;
-import com.yammer.dropwizard.db.DatabaseConfiguration;
 import de.spinscale.dropwizard.jobs.config.JobConfiguration;
+import io.dropwizard.Configuration;
+import io.dropwizard.db.DataSourceFactory;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-public class MigratorConfiguration extends Configuration{
+public class MigratorConfiguration extends Configuration {
     @Valid
     @NotNull
     @JsonProperty
@@ -27,14 +27,14 @@ public class MigratorConfiguration extends Configuration{
     @Valid
     @NotNull
     @JsonProperty
-    private DatabaseConfiguration database = new DatabaseConfiguration();
+    private DataSourceFactory database = new DataSourceFactory();
 
     @Valid
     @NotNull
     @JsonProperty
     private JobConfiguration jobs = new JobConfiguration();
 
-    public DatabaseConfiguration getDatabase() {
+    public DataSourceFactory getDatabase() {
         return database;
     }
 

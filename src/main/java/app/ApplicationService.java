@@ -7,17 +7,17 @@ import app.model.subForms.ChildPncVisit;
 import app.model.subForms.ChildRegistration;
 import app.model.subForms.PncChildRegistration;
 import app.resource.FormResource;
-import com.yammer.dropwizard.Service;
-import com.yammer.dropwizard.config.Bootstrap;
-import com.yammer.dropwizard.config.Environment;
-import com.yammer.dropwizard.db.DatabaseConfiguration;
-import com.yammer.dropwizard.hibernate.HibernateBundle;
-import com.yammer.dropwizard.migrations.MigrationsBundle;
-import de.spinscale.dropwizard.jobs.JobsBundle;
+import de.spinscale.dropwizard.jobs.ConfiguredJobsBundle;
 import de.spinscale.dropwizard.jobs.config.JobConfiguration;
+import io.dropwizard.Application;
+import io.dropwizard.db.DataSourceFactory;
+import io.dropwizard.hibernate.HibernateBundle;
+import io.dropwizard.migrations.MigrationsBundle;
+import io.dropwizard.setup.Bootstrap;
+import io.dropwizard.setup.Environment;
 
 
-public class ApplicationService extends Service<MigratorConfiguration> {
+public class ApplicationService extends Application<MigratorConfiguration> {
 
     private final String contentMigrator = "ContentMigrator";
 
@@ -37,27 +37,30 @@ public class ApplicationService extends Service<MigratorConfiguration> {
                     PncChildRegistration.class, ChildRegistration.class, ChildPncVisit.class,
                     FpReferralFollowup.class, AncInvestigations.class,
                     Audit.class, ErrorAudit.class) {
+
                 @Override
-                public DatabaseConfiguration getDatabaseConfiguration(MigratorConfiguration configuration) {
+                public DataSourceFactory getDataSourceFactory(MigratorConfiguration configuration) {
                     return configuration.getDatabase();
                 }
             };
 
 
     @Override
-    public void initialize(Bootstrap<MigratorConfiguration> bootstrap) {
-        bootstrap.setName(contentMigrator);
+    public String getName() {
+        return contentMigrator;
+    }
 
-        bootstrap.addBundle(new JobsBundle<MigratorConfiguration>() {
+    @Override
+    public void initialize(Bootstrap<MigratorConfiguration> bootstrap) {
+        bootstrap.addBundle(new ConfiguredJobsBundle<MigratorConfiguration>() {
             @Override
-            public JobConfiguration getJobConfiguration(MigratorConfiguration configuration) {
-                return configuration.getJobs();
+            public JobConfiguration getJobConfiguration(MigratorConfiguration migratorConfiguration) {
+                return migratorConfiguration.getJobs();
             }
         });
-
         bootstrap.addBundle(new MigrationsBundle<MigratorConfiguration>() {
             @Override
-            public DatabaseConfiguration getDatabaseConfiguration(MigratorConfiguration configuration) {
+            public DataSourceFactory getDataSourceFactory(MigratorConfiguration configuration) {
                 return configuration.getDatabase();
             }
         });
@@ -70,6 +73,6 @@ public class ApplicationService extends Service<MigratorConfiguration> {
         context.updateSessionFactory(hibernateBundle.getSessionFactory())
                 .updateConfiguration(configuration);
 
-        environment.addResource(new FormResource(context.formService()));
+        environment.jersey().register(new FormResource(context.formService()));
     }
 }

@@ -1,7 +1,6 @@
 package app.scheduler;
 
 import app.MigratorConfiguration;
-import app.model.Audit;
 import app.service.AuditService;
 import app.service.FormService;
 import app.util.HttpClient;
@@ -16,7 +15,6 @@ import java.util.Map;
 
 import static app.Constants.TIMESTAMP;
 import static java.lang.String.format;
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 public class FormMigratorJob implements Job {
     private final AuditService auditService;
@@ -43,7 +41,7 @@ public class FormMigratorJob implements Job {
         List<Map<String, Object>> processedForms = formService.save(responseData);
 
         auditService.createAuditFor(processedForms, responseData);
-        logger.info(format("Successfully processed %d of %d form entries. (%dms)", processedForms.size(), responseData.size(), stopwatch.stop().elapsed(MILLISECONDS)));
+        logger.info(format("Successfully processed %d of %d form entries. (%dms)", processedForms.size(), responseData.size(), stopwatch.stop().elapsedMillis()));
     }
 
     private URI getBaseURI() {
