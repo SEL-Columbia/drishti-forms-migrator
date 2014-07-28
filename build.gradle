@@ -45,7 +45,7 @@ dependencies {
     compile fileTree('lib')
     runtime group: 'postgresql', name: 'postgresql', version: '9.1-901.jdbc4'
 
-    testCompile 'junit:junit:4.11'
+    testCompile 'junit:junit:4.8.2'
     testCompile 'org.mockito:mockito-all:1.9.5'
 }
 
