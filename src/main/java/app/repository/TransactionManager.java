@@ -1,6 +1,5 @@
 package app.repository;
 
-import app.model.BaseEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.context.internal.ManagedSessionContext;
@@ -13,7 +12,7 @@ public class TransactionManager {
     }
 
     public Object doInTransaction(JTransaction transaction) {
-        try{
+        try {
             initTransaction();
             Object response = transaction.doInTransaction();
             commit();

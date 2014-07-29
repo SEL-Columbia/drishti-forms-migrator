@@ -90,7 +90,3 @@ uploadArchives {
         }
     }
 }
-
-task foo << {
-    println fatJar.archivePath
-}

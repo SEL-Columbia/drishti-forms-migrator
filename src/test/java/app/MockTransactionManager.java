@@ -2,9 +2,8 @@ package app;
 
 import app.repository.JTransaction;
 import app.repository.TransactionManager;
-import org.hibernate.SessionFactory;
 
-public class MockTransactionManager extends TransactionManager{
+public class MockTransactionManager extends TransactionManager {
     public MockTransactionManager() {
         super(null);
     }
