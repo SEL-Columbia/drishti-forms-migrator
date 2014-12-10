@@ -1,6 +1,6 @@
-pollingUrl: http://qa.smartregistries.org/all-form-submissions?timestamp=0&batch-size=100
-pollingUrlUsername: demo1
-pollingUrlPassword: 1
+pollingUrl: http://uat.smartregistries.org/all-form-submissions?timestamp=0&batch-size=100
+pollingUrlUsername: demo2
+pollingUrlPassword: 2
 
 database:
   driverClass: org.postgresql.Driver

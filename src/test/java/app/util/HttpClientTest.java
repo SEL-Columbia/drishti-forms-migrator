@@ -21,9 +21,9 @@ public class HttpClientTest {
 
     @Before
     public void setup() {
-        uri = "http://qa.smartregistries.org/all-form-submissions?timestamp=0&batch-size=100";
-        username = "demo1";
-        password = "1";
+        uri = "http://uat.smartregistries.org/all-form-submissions?timestamp=0&batch-size=100";
+        username = "demo2";
+        password = "2";
     }
 
     @Test
