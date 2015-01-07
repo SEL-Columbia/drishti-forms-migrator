@@ -82,7 +82,7 @@ task cleanDb(dependsOn : "fatJar") << {
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: "http://nexus.motechproject.org/content/repositories/drishti-forms-migrator") {
+            repository(url: "http://ci.smartregistries.org:8081/nexus/content/repositories/drishti-forms-migrator") {
                 authentication(userName: System.getenv('NEXUS_USERNAME'), password: System.getenv('NEXUS_PASSWORD'))
             }
             pom.artifactId = "drishti-forms-migrator"

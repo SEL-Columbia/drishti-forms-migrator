@@ -3,10 +3,6 @@ language: java
 jdk:
   - oraclejdk8
 
-env:
-  global:
-    - NEXUS_USERNAME=admin
-    - secure: "WreW/GLf2nUUEkUUBjubXHnYlDhgUgsNhTcF5rrZl2kmRXUrKKNCQ0qCiWBKCUBZQkdattnSNL627QgoaUr79IWTFnLQQXfFGm9lgIWaD+8zMisefVREwwB64CuzPuk3h5rwOY1tkSgMn/LWQJB+z76XzT6p7pwBRAzYRZ+Isas="
 
 before_script:
   - ./gradlew clean build
